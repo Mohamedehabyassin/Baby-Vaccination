@@ -115,6 +115,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign In With Google'**
   String get signInWithGoogle;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @forgetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password?'**
+  String get forgetPassword;
 }
 
 class _AppLocalizationsDelegate

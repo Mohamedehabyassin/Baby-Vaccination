@@ -13,7 +13,8 @@ part 'sign_in_state.dart';
 part 'sign_in_bloc.freezed.dart';
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  SignInBloc() : super(_Initial()) {
+  SignInBloc(this._emailUseCase, this._googleUseCase, this._biometricsUseCase)
+    : super(_Initial()) {
     on<SignInEvent>((event, emit) {
       // TODO: implement event handler
     });

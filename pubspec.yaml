@@ -2,20 +2,8 @@ name: baby_vaccination
 
 description: A new Flutter application.
 
-# The following line prevents the package from being accidentally published to
-# pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
 environment:
@@ -25,8 +13,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_localizations:
     sdk: flutter
@@ -51,7 +37,6 @@ dependencies:
   json_annotation: ^4.11.0
   go_router: ^17.1.0
 
-
   smooth_page_indicator: ^1.1.0
 
   firebase_core: ^4.6.0
@@ -61,11 +46,11 @@ dependencies:
   open_file: ^3.3.2
   carousel_slider: ^5.1.1
   cloud_firestore: ^6.0.0
-  flare_flutter: ^3.0.2
+  rive: ^0.14.4
   flutter_screenutil: ^5.9.3
   flare_splash_screen: ^4.0.0
   firebase_messaging: ^16.0.0
-  flutter_local_notifications: ^21.0.0
+  # flutter_local_notifications: ^21.0.0
   google_maps_flutter: ^2.17.0
   google_maps_polyline: ^1.0.3
   flutter_polyline_points: ^3.1.0
@@ -78,8 +63,10 @@ dev_dependencies:
   injectable_generator: ^2.7.1+4
   freezed: ^3.2.5
   json_serializable: ^6.13.1
+  flutter_gen_runner: ^5.13.0+1
 
-
+dependency_overrides:
+  platform: ^3.1.0
 
 flutter:
   generate: true
@@ -88,6 +75,7 @@ flutter:
   assets:
     - assets/flare/
     - assets/images/
+    - assets/rive/
 
   fonts:
     - family: Nunito
@@ -116,3 +104,18 @@ flutter_intl:
   enabled: true
   arb_dir: lib/core/presentation/localization
   output_dir: lib/core/presentation/localization
+
+flutter_gen:
+  output: lib/core/gen/
+  line_length: 80
+  
+  integrations:
+    flutter_svg: true
+    lottie: true
+  
+  assets:
+    outputs:
+      package_parameter_enabled: false
+      directory_path_enabled: true
+  
+  parse_metadata: true

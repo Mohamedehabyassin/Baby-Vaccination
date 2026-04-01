@@ -5,5 +5,8 @@
     "signInWithEmailAndPassword": "Sign In With Email And Password",
     "@signInWithEmailAndPassword": {},
     "signInWithGoogle": "Sign In With Google",
-    "@signInWithGoogle": {}
+    "@signInWithGoogle": {},
+    "email": "Email",
+    "password": "Password",
+    "forgetPassword": "Forgot Password?"
 }

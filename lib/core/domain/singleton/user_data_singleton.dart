@@ -46,7 +46,7 @@ class UserDataSingleton {
   static Future<void> fetchCachedTutorial() async {
     try {
       final value = await StorageHelper.read(StorageKeys.tutorial);
-      if (value.isValid()) {
+      if (value.isValid) {
         UserDataSingleton.isUserCompleteTutorial = bool.parse(value!);
       }
     } catch (e) {
