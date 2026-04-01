@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "889526443741",
+    "project_id": "baby-vaccination-a9ad0",
+    "storage_bucket": "baby-vaccination-a9ad0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889526443741:android:7d875c9e26bb523df38534",
+        "android_client_info": {
+          "package_name": "velora.baby_vaccination"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkpGUcHGTXJVb2V95uCa8Wa5MuV98zWn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

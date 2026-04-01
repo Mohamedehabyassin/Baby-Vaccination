@@ -94,11 +94,25 @@ class $AssetsImagesGen {
   ];
 }
 
+class $AssetsRiveGen {
+  const $AssetsRiveGen();
+
+  /// File path: assets/rive/bunny.riv
+  String get bunny => 'assets/rive/bunny.riv';
+
+  /// Directory path: assets/rive
+  String get path => 'assets/rive';
+
+  /// List of all assets
+  List<String> get values => [bunny];
+}
+
 class Assets {
   const Assets._();
 
   static const $AssetsFlareGen flare = $AssetsFlareGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsRiveGen rive = $AssetsRiveGen();
 }
 
 class AssetGenImage {

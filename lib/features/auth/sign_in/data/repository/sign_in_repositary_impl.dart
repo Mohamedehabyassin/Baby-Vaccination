@@ -4,7 +4,9 @@ import 'package:baby_vaccination/features/auth/sign_in/data/data_sources/remote/
 import 'package:baby_vaccination/features/auth/sign_in/domain/entity/sign_in_params_entity.dart';
 import 'package:baby_vaccination/features/auth/sign_in/domain/repository/sign_in_repository.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: SignInRepository)
 class SignInRepositoryImpl implements SignInRepository {
   SignInRepositoryImpl(
     this._signInLocalDataSource,
