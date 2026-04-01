@@ -1,0 +1,10 @@
+arb-dir: lib/core/presentation/localization
+template-arb-file: intl_en.arb
+output-dir: lib/core/presentation/localization
+output-localization-file: app_localizations.dart
+
+
+#! Escaping syntax
+# Sometimes, you have to use tokens, such as { and }, as normal characters.
+# To ignore such tokens from being parsed, enable the use-escaping flag
+# use-escaping: true

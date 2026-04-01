@@ -1,0 +1,9 @@
+{
+    "@@locale": "en",
+    "signIn": "Sign In",
+    "@signIn": {},
+    "signInWithEmailAndPassword": "Sign In With Email And Password",
+    "@signInWithEmailAndPassword": {},
+    "signInWithGoogle": "Sign In With Google",
+    "@signInWithGoogle": {}
+}
