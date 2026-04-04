@@ -55,13 +55,14 @@ extension SignInEventPatterns on SignInEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Started value)?  started,TResult Function( SignInWithEmailAndPassword value)?  signInWithEmailAndPassword,TResult Function( SignInWithGoogle value)?  signInWithGoogle,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Started value)?  started,TResult Function( SignInWithEmailAndPassword value)?  signInWithEmailAndPassword,TResult Function( SignInWithGoogle value)?  signInWithGoogle,TResult Function( SignInWithBiometrics value)?  signInWithBiometrics,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Started() when started != null:
 return started(_that);case SignInWithEmailAndPassword() when signInWithEmailAndPassword != null:
 return signInWithEmailAndPassword(_that);case SignInWithGoogle() when signInWithGoogle != null:
-return signInWithGoogle(_that);case _:
+return signInWithGoogle(_that);case SignInWithBiometrics() when signInWithBiometrics != null:
+return signInWithBiometrics(_that);case _:
   return orElse();
 
 }
@@ -79,13 +80,14 @@ return signInWithGoogle(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Started value)  started,required TResult Function( SignInWithEmailAndPassword value)  signInWithEmailAndPassword,required TResult Function( SignInWithGoogle value)  signInWithGoogle,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Started value)  started,required TResult Function( SignInWithEmailAndPassword value)  signInWithEmailAndPassword,required TResult Function( SignInWithGoogle value)  signInWithGoogle,required TResult Function( SignInWithBiometrics value)  signInWithBiometrics,}){
 final _that = this;
 switch (_that) {
 case _Started():
 return started(_that);case SignInWithEmailAndPassword():
 return signInWithEmailAndPassword(_that);case SignInWithGoogle():
-return signInWithGoogle(_that);case _:
+return signInWithGoogle(_that);case SignInWithBiometrics():
+return signInWithBiometrics(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -102,13 +104,14 @@ return signInWithGoogle(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Started value)?  started,TResult? Function( SignInWithEmailAndPassword value)?  signInWithEmailAndPassword,TResult? Function( SignInWithGoogle value)?  signInWithGoogle,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Started value)?  started,TResult? Function( SignInWithEmailAndPassword value)?  signInWithEmailAndPassword,TResult? Function( SignInWithGoogle value)?  signInWithGoogle,TResult? Function( SignInWithBiometrics value)?  signInWithBiometrics,}){
 final _that = this;
 switch (_that) {
 case _Started() when started != null:
 return started(_that);case SignInWithEmailAndPassword() when signInWithEmailAndPassword != null:
 return signInWithEmailAndPassword(_that);case SignInWithGoogle() when signInWithGoogle != null:
-return signInWithGoogle(_that);case _:
+return signInWithGoogle(_that);case SignInWithBiometrics() when signInWithBiometrics != null:
+return signInWithBiometrics(_that);case _:
   return null;
 
 }
@@ -125,12 +128,13 @@ return signInWithGoogle(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  started,TResult Function( String email,  String password)?  signInWithEmailAndPassword,TResult Function()?  signInWithGoogle,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  started,TResult Function()?  signInWithEmailAndPassword,TResult Function()?  signInWithGoogle,TResult Function()?  signInWithBiometrics,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Started() when started != null:
 return started();case SignInWithEmailAndPassword() when signInWithEmailAndPassword != null:
-return signInWithEmailAndPassword(_that.email,_that.password);case SignInWithGoogle() when signInWithGoogle != null:
-return signInWithGoogle();case _:
+return signInWithEmailAndPassword();case SignInWithGoogle() when signInWithGoogle != null:
+return signInWithGoogle();case SignInWithBiometrics() when signInWithBiometrics != null:
+return signInWithBiometrics();case _:
   return orElse();
 
 }
@@ -148,12 +152,13 @@ return signInWithGoogle();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  started,required TResult Function( String email,  String password)  signInWithEmailAndPassword,required TResult Function()  signInWithGoogle,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  started,required TResult Function()  signInWithEmailAndPassword,required TResult Function()  signInWithGoogle,required TResult Function()  signInWithBiometrics,}) {final _that = this;
 switch (_that) {
 case _Started():
 return started();case SignInWithEmailAndPassword():
-return signInWithEmailAndPassword(_that.email,_that.password);case SignInWithGoogle():
-return signInWithGoogle();case _:
+return signInWithEmailAndPassword();case SignInWithGoogle():
+return signInWithGoogle();case SignInWithBiometrics():
+return signInWithBiometrics();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -170,12 +175,13 @@ return signInWithGoogle();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  started,TResult? Function( String email,  String password)?  signInWithEmailAndPassword,TResult? Function()?  signInWithGoogle,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  started,TResult? Function()?  signInWithEmailAndPassword,TResult? Function()?  signInWithGoogle,TResult? Function()?  signInWithBiometrics,}) {final _that = this;
 switch (_that) {
 case _Started() when started != null:
 return started();case SignInWithEmailAndPassword() when signInWithEmailAndPassword != null:
-return signInWithEmailAndPassword(_that.email,_that.password);case SignInWithGoogle() when signInWithGoogle != null:
-return signInWithGoogle();case _:
+return signInWithEmailAndPassword();case SignInWithGoogle() when signInWithGoogle != null:
+return signInWithGoogle();case SignInWithBiometrics() when signInWithBiometrics != null:
+return signInWithBiometrics();case _:
   return null;
 
 }
@@ -219,69 +225,33 @@ String toString() {
 
 
 class SignInWithEmailAndPassword implements SignInEvent {
-  const SignInWithEmailAndPassword(this.email, this.password);
+  const SignInWithEmailAndPassword();
   
 
- final  String email;
- final  String password;
 
-/// Create a copy of SignInEvent
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$SignInWithEmailAndPasswordCopyWith<SignInWithEmailAndPassword> get copyWith => _$SignInWithEmailAndPasswordCopyWithImpl<SignInWithEmailAndPassword>(this, _$identity);
+
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignInWithEmailAndPassword&&(identical(other.email, email) || other.email == email)&&(identical(other.password, password) || other.password == password));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignInWithEmailAndPassword);
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,email,password);
+int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'SignInEvent.signInWithEmailAndPassword(email: $email, password: $password)';
+  return 'SignInEvent.signInWithEmailAndPassword()';
 }
 
 
 }
 
-/// @nodoc
-abstract mixin class $SignInWithEmailAndPasswordCopyWith<$Res> implements $SignInEventCopyWith<$Res> {
-  factory $SignInWithEmailAndPasswordCopyWith(SignInWithEmailAndPassword value, $Res Function(SignInWithEmailAndPassword) _then) = _$SignInWithEmailAndPasswordCopyWithImpl;
-@useResult
-$Res call({
- String email, String password
-});
 
 
-
-
-}
-/// @nodoc
-class _$SignInWithEmailAndPasswordCopyWithImpl<$Res>
-    implements $SignInWithEmailAndPasswordCopyWith<$Res> {
-  _$SignInWithEmailAndPasswordCopyWithImpl(this._self, this._then);
-
-  final SignInWithEmailAndPassword _self;
-  final $Res Function(SignInWithEmailAndPassword) _then;
-
-/// Create a copy of SignInEvent
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? email = null,Object? password = null,}) {
-  return _then(SignInWithEmailAndPassword(
-null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String,null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
-}
 
 /// @nodoc
 
@@ -307,6 +277,38 @@ int get hashCode => runtimeType.hashCode;
 @override
 String toString() {
   return 'SignInEvent.signInWithGoogle()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class SignInWithBiometrics implements SignInEvent {
+  const SignInWithBiometrics();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignInWithBiometrics);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'SignInEvent.signInWithBiometrics()';
 }
 
 

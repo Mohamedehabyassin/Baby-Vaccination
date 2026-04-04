@@ -7,7 +7,7 @@ abstract class SignInRemoteDataSource {
   Future<Either<Failure, bool>> signInWithGoogle();
 }
 
-@lazySingleton
+@LazySingleton(as: SignInRemoteDataSource, scope: 'signIn')
 class SignInRemoteDataSourceImpl implements SignInRemoteDataSource {
   @override
   Future<Either<Failure, bool>> signInWithEmail(String email, String password) {

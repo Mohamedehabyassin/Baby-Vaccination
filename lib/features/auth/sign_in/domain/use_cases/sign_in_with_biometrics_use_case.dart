@@ -4,7 +4,7 @@ import 'package:baby_vaccination/features/auth/sign_in/domain/repository/sign_in
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@LazySingleton(scope: 'signIn')
 class SignInWithBiometricsUseCase extends BaseUseCase<bool, void> {
   SignInWithBiometricsUseCase(this._repository);
   final SignInRepository _repository;

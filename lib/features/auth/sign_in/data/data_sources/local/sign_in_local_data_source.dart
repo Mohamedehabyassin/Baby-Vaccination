@@ -6,7 +6,7 @@ abstract class SignInLocalDataSource {
   Future<Either<Failure, bool>> signInWithBiometric();
 }
 
-@lazySingleton
+@LazySingleton(as: SignInLocalDataSource, scope: 'signIn')
 class SignInLocalDataSourceImpl implements SignInLocalDataSource {
   @override
   Future<Either<Failure, bool>> signInWithBiometric() {

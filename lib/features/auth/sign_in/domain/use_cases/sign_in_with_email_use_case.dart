@@ -5,7 +5,7 @@ import 'package:baby_vaccination/features/auth/sign_in/domain/repository/sign_in
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@LazySingleton(scope: 'signIn')
 class SignInWithEmailUseCase extends BaseUseCase<bool, SignInParamsEntity> {
   SignInWithEmailUseCase(this._repository);
   final SignInRepository _repository;

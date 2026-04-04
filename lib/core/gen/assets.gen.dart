@@ -14,6 +14,13 @@ import 'package:flutter/widgets.dart';
 class $AssetsFlareGen {
   const $AssetsFlareGen();
 
+  /// File path: assets/flare/Fingerprint Scanning (Lottie Import).flr
+  String get fingerprintScanningLottieImport =>
+      'assets/flare/Fingerprint Scanning (Lottie Import).flr';
+
+  /// File path: assets/flare/Rekab.flr
+  String get rekab => 'assets/flare/Rekab.flr';
+
   /// File path: assets/flare/doctor.flr
   String get doctor => 'assets/flare/doctor.flr';
 
@@ -24,7 +31,12 @@ class $AssetsFlareGen {
   String get path => 'assets/flare';
 
   /// List of all assets
-  List<String> get values => [doctor, teddyTest];
+  List<String> get values => [
+    fingerprintScanningLottieImport,
+    rekab,
+    doctor,
+    teddyTest,
+  ];
 }
 
 class $AssetsImagesGen {

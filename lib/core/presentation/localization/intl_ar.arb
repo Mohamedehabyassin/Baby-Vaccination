@@ -1,9 +1,11 @@
 {
-    "@@locale":"ar",
+    "@@locale": "ar",
     "signIn": "تسجيل الدخول",
     "signInWithEmailAndPassword": "تسجيل الدخول بالبريد الإلكتروني وكلمة المرور",
     "signInWithGoogle": "تسجيل الدخول بالجوجل",
     "email": "البريد الإلكتروني",
     "password": "كلمة المرور",
-    "forgetPassword": "نسيت كلمة المرور؟"
+    "forgetPassword": "نسيت كلمة المرور؟",
+    "enterYourEmail": "أدخل بريدك الإلكتروني",
+    "enterYourPassword": "أدخل كلمة المرور"
 }

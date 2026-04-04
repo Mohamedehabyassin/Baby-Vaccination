@@ -3,7 +3,7 @@ import 'package:baby_vaccination/core/domain/base_use_case.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@LazySingleton(scope: 'signIn')
 class SignInWithGoogleUseCase extends BaseUseCase {
   @override
   Future<Either<Failure<dynamic>, dynamic>> call(params) {

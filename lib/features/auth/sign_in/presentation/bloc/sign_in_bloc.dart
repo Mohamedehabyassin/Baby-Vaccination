@@ -13,12 +13,22 @@ part 'sign_in_event.dart';
 part 'sign_in_state.dart';
 part 'sign_in_bloc.freezed.dart';
 
-@injectable
+@LazySingleton(scope: 'signIn')
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   SignInBloc(this._emailUseCase, this._googleUseCase, this._biometricsUseCase)
     : super(_Initial()) {
     on<SignInEvent>((event, emit) {
-      // TODO: implement event handler
+      event.whenOrNull(
+        signInWithEmailAndPassword: () {
+          _signInWithEmailAndPassword();
+        },
+        signInWithGoogle: () {
+          _signInWithGoogle();
+        },
+        signInWithBiometrics: () {
+          _signInWithBiometrics();
+        },
+      );
     });
   }
   final SignInWithEmailUseCase _emailUseCase;
@@ -32,4 +42,17 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final userFocusNode = FocusNode();
   final passwordFocusNode = FocusNode();
   bool loading = false;
+
+  void _signInWithEmailAndPassword() {
+    animationType = "typing";
+    emit(SignInState.error(Failure()));
+  }
+
+  void _signInWithGoogle() {
+    add(const SignInEvent.signInWithGoogle());
+  }
+
+  void _signInWithBiometrics() {
+    add(const SignInEvent.signInWithBiometrics());
+  }
 }

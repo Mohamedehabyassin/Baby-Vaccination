@@ -25,4 +25,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get forgetPassword => 'Forgot Password?';
+
+  @override
+  String get enterYourEmail => 'Enter Your Email';
+
+  @override
+  String get enterYourPassword => 'Enter Your Password';
 }

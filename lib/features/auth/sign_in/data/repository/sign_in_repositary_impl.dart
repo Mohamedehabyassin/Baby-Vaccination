@@ -6,7 +6,7 @@ import 'package:baby_vaccination/features/auth/sign_in/domain/repository/sign_in
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton(as: SignInRepository)
+@LazySingleton(as: SignInRepository, scope: 'signIn')
 class SignInRepositoryImpl implements SignInRepository {
   SignInRepositoryImpl(
     this._signInLocalDataSource,

@@ -7,6 +7,13 @@
     "signInWithGoogle": "Sign In With Google",
     "@signInWithGoogle": {},
     "email": "Email",
+    "@email": {},
     "password": "Password",
-    "forgetPassword": "Forgot Password?"
+    "@password": {},
+    "forgetPassword": "Forgot Password?",
+    "@forgetPassword": {},
+    "enterYourEmail": "Enter Your Email",
+    "@enterYourEmail": {},
+    "enterYourPassword": "Enter Your Password",
+    "@enterYourPassword": {}
 }

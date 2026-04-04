@@ -26,4 +26,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get forgetPassword => 'نسيت كلمة المرور؟';
+
+  @override
+  String get enterYourEmail => 'أدخل بريدك الإلكتروني';
+
+  @override
+  String get enterYourPassword => 'أدخل كلمة المرور';
 }
