@@ -5,67 +5,7 @@ import 'package:baby_vaccination/core/presentation/theme/components/theme_factor
 
 class CustomTextStyle {
   CustomTextStyle._();
-  //! HeroHeadlines
-  static final TextStyle heroHeadlinesBold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 56.sp,
-    fontWeight: FontWeight.w700,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle heroHeadlinesMedium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 56.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle heroHeadlinesRegular = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 56.sp,
-    fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
 
-  static final TextStyle heroHeadlinesLight = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 56.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-
-  //! Page Titles
-  static final TextStyle pageTitleBold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 46.sp,
-    fontWeight: FontWeight.w700,
-    fontFamily: AppStrings.nunito,
-
-    height: 1.5,
-  );
-  static final TextStyle pageTitleMedium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 46.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle pageTitleRegular = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 46.sp,
-    fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle pageTitleLight = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 46.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
   //! Headings
   static final TextStyle h1Bold = TextStyle(
     color: currentTheme.darkText,

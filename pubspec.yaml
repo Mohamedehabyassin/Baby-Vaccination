@@ -64,6 +64,7 @@ dev_dependencies:
   freezed: ^3.2.5
   json_serializable: ^6.13.1
   flutter_gen_runner: ^5.13.0+1
+  flutter_lints: ^6.0.0
 
 dependency_overrides:
   platform: ^3.1.0
@@ -75,6 +76,7 @@ flutter:
   assets:
     - assets/flare/
     - assets/images/
+    - assets/icons/
     - assets/rive/
 
   fonts:

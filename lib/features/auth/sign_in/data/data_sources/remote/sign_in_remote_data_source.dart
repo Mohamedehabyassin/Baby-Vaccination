@@ -1,4 +1,5 @@
 import 'package:baby_vaccination/core/data/network/failure.dart';
+import 'package:baby_vaccination/core/data/network/firebase/firebase_auth_manger.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
@@ -9,15 +10,24 @@ abstract class SignInRemoteDataSource {
 
 @LazySingleton(as: SignInRemoteDataSource, scope: 'signIn')
 class SignInRemoteDataSourceImpl implements SignInRemoteDataSource {
+  SignInRemoteDataSourceImpl(this.firebaseAuth);
+  final FirebaseAuthManger firebaseAuth;
   @override
-  Future<Either<Failure, bool>> signInWithEmail(String email, String password) {
-    // TODO: implement signInWithEmail
-    throw UnimplementedError();
+  Future<Either<Failure, bool>> signInWithEmail(
+    String email,
+    String password,
+  ) async {
+    final response = await firebaseAuth.signInWithEmailAndPassword(
+      email,
+      password,
+    );
+
+    return response.fold((failure) => Left(failure), (user) => Right(true));
   }
 
   @override
-  Future<Either<Failure, bool>> signInWithGoogle() {
-    // TODO: implement signInWithGoogle
-    throw UnimplementedError();
+  Future<Either<Failure, bool>> signInWithGoogle() async {
+    final response = await firebaseAuth.signInWithGoogle();
+    return response.fold((failure) => Left(failure), (user) => Right(true));
   }
 }

@@ -12,7 +12,12 @@
           "package_name": "velora.baby_vaccination"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "889526443741-3ak32jdk98ha8nul4dfr0bm6fk8sg0gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDkpGUcHGTXJVb2V95uCa8Wa5MuV98zWn8"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889526443741-3ak32jdk98ha8nul4dfr0bm6fk8sg0gd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

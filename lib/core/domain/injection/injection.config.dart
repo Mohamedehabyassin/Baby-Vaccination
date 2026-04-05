@@ -28,6 +28,11 @@ import '../../../features/auth/sign_in/domain/use_cases/sign_in_with_google_use_
     as _i830;
 import '../../../features/auth/sign_in/presentation/bloc/sign_in_bloc.dart'
     as _i829;
+import '../../data/connectivity/connectivity_manger.dart' as _i961;
+import '../../data/network/firebase/firebase_auth_manger.dart' as _i730;
+import '../../data/network/firebase/firestore_manager.dart' as _i110;
+import '../../presentation/localization/cubit/localization_cubit.dart' as _i61;
+import '../../presentation/theme/cubit/theme_cubit.dart' as _i550;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -35,7 +40,18 @@ extension GetItInjectableX on _i174.GetIt {
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
   }) {
-    _i526.GetItHelper(this, environment, environmentFilter);
+    final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    gh.lazySingleton<_i730.FirebaseAuthManger>(
+      () => _i730.FirebaseAuthManger(),
+    );
+    gh.lazySingleton<_i61.LocalizationCubit>(() => _i61.LocalizationCubit());
+    gh.lazySingleton<_i550.ThemeCubit>(() => _i550.ThemeCubit());
+    gh.lazySingleton<_i110.FirebaseManager>(
+      () => _i110.FirebaseManager(
+        gh<_i961.ConnectivityManager>(),
+        gh<_i730.FirebaseAuthManger>(),
+      ),
+    );
     return this;
   }
 
@@ -45,14 +61,12 @@ extension GetItInjectableX on _i174.GetIt {
       'signIn',
       dispose: dispose,
       init: (_i526.GetItHelper gh) {
-        gh.lazySingleton<_i830.SignInWithGoogleUseCase>(
-          () => _i830.SignInWithGoogleUseCase(),
-        );
-        gh.lazySingleton<_i656.SignInRemoteDataSource>(
-          () => _i656.SignInRemoteDataSourceImpl(),
-        );
         gh.lazySingleton<_i12.SignInLocalDataSource>(
           () => _i12.SignInLocalDataSourceImpl(),
+        );
+        gh.lazySingleton<_i656.SignInRemoteDataSource>(
+          () =>
+              _i656.SignInRemoteDataSourceImpl(gh<_i730.FirebaseAuthManger>()),
         );
         gh.lazySingleton<_i1054.SignInRepository>(
           () => _i291.SignInRepositoryImpl(
@@ -64,12 +78,17 @@ extension GetItInjectableX on _i174.GetIt {
           () =>
               _i509.SignInWithBiometricsUseCase(gh<_i1054.SignInRepository>()),
         );
-        gh.lazySingleton<_i25.SignInWithEmailUseCase>(
-          () => _i25.SignInWithEmailUseCase(gh<_i1054.SignInRepository>()),
+        gh.lazySingleton<_i25.SignInWithEmailAndPasswordUseCase>(
+          () => _i25.SignInWithEmailAndPasswordUseCase(
+            gh<_i1054.SignInRepository>(),
+          ),
+        );
+        gh.lazySingleton<_i830.SignInWithGoogleUseCase>(
+          () => _i830.SignInWithGoogleUseCase(gh<_i1054.SignInRepository>()),
         );
         gh.lazySingleton<_i829.SignInBloc>(
           () => _i829.SignInBloc(
-            gh<_i25.SignInWithEmailUseCase>(),
+            gh<_i25.SignInWithEmailAndPasswordUseCase>(),
             gh<_i830.SignInWithGoogleUseCase>(),
             gh<_i509.SignInWithBiometricsUseCase>(),
           ),

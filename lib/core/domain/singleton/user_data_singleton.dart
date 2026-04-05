@@ -5,14 +5,12 @@ import 'package:baby_vaccination/core/domain/extensions/string_extension.dart';
 import '../constants/enums.dart';
 
 class UserDataSingleton {
-  static final UserDataSingleton _singleton = UserDataSingleton._internal();
-
-  UserDataSingleton._internal();
-
   factory UserDataSingleton() {
     return _singleton;
   }
+  UserDataSingleton._internal();
 
+  static final UserDataSingleton _singleton = UserDataSingleton._internal();
   static String? _token;
   static String? get token => _token;
 

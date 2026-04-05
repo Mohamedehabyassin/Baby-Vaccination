@@ -318,7 +318,7 @@ String toString() {
 
 
 /// @nodoc
-mixin _$SignInState {
+mixin _$SignInState<T> {
 
 
 
@@ -326,7 +326,7 @@ mixin _$SignInState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignInState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignInState<T>);
 }
 
 
@@ -335,20 +335,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'SignInState()';
+  return 'SignInState<$T>()';
 }
 
 
 }
 
 /// @nodoc
-class $SignInStateCopyWith<$Res>  {
-$SignInStateCopyWith(SignInState _, $Res Function(SignInState) __);
+class $SignInStateCopyWith<T,$Res>  {
+$SignInStateCopyWith(SignInState<T> _, $Res Function(SignInState<T>) __);
 }
 
 
 /// Adds pattern-matching-related methods to [SignInState].
-extension SignInStatePatterns on SignInState {
+extension SignInStatePatterns<T> on SignInState<T> {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -361,7 +361,7 @@ extension SignInStatePatterns on SignInState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( Loading value)?  loading,TResult Function( Success value)?  success,TResult Function( Error value)?  error,TResult Function( Toast value)?  toast,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial<T> value)?  initial,TResult Function( Loading<T> value)?  loading,TResult Function( Success<T> value)?  success,TResult Function( Error<T> value)?  error,TResult Function( Toast<T> value)?  toast,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -387,7 +387,7 @@ return toast(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( Loading value)  loading,required TResult Function( Success value)  success,required TResult Function( Error value)  error,required TResult Function( Toast value)  toast,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial<T> value)  initial,required TResult Function( Loading<T> value)  loading,required TResult Function( Success<T> value)  success,required TResult Function( Error<T> value)  error,required TResult Function( Toast<T> value)  toast,}){
 final _that = this;
 switch (_that) {
 case _Initial():
@@ -412,7 +412,7 @@ return toast(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( Loading value)?  loading,TResult? Function( Success value)?  success,TResult? Function( Error value)?  error,TResult? Function( Toast value)?  toast,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial<T> value)?  initial,TResult? Function( Loading<T> value)?  loading,TResult? Function( Success<T> value)?  success,TResult? Function( Error<T> value)?  error,TResult? Function( Toast<T> value)?  toast,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -504,7 +504,7 @@ return toast(_that.message,_that.toastType);case _:
 /// @nodoc
 
 
-class _Initial implements SignInState {
+class _Initial<T> implements SignInState<T> {
   const _Initial();
   
 
@@ -515,7 +515,7 @@ class _Initial implements SignInState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial<T>);
 }
 
 
@@ -524,7 +524,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'SignInState.initial()';
+  return 'SignInState<$T>.initial()';
 }
 
 
@@ -536,7 +536,7 @@ String toString() {
 /// @nodoc
 
 
-class Loading implements SignInState {
+class Loading<T> implements SignInState<T> {
   const Loading();
   
 
@@ -547,7 +547,7 @@ class Loading implements SignInState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Loading<T>);
 }
 
 
@@ -556,7 +556,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'SignInState.loading()';
+  return 'SignInState<$T>.loading()';
 }
 
 
@@ -568,7 +568,7 @@ String toString() {
 /// @nodoc
 
 
-class Success implements SignInState {
+class Success<T> implements SignInState<T> {
   const Success();
   
 
@@ -579,7 +579,7 @@ class Success implements SignInState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Success);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Success<T>);
 }
 
 
@@ -588,7 +588,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'SignInState.success()';
+  return 'SignInState<$T>.success()';
 }
 
 
@@ -600,7 +600,7 @@ String toString() {
 /// @nodoc
 
 
-class Error implements SignInState {
+class Error<T> implements SignInState<T> {
   const Error(this.failure);
   
 
@@ -610,13 +610,13 @@ class Error implements SignInState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$ErrorCopyWith<Error> get copyWith => _$ErrorCopyWithImpl<Error>(this, _$identity);
+$ErrorCopyWith<T, Error<T>> get copyWith => _$ErrorCopyWithImpl<T, Error<T>>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Error&&(identical(other.failure, failure) || other.failure == failure));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Error<T>&&(identical(other.failure, failure) || other.failure == failure));
 }
 
 
@@ -625,15 +625,15 @@ int get hashCode => Object.hash(runtimeType,failure);
 
 @override
 String toString() {
-  return 'SignInState.error(failure: $failure)';
+  return 'SignInState<$T>.error(failure: $failure)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ErrorCopyWith<$Res> implements $SignInStateCopyWith<$Res> {
-  factory $ErrorCopyWith(Error value, $Res Function(Error) _then) = _$ErrorCopyWithImpl;
+abstract mixin class $ErrorCopyWith<T,$Res> implements $SignInStateCopyWith<T, $Res> {
+  factory $ErrorCopyWith(Error<T> value, $Res Function(Error<T>) _then) = _$ErrorCopyWithImpl;
 @useResult
 $Res call({
  Failure failure
@@ -644,17 +644,17 @@ $Res call({
 
 }
 /// @nodoc
-class _$ErrorCopyWithImpl<$Res>
-    implements $ErrorCopyWith<$Res> {
+class _$ErrorCopyWithImpl<T,$Res>
+    implements $ErrorCopyWith<T, $Res> {
   _$ErrorCopyWithImpl(this._self, this._then);
 
-  final Error _self;
-  final $Res Function(Error) _then;
+  final Error<T> _self;
+  final $Res Function(Error<T>) _then;
 
 /// Create a copy of SignInState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? failure = null,}) {
-  return _then(Error(
+  return _then(Error<T>(
 null == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
 as Failure,
   ));
@@ -666,7 +666,7 @@ as Failure,
 /// @nodoc
 
 
-class Toast implements SignInState {
+class Toast<T> implements SignInState<T> {
   const Toast(this.message, this.toastType);
   
 
@@ -677,13 +677,13 @@ class Toast implements SignInState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$ToastCopyWith<Toast> get copyWith => _$ToastCopyWithImpl<Toast>(this, _$identity);
+$ToastCopyWith<T, Toast<T>> get copyWith => _$ToastCopyWithImpl<T, Toast<T>>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Toast&&(identical(other.message, message) || other.message == message)&&(identical(other.toastType, toastType) || other.toastType == toastType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Toast<T>&&(identical(other.message, message) || other.message == message)&&(identical(other.toastType, toastType) || other.toastType == toastType));
 }
 
 
@@ -692,15 +692,15 @@ int get hashCode => Object.hash(runtimeType,message,toastType);
 
 @override
 String toString() {
-  return 'SignInState.toast(message: $message, toastType: $toastType)';
+  return 'SignInState<$T>.toast(message: $message, toastType: $toastType)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ToastCopyWith<$Res> implements $SignInStateCopyWith<$Res> {
-  factory $ToastCopyWith(Toast value, $Res Function(Toast) _then) = _$ToastCopyWithImpl;
+abstract mixin class $ToastCopyWith<T,$Res> implements $SignInStateCopyWith<T, $Res> {
+  factory $ToastCopyWith(Toast<T> value, $Res Function(Toast<T>) _then) = _$ToastCopyWithImpl;
 @useResult
 $Res call({
  String message, ToastType toastType
@@ -711,17 +711,17 @@ $Res call({
 
 }
 /// @nodoc
-class _$ToastCopyWithImpl<$Res>
-    implements $ToastCopyWith<$Res> {
+class _$ToastCopyWithImpl<T,$Res>
+    implements $ToastCopyWith<T, $Res> {
   _$ToastCopyWithImpl(this._self, this._then);
 
-  final Toast _self;
-  final $Res Function(Toast) _then;
+  final Toast<T> _self;
+  final $Res Function(Toast<T>) _then;
 
 /// Create a copy of SignInState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,Object? toastType = null,}) {
-  return _then(Toast(
+  return _then(Toast<T>(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,null == toastType ? _self.toastType : toastType // ignore: cast_nullable_to_non_nullable
 as ToastType,

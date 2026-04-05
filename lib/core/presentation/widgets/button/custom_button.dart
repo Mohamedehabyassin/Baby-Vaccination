@@ -4,15 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
-  final Function()? onPressed;
-  final Widget child;
-  final Color? backgroundColor;
-  final Color? borderColor;
-  final double? borderRadius;
-  final double height;
-  final double? width;
-  final double elevation;
-  final EdgeInsets? padding;
   const CustomButton({
     super.key,
     required this.onPressed,
@@ -25,7 +16,15 @@ class CustomButton extends StatelessWidget {
     this.borderColor,
     this.padding,
   });
-
+  final Function()? onPressed;
+  final Widget child;
+  final Color? backgroundColor;
+  final Color? borderColor;
+  final double? borderRadius;
+  final double height;
+  final double? width;
+  final double elevation;
+  final EdgeInsets? padding;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

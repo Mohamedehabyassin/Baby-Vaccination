@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
       next: (context) {
         return BlocProvider(
           create: (_) => getIt<SignInBloc>(),
-          child: SignInSccreen(),
+          child: SignInScreen(),
         );
       },
 

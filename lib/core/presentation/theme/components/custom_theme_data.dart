@@ -19,48 +19,8 @@ class CustomThemeData {
             Brightness.dark, // For Android(M and greater): (dark icons)
       ),
     ),
-    scaffoldBackgroundColor: currentTheme.mistWhite,
-    textButtonTheme: TextButtonThemeData(
-      style: ButtonStyle(
-        overlayColor: WidgetStateProperty.resolveWith<Color?>((states) {
-          if (states.contains(WidgetState.pressed)) {
-            return currentTheme.leafGreen.withAlpha(40); // Hov Pressed color
-          }
-          if (states.contains(WidgetState.hovered)) {
-            return currentTheme.leafGreen.withAlpha(
-              40,
-            ); // Hover color (web/desktop)
-          }
-          return null; // Default
-        }),
-      ),
-    ),
-
-    // bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    //   backgroundColor: currentTheme.surface,
-    //   type: BottomNavigationBarType.fixed,
-    //   elevation: 10,
-    // ),
-    // primaryColor: currentTheme.primary,
+    scaffoldBackgroundColor: currentTheme.primary100,
     brightness: Brightness.dark,
-    // switchTheme: SwitchThemeData(
-    //     thumbColor: MaterialStatePropertyAll<Color>(currentTheme.primary)),
-    // radioTheme: RadioThemeData(
-    //     fillColor: MaterialStatePropertyAll<Color>(currentTheme.primary)),
-    // datePickerTheme: DatePickerThemeData(
-    //     backgroundColor: currentTheme.background,
-    //     headerBackgroundColor: currentTheme.primary,
-    //     rangePickerHeaderBackgroundColor: currentTheme.primary,
-    //     confirmButtonStyle: ButtonStyle(
-    //         textStyle: MaterialStatePropertyAll(
-    //             TextStyle(color: currentTheme.primaryGreen800))),
-    //     cancelButtonStyle: ButtonStyle(
-    //         textStyle: MaterialStatePropertyAll(
-    //             TextStyle(color: currentTheme.paleSky500))),
-    //     rangeSelectionBackgroundColor: currentTheme.primary),
-    // expansionTileTheme: ExpansionTileThemeData(
-    //   iconColor: currentTheme.primary,
-    // ),
     fontFamily: AppStrings.nunito,
     useMaterial3: false,
   );
@@ -79,14 +39,8 @@ class CustomThemeData {
             Brightness.light, // For Android(M and greater): (dark icons)
       ),
     ),
-    scaffoldBackgroundColor: currentTheme.mistWhite,
-    // bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    //   backgroundColor: currentTheme.surface,
-    //   elevation: 10,
-    // ),
-    // primaryColor: currentTheme.primary,
+    scaffoldBackgroundColor: currentTheme.primary100,
     brightness: Brightness.dark,
-    // primarySwatch: Colors.blue,
     fontFamily: AppStrings.nunito,
     useMaterial3: false,
   );

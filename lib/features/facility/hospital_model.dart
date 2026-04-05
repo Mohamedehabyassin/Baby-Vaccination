@@ -1,9 +1,12 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HospitalModel {
-  String name ;
-  String description;
-  LatLng position;
-
-  HospitalModel(this.name,this.description,this.position);
+  HospitalModel({
+    required this.name,
+    required this.description,
+    required this.position,
+  });
+  final String name;
+  final String description;
+  final LatLng position;
 }

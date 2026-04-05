@@ -6,8 +6,9 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(scope: 'signIn')
-class SignInWithEmailUseCase extends BaseUseCase<bool, SignInParamsEntity> {
-  SignInWithEmailUseCase(this._repository);
+class SignInWithEmailAndPasswordUseCase
+    extends BaseUseCase<bool, SignInParamsEntity> {
+  SignInWithEmailAndPasswordUseCase(this._repository);
   final SignInRepository _repository;
   @override
   Future<Either<Failure, bool>> call(SignInParamsEntity params) async {

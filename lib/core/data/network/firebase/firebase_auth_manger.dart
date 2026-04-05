@@ -4,16 +4,17 @@ import 'package:baby_vaccination/core/data/network/success.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:injectable/injectable.dart';
 
+@lazySingleton
 class FirebaseAuthManger {
-  FirebaseAuthManger._();
+  FirebaseAuthManger();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   User? get currentUser => _auth.currentUser;
 
   bool get isAuthenticated => currentUser != null;
-
   UserModel? _userFromFirebaseUser(User? user) {
     return user != null ? UserModel(user.uid) : null;
   }
@@ -37,7 +38,6 @@ class FirebaseAuthManger {
         return Left(Failure());
       }
     } catch (e) {
-      print(e.toString());
       return Left(Failure(message: e.toString(), errorObject: e));
     }
   }
@@ -50,7 +50,6 @@ class FirebaseAuthManger {
       // await DatabaseService().addUser(email, '');
       return _userFromFirebaseUser(user);
     } catch (e) {
-      print(e.toString());
       return null;
     }
   }

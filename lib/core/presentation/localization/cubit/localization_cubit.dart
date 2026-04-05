@@ -4,9 +4,11 @@ import 'package:baby_vaccination/core/domain/constants/strings.dart';
 import 'package:baby_vaccination/core/domain/singleton/user_data_singleton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 
 part 'localization_state.dart';
 
+@lazySingleton
 class LocalizationCubit extends Cubit<LocalizationState> {
   LocalizationCubit() : super(LocalizationInitial());
 

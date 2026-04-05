@@ -2,10 +2,7 @@ import 'package:baby_vaccination/core/data/storage/storage_keys.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class StorageHelper {
-  static final FlutterSecureStorage _storage = FlutterSecureStorage(
-    aOptions: AndroidOptions.defaultOptions,
-    iOptions: IOSOptions.defaultOptions,
-  );
+  static const FlutterSecureStorage _storage = FlutterSecureStorage();
 
   static Future<String?> read<T>(StorageKeys key) async {
     return await _storage.read(key: key.name);

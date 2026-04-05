@@ -18,6 +18,7 @@ class SignInRepositoryImpl implements SignInRepository {
   Future<Either<Failure, bool>> signInWithEmail(
     SignInParamsEntity params,
   ) async {
+    await Future.delayed(const Duration(seconds: 2));
     return await _signInRemoteDataSource.signInWithEmail(
       params.email,
       params.password,

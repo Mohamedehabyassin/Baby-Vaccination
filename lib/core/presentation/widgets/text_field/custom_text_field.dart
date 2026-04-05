@@ -14,7 +14,6 @@ class CustomTextField extends StatelessWidget {
   CustomTextField({
     super.key,
     required this.label,
-    this.labelColor,
     this.hint,
     this.helperText,
     this.controller,
@@ -42,7 +41,6 @@ class CustomTextField extends StatelessWidget {
   });
 
   final String label;
-  final Color? labelColor;
   final String? hint;
   final String? helperText;
   final TextInputType keyboardType;
@@ -137,7 +135,7 @@ class CustomTextField extends StatelessWidget {
       //   fontFamily: "SF Pro",
       // ),
       hintStyle: CustomTextStyle.mediumElementsMedium.copyWith(
-        color: currentTheme.secondary100,
+        color: currentTheme.neutral800,
       ),
       helperStyle: CustomTextStyle.secondaryBold,
       border: InputBorder.none,
@@ -153,7 +151,7 @@ class CustomTextField extends StatelessWidget {
   OutlineInputBorder _buildBorder(Color colorBorder) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(Dimensions.radius6),
-      borderSide: BorderSide(color: colorBorder, width: 1.0),
+      borderSide: BorderSide(color: colorBorder),
     );
   }
 }

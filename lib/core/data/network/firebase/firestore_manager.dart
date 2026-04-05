@@ -4,7 +4,9 @@ import 'package:baby_vaccination/core/data/network/firebase/firebase_auth_manger
 import 'package:baby_vaccination/core/data/network/success.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
+@lazySingleton
 class FirebaseManager {
   FirebaseManager(this._connectivityManager, this._firebaseAuthManger);
   final ConnectivityManager _connectivityManager;

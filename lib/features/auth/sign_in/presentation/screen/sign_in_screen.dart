@@ -1,69 +1,126 @@
+import 'package:baby_vaccination/core/domain/constants/enums.dart';
 import 'package:baby_vaccination/core/domain/extensions/context_extension.dart';
 import 'package:baby_vaccination/core/gen/assets.gen.dart';
 import 'package:baby_vaccination/core/presentation/theme/components/theme_factory.dart';
 import 'package:baby_vaccination/core/presentation/theme/sizes/application_size.dart';
 import 'package:baby_vaccination/core/presentation/theme/sizes/dimension_manager.dart';
 import 'package:baby_vaccination/core/presentation/theme/styles/custom_text_style.dart';
-import 'package:baby_vaccination/core/presentation/widgets/app_bar/custom_app_bar.dart';
 import 'package:baby_vaccination/core/presentation/widgets/button/custom_button.dart';
 import 'package:baby_vaccination/core/presentation/widgets/text/custom_text.dart';
 import 'package:baby_vaccination/core/presentation/widgets/text_field/custom_text_field.dart';
+import 'package:baby_vaccination/core/presentation/widgets/toast/custom_toast_message.dart';
+import 'package:baby_vaccination/features/auth/sign_in/domain/use_cases/sign_in_with_email_use_case.dart';
+import 'package:baby_vaccination/features/auth/sign_in/domain/use_cases/sign_in_with_google_use_case.dart';
 import 'package:baby_vaccination/features/auth/sign_in/presentation/bloc/sign_in_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
-class SignInSccreen extends StatelessWidget {
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final SignInBloc bloc = context.read<SignInBloc>();
-    return Scaffold(
-      appBar: CustomAppBar(),
-      backgroundColor: currentTheme.neutral100,
-      body: Padding(
-        padding: EdgeInsets.all(Dimensions.padding16),
-        child: Column(
-          children: <Widget>[
-            BlocBuilder<SignInBloc, SignInState>(
-              builder: (context, state) {
-                return SizedBox(
-                  height: 200.h,
-                  width: 200.w,
-                  child: CircleAvatar(
-                    child: new FlareActor(
-                      Assets.flare.teddyTest,
-                      alignment: Alignment.center,
-                      fit: BoxFit.contain,
-                      animation: bloc.animationType,
-                    ),
-                    backgroundColor: currentTheme.neutral100,
+    return BlocConsumer<SignInBloc, SignInState>(
+      listener: (context, state) {
+        if (state is Error) {
+          CustomToastMessage.show(
+            context: context,
+            message: state.failure.message,
+            type: ToastType.error,
+          );
+        }
+      },
+      builder: (context, state) {
+        return Scaffold(
+          body: Padding(
+            padding: EdgeInsets.all(Dimensions.padding16),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: <Widget>[
+                  SpaceHeight32(),
+                  CustomText(
+                    text: context.loc.signIn,
+                    style: CustomTextStyle.h1Bold,
                   ),
-                );
-              },
-            ),
-            SpaceHeight32(),
-            CustomTextField(
-              label: context.loc.email,
-              hint: context.loc.enterYourEmail,
-            ),
-            SpaceHeight12(),
-            CustomTextField(
-              label: context.loc.password,
-              hint: context.loc.enterYourPassword,
-            ),
-            CustomButton(
-              onPressed: () {
-                bloc.add(const SignInEvent.signInWithEmailAndPassword());
-              },
-              child: CustomText(
-                text: context.loc.signIn,
-                style: CustomTextStyle.secondaryMedium,
+                  BlocBuilder<SignInBloc, SignInState>(
+                    builder: (context, state) {
+                      return SizedBox(
+                        height: 200.h,
+                        width: 200.w,
+                        child: FlareActor(
+                          Assets.flare.teddyTest,
+                          animation: bloc.animationType,
+                        ),
+                      );
+                    },
+                  ),
+                  SpaceHeight32(),
+                  CustomTextField(
+                    label: context.loc.email,
+                    controller: bloc.emailController,
+                    hint: context.loc.enterYourEmail,
+                  ),
+                  SpaceHeight12(),
+                  CustomTextField(
+                    label: context.loc.password,
+                    controller: bloc.passwordController,
+                    hint: context.loc.enterYourPassword,
+                  ),
+                  SpaceHeight32(),
+                  BlocBuilder<SignInBloc, SignInState>(
+                    builder: (context, state) {
+                      return state is Loading<SignInWithEmailAndPasswordUseCase>
+                          ? const CircularProgressIndicator.adaptive()
+                          : CustomButton(
+                              onPressed: () {
+                                bloc.add(
+                                  const SignInEvent.signInWithEmailAndPassword(),
+                                );
+                              },
+                              child: CustomText(
+                                text: context.loc.signIn,
+                                style: CustomTextStyle.mediumElementsBold,
+                              ),
+                            );
+                    },
+                  ),
+                  SpaceHeight12(),
+                  BlocBuilder<SignInBloc, SignInState>(
+                    builder: (context, state) {
+                      return state is Loading<SignInWithGoogleUseCase>
+                          ? const CircularProgressIndicator.adaptive()
+                          : CustomButton(
+                              backgroundColor: currentTheme.neutral100,
+                              onPressed: () {
+                                bloc.add(const SignInEvent.signInWithGoogle());
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CustomText(
+                                    text: context.loc.signInWithGoogle,
+                                    style: CustomTextStyle.mediumElementsBold,
+                                  ),
+                                  SpaceWidth16(),
+                                  Assets.icons.google.svg(
+                                    width: 24.w,
+                                    height: 24.h,
+                                  ),
+                                ],
+                              ),
+                            );
+                    },
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
