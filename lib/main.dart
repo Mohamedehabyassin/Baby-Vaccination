@@ -12,5 +12,6 @@ void main() async {
   await Firebase.initializeApp();
   configureDependencies();
   getIt.initSignInScope();
+  getIt.initSignUpScope();
   runApp(MyApp());
 }

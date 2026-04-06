@@ -7,5 +7,14 @@
     "password": "كلمة المرور",
     "forgetPassword": "نسيت كلمة المرور؟",
     "enterYourEmail": "أدخل بريدك الإلكتروني",
-    "enterYourPassword": "أدخل كلمة المرور"
+    "enterYourPassword": "أدخل كلمة المرور",
+    "signUp": "إنشاء حساب",
+    "name": "الاسم",
+    "phoneNumber": "رقم الهاتف",
+    "gender": "الجنس",
+    "enterYourName": "أدخل اسمك",
+    "enterYourPhoneNumber": "أدخل رقم هاتفك",
+    "enterYourGender": "أدخل جنسك",
+    "dontHaveAccount": "ليس لديك حساب؟ ",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟ "
 }

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500&amp;family=Beiruti:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e9e8e2",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e3dc",
+                        "primary": "#476500",
+                        "error": "#ba1a1a",
+                        "outline": "#747967",
+                        "surface-bright": "#fafaf3",
+                        "on-surface-variant": "#444939",
+                        "surface-variant": "#e3e3dc",
+                        "on-primary-fixed": "#131f00",
+                        "on-secondary-container": "#6d5000",
+                        "on-primary-container": "#faffe7",
+                        "secondary-fixed": "#ffdfa0",
+                        "on-surface": "#1b1c18",
+                        "on-background": "#1b1c18",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "inverse-on-surface": "#f2f1ea",
+                        "primary-fixed": "#c8f17a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#380037",
+                        "on-tertiary-fixed-variant": "#73266f",
+                        "surface-tint": "#496800",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c4c9b4",
+                        "surface-container-low": "#f5f4ed",
+                        "inverse-primary": "#add461",
+                        "secondary-container": "#ffbf00",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-fixed": "#261a00",
+                        "tertiary-fixed": "#ffd7f5",
+                        "surface": "#fafaf3",
+                        "tertiary": "#8c3d86",
+                        "primary-fixed-dim": "#add461",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312c",
+                        "background": "#fafaf3",
+                        "primary-container": "#5d7f13",
+                        "surface-dim": "#dbdad4",
+                        "on-primary-fixed-variant": "#364e00",
+                        "secondary": "#795900",
+                        "tertiary-fixed-dim": "#ffabf2",
+                        "secondary-fixed-dim": "#fbbc00",
+                        "surface-container": "#efeee7",
+                        "tertiary-container": "#a956a1"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans", "Beiruti"],
+                        "body": ["Be Vietnam Pro", "Beiruti"],
+                        "label": ["Be Vietnam Pro", "Beiruti"],
+                        "beiruti": ["Beiruti"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Beiruti', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#fafaf3] dark:bg-[#1b1c18] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 rtl:flex-row-reverse">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Child profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a smiling toddler with soft natural lighting and warm neutral background tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsKmAPBhWzHqr2CQZ4NE2jOgM67oBQWnmF8CRu_bEAmOkQDhq5f2svE3Ry_FlSb0JWsA1DEs9Ccuh2QyyTW9rkTo5AONHvc489QN4tTe5Ck1t60OR6BvgIHlW1VgjU2HJvzQ-hb1iTbOxy1KOoz6GQIxhStaPFwuLUQYNHB-uCt4-POzNtkeVmijzY2aq7ZWqYRSY-b0RJkJWzW_VUB5-kneVkiEqfYQAnEOmwqPqP-aWlMz2AgLI_4OubeGwcOJO1eZg-7zeUwBE"/>
+</div>
+<h1 class="font-beiruti font-bold text-2xl tracking-tight text-[#476500] dark:text-[#b0d174]">TinyShield</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-[#f5f4ed] dark:hover:bg-[#2a2b24] rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#476500] dark:text-[#b0d174]" data-icon="share">share</span>
+</button>
+<button class="p-2 hover:bg-[#f5f4ed] dark:hover:bg-[#2a2b24] rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#476500] dark:text-[#b0d174]" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto px-6 pt-4 space-y-8">
+<!-- Profile Header Section -->
+<section class="space-y-4">
+<div class="flex items-end justify-between">
+<div>
+<h2 class="text-3xl font-beiruti font-bold text-on-surface">يوسف أحمد</h2>
+<p class="text-on-surface-variant font-beiruti opacity-80">العمر: 14 شهرًا • فصيلة الدم: A+</p>
+</div>
+<div class="bg-secondary-container/20 px-4 py-2 rounded-2xl flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="text-secondary font-beiruti font-bold">حماية 85%</span>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-2xl py-4 pr-12 pl-4 focus:ring-2 focus:ring-primary text-beiruti placeholder:text-on-surface-variant/50" placeholder="ابحث عن لقاح محدد..." type="text"/>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-beiruti font-bold">الجدول الزمني للتطعيمات</h3>
+<span class="text-sm text-primary font-beiruti font-medium">عرض الكل</span>
+</div>
+<div class="space-y-4 relative">
+<!-- Vertical Line Accents (Conceptual) -->
+<div class="absolute right-[1.65rem] top-8 bottom-8 w-0.5 bg-outline-variant/20"></div>
+<!-- Overdue Item -->
+<div class="bg-surface-container-low p-5 rounded-3xl relative border-r-4 border-error/40">
+<div class="flex gap-4">
+<div class="z-10 w-10 h-10 rounded-full bg-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-start">
+<h4 class="font-beiruti font-bold text-lg">لقاح الإنفلونزا</h4>
+<span class="text-error text-xs font-beiruti bg-error-container/50 px-2 py-1 rounded-full">متأخر 3 أيام</span>
+</div>
+<p class="text-on-surface-variant text-sm font-beiruti">الجرعة السنوية الأولى</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+<span class="text-xs font-beiruti">الموعد: 12 أكتوبر 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Due Item -->
+<div class="bg-surface-container-lowest shadow-sm p-5 rounded-3xl relative">
+<div class="flex gap-4">
+<div class="z-10 w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-start">
+<h4 class="font-beiruti font-bold text-lg">لقاح الحصبة (MMR)</h4>
+<span class="text-secondary text-xs font-beiruti bg-secondary-fixed-dim/20 px-2 py-1 rounded-full">قادم قريباً</span>
+</div>
+<p class="text-on-surface-variant text-sm font-beiruti">الجرعة الثانية المنشطة</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="event">event</span>
+<span class="text-xs font-beiruti">الموعد: 1 نوفمبر 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Done Item -->
+<div class="bg-surface-container-lowest shadow-sm p-5 rounded-3xl opacity-75 grayscale-[0.3] relative">
+<div class="flex gap-4">
+<div class="z-10 w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-start">
+<h4 class="font-beiruti font-bold text-lg">اللقاح الخماسي</h4>
+<span class="text-primary text-xs font-beiruti bg-primary-fixed-dim/30 px-2 py-1 rounded-full">تم التطعيم</span>
+</div>
+<p class="text-on-surface-variant text-sm font-beiruti">الجرعة الثالثة</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="task_alt">task_alt</span>
+<span class="text-xs font-beiruti">تم في: 15 سبتمبر 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Done Item 2 -->
+<div class="bg-surface-container-lowest shadow-sm p-5 rounded-3xl opacity-75 grayscale-[0.3] relative">
+<div class="flex gap-4">
+<div class="z-10 w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-start">
+<h4 class="font-beiruti font-bold text-lg">لقاح شلل الأطفال</h4>
+<span class="text-primary text-xs font-beiruti bg-primary-fixed-dim/30 px-2 py-1 rounded-full">تم التطعيم</span>
+</div>
+<p class="text-on-surface-variant text-sm font-beiruti">الجرعة الفموية الرابعة</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="task_alt">task_alt</span>
+<span class="text-xs font-beiruti">تم في: 10 أغسطس 2023</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Style Stats (Optional Addition for Design Quality) -->
+<section class="grid grid-cols-2 gap-4 pb-8">
+<div class="bg-primary-container/10 p-5 rounded-3xl space-y-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="health_and_safety">health_and_safety</span>
+<p class="text-sm font-beiruti font-medium leading-tight text-on-surface">إجمالي التطعيمات المكتملة</p>
+<p class="text-2xl font-bold font-beiruti text-primary">12 / 14</p>
+</div>
+<div class="bg-secondary-container/10 p-5 rounded-3xl space-y-3">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="verified">verified</span>
+<p class="text-sm font-beiruti font-medium leading-tight text-on-surface">الحالة الصحية الحالية</p>
+<p class="text-2xl font-bold font-beiruti text-secondary">ممتاز</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 rtl:flex-row-reverse bg-[#fafaf3]/80 dark:bg-[#1b1c18]/80 backdrop-blur-xl border-t border-[#c4c9b4]/20 shadow-[0_-4px_24px_rgba(27,28,24,0.06)] rounded-t-[2rem]">
+<a class="flex flex-col items-center justify-center text-[#444939] dark:text-[#c4c9b4] px-6 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-beiruti text-xs font-medium mt-1">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#476500] text-white dark:bg-[#b0d174] dark:text-[#1b1c18] rounded-full px-6 py-2 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event_upcoming">event_upcoming</span>
+<span class="font-beiruti text-xs font-medium mt-1">الجدول</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#444939] dark:text-[#c4c9b4] px-6 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-beiruti text-xs font-medium mt-1">الإعدادات</span>
+</a>
+</nav>
+<!-- FAB (Contextual for Home/Timeline) -->
+<button class="fixed bottom-24 left-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>

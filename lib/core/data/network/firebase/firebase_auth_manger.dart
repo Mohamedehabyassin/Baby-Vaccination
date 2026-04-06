@@ -42,15 +42,17 @@ class FirebaseAuthManger {
     }
   }
 
-  Future registerWithEmailAndPassword(String email, String password) async {
+  Future<Either<Failure, Success<UserCredential>>> registerWithEmailAndPassword(
+    String email,
+    String password,
+  ) async {
     try {
       UserCredential userCredential = await _auth
           .createUserWithEmailAndPassword(email: email, password: password);
-      User? user = userCredential.user;
       // await DatabaseService().addUser(email, '');
-      return _userFromFirebaseUser(user);
+      return Right(Success(data: userCredential));
     } catch (e) {
-      return null;
+      return Left(Failure(message: e.toString(), errorObject: e));
     }
   }
 

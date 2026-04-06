@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Parent FAQ - TinyShield</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#476500",
+              "surface-container": "#efeee7",
+              "primary-container": "#5d7f13",
+              "on-secondary-fixed": "#261a00",
+              "on-secondary-container": "#6d5000",
+              "surface-tint": "#496800",
+              "surface-container-high": "#e9e8e2",
+              "surface": "#fafaf3",
+              "on-surface": "#1b1c18",
+              "tertiary-container": "#a956a1",
+              "surface-container-low": "#f5f4ed",
+              "tertiary-fixed": "#ffd7f5",
+              "secondary-fixed": "#ffdfa0",
+              "primary-fixed-dim": "#add461",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e3e3dc",
+              "on-tertiary-container": "#fffbff",
+              "on-secondary-fixed-variant": "#5c4300",
+              "inverse-primary": "#add461",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#444939",
+              "surface-dim": "#dbdad4",
+              "on-tertiary-fixed-variant": "#73266f",
+              "primary-fixed": "#c8f17a",
+              "on-error": "#ffffff",
+              "surface-variant": "#e3e3dc",
+              "outline-variant": "#c4c9b4",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#380037",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#ffabf2",
+              "secondary": "#795900",
+              "on-tertiary": "#ffffff",
+              "on-background": "#1b1c18",
+              "surface-bright": "#fafaf3",
+              "secondary-fixed-dim": "#fbbc00",
+              "on-primary-container": "#faffe7",
+              "outline": "#747967",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#364e00",
+              "on-primary-fixed": "#131f00",
+              "background": "#fafaf3",
+              "secondary-container": "#ffbf00",
+              "tertiary": "#8c3d86",
+              "inverse-surface": "#30312c",
+              "inverse-on-surface": "#f2f1ea"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Be Vietnam Pro', sans-serif;
+        background-color: #fafaf3;
+      }
+      h1, h2, h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#fafaf3] dark:bg-stone-950 flex justify-between items-center w-full px-6 py-4 sticky top-0 z-40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#476500] dark:text-[#a4c35e] text-2xl">shield_with_heart</span>
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-2xl tracking-tight text-[#476500] dark:text-[#a4c35e] italic">TinyShield</span>
+</div>
+<button class="text-[#476500] dark:text-[#a4c35e] hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">search</span>
+</button>
+</header>
+<main class="max-w-screen-md mx-auto px-6 pt-4">
+<!-- Search Header -->
+<section class="mb-10">
+<h1 class="text-3xl font-extrabold text-on-surface mb-6 leading-tight">How can we help<br/><span class="text-primary">you today?</span></h1>
+<div class="relative group">
+<input class="w-full bg-surface-container-high border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-on-surface-variant/60 font-medium transition-all" placeholder="Search for answers..." type="text"/>
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+</div>
+</section>
+<!-- Category Grid (Asymmetric Editorial Style) -->
+<section class="mb-12">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary text-on-primary p-6 rounded-3xl flex flex-col justify-between aspect-square hover:opacity-90 cursor-pointer transition-all">
+<span class="material-symbols-outlined text-3xl">vaccines</span>
+<h3 class="text-lg font-bold leading-tight">Vaccination Basics</h3>
+</div>
+<div class="grid grid-rows-2 gap-4">
+<div class="bg-secondary-container text-on-secondary-container p-4 rounded-3xl flex items-center gap-3 hover:opacity-90 cursor-pointer transition-all">
+<span class="material-symbols-outlined">health_and_safety</span>
+<h3 class="font-bold leading-tight">Safety &amp; Effects</h3>
+</div>
+<div class="bg-surface-container-highest text-on-surface-variant p-4 rounded-3xl flex items-center gap-3 hover:opacity-90 cursor-pointer transition-all">
+<span class="material-symbols-outlined">healing</span>
+<h3 class="font-bold leading-tight">Post-Care</h3>
+</div>
+</div>
+</div>
+<div class="mt-4 bg-surface-container-low text-on-surface-variant p-5 rounded-3xl flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">tips_and_updates</span>
+<span class="font-bold">App Tips &amp; Navigation</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</div>
+</section>
+<!-- FAQ Accordion List -->
+<section class="space-y-4 mb-12">
+<h2 class="text-xl font-extrabold mb-6 flex items-center gap-2">
+<span class="w-1.5 h-6 bg-secondary rounded-full"></span>
+                Top Questions
+            </h2>
+<!-- Accordion Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-3xl overflow-hidden">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors group">
+<span class="font-bold text-on-surface leading-snug pr-4">Is my baby too young for this vaccine?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/5 pt-4">
+                    Most vaccination schedules begin at birth, with significant milestones at 2, 4, and 6 months. Our app uses your child's birth date to calculate the exact medically-recommended window.
+                </div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-3xl overflow-hidden">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors group">
+<span class="font-bold text-on-surface leading-snug pr-4">What if my baby has a fever after the shot?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">expand_more</span>
+</button>
+</div>
+<!-- Accordion Item 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-3xl overflow-hidden">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors group">
+<span class="font-bold text-on-surface leading-snug pr-4">How do I track multiple children?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">expand_more</span>
+</button>
+</div>
+<!-- Accordion Item 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-3xl overflow-hidden">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors group">
+<span class="font-bold text-on-surface leading-snug pr-4">Can I reschedule an appointment?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Still Have Questions Section -->
+<section class="relative rounded-3xl overflow-hidden p-8 mb-8">
+<div class="absolute inset-0 z-0">
+<img alt="Support" class="w-full h-full object-cover brightness-[0.4] contrast-[1.1]" data-alt="Close-up of a doctor holding a baby's tiny hand in a warm, comforting medical setting with soft bokeh lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIDFIi_iPR5k-C4T56sVVLAKvyM7lXQ8VFB3etFDOosIyaAFJdaEM-JaNd3SWiArJ3eLV_B-RV-Amvedz4CWT_21Ozf25KciY-u9G9kIzKAEYOxQv_zSQiQqVULAUyEaTAHeEfjoRVo96nV1Fv2S5NCQIYN3kRqEJrum1taX330GLhzaqREspczbtbdO9R1BU9kzePdETsxyGre8x46yHLYTxHZoy95Kb-h-howoFUfq0PFdpPB-jLQJBgamzg0iQVKnEb1BBlIWM"/>
+</div>
+<div class="relative z-10">
+<h2 class="text-2xl font-bold text-white mb-2">Still have questions?</h2>
+<p class="text-white/80 text-sm mb-6 max-w-[240px]">Our medical support team is available 24/7 to help you with your concerns.</p>
+<div class="flex flex-col sm:flex-row gap-3">
+<button class="bg-white text-primary px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                        Chat with Support
+                    </button>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-xl shadow-black/10">
+<span class="material-symbols-outlined text-[20px]">medical_services</span>
+                        Ask a Pediatrician
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f5f4ed]/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-[0_-4px_24px_rgba(27,28,24,0.06)] rounded-t-[2rem]">
+<div class="flex flex-col items-center justify-center text-[#444939] dark:text-[#c4c9b4] px-5 py-2 hover:bg-[#476500]/10 dark:hover:bg-[#a4c35e]/10 rounded-full active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-medium uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#444939] dark:text-[#c4c9b4] px-5 py-2 hover:bg-[#476500]/10 dark:hover:bg-[#a4c35e]/10 rounded-full active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="event_upcoming">event_upcoming</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-medium uppercase tracking-widest mt-1">Timeline</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#444939] dark:text-[#c4c9b4] px-5 py-2 hover:bg-[#476500]/10 dark:hover:bg-[#a4c35e]/10 rounded-full active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-medium uppercase tracking-widest mt-1">Doctors</span>
+</div>
+<!-- Active Tab: FAQ (Falls under Settings for this app architecture) -->
+<div class="flex flex-col items-center justify-center bg-[#476500] text-white dark:bg-[#a4c35e] dark:text-stone-950 rounded-full px-5 py-2 transition-all duration-300 active:scale-90">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-medium uppercase tracking-widest mt-1">Settings</span>
+</div>
+</nav>
+</body></html>

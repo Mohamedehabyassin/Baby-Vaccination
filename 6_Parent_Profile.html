@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Parent Profile - TinyShield</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#fffbff",
+              "secondary-container": "#ffbf00",
+              "surface": "#fafaf3",
+              "on-primary-fixed": "#131f00",
+              "surface-container-low": "#f5f4ed",
+              "surface-container-high": "#e9e8e2",
+              "on-primary-fixed-variant": "#364e00",
+              "on-surface": "#1b1c18",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#faffe7",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-background": "#1b1c18",
+              "on-secondary-fixed": "#261a00",
+              "surface-dim": "#dbdad4",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#fbbc00",
+              "secondary-fixed": "#ffdfa0",
+              "primary-fixed-dim": "#add461",
+              "on-secondary-fixed-variant": "#5c4300",
+              "on-secondary-container": "#6d5000",
+              "on-surface-variant": "#444939",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#e3e3dc",
+              "inverse-on-surface": "#f2f1ea",
+              "surface-bright": "#fafaf3",
+              "inverse-surface": "#30312c",
+              "surface-variant": "#e3e3dc",
+              "outline": "#747967",
+              "tertiary-fixed": "#ffd7f5",
+              "tertiary": "#8c3d86",
+              "tertiary-fixed-dim": "#ffabf2",
+              "primary-container": "#5d7f13",
+              "tertiary-container": "#a956a1",
+              "on-tertiary-fixed": "#380037",
+              "secondary": "#795900",
+              "inverse-primary": "#add461",
+              "surface-container": "#efeee7",
+              "surface-tint": "#496800",
+              "primary-fixed": "#c8f17a",
+              "on-tertiary-fixed-variant": "#73266f",
+              "error": "#ba1a1a",
+              "outline-variant": "#c4c9b4",
+              "primary": "#476500",
+              "background": "#fafaf3"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 8px 24px -4px rgba(27, 28, 24, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#fafaf3] dark:bg-[#1b1c18] docked full-width top-0 z-40">
+<div class="flex justify-between items-center w-full px-6 py-4 rtl:flex-row-reverse">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a kind mother smiling warmly, natural soft daylight, soft focused background of a home interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwqkPU19HLtTk7xmnMXi-rYLrJ3VvbdiNkPzICe2hRbzVWgDMiiN6wfUSVmNxFbJReknWCxeQ4TvGLoXottMnbV51kw6sOn5bO-gMTQI9PrcxN50_9Ocs8Ko0ejLSo3ExkePppJLZdZ31ev8sCaq7aJUIYIiF25aThF8LpGw6Hi-O_qV8Lm7GDjb5R2OSkI_Q0BgqsFGQmDtDkOAwnhDQmxOi1avNqbGJXfk-PGuCm_C30GvhgGm9LlspFL9w-O3DEwb7Hhzt1MUM"/>
+</div>
+<h1 class="text-[#476500] dark:text-[#b0d174] font-['Plus_Jakarta_Sans'] font-bold text-2xl tracking-tight">TinyShield</h1>
+</div>
+<button class="text-[#476500] dark:text-[#b0d174] hover:bg-[#f5f4ed] dark:hover:bg-[#2a2b24] rounded-full transition-colors p-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-6 pt-8 pb-32">
+<!-- Profile Section -->
+<section class="mb-12">
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="relative">
+<div class="w-32 h-32 rounded-full overflow-hidden editorial-shadow border-4 border-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a kind mother smiling warmly, natural soft daylight, soft focused background of a home interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzOHMzl9eVHXTg80u7C1oOqxjc2O4L4pT2dA7jqpAUKGwcy_vbYzny4mhjPCqd4eDgk1JJHf6azkitYwMz-1741qBicgI_CP85RTM_F7IZIP13kGxEExEBnaK_a5np0XWY7MP9AIzB80RSdzu2e6l3Xhh6qw_OWxC7hxGpc77Qt8gTLg-oCb_xm858bMuD-9hx-YjBLZkes_5NfLLGBWcP16CyqBF9xRFt3-fAw9Z5CzOsFwWY2NOb0O2_PLPsNLFlEUFxsgQazoI"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-lg border-2 border-surface active:scale-90 duration-200">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<div>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">Sarah Mitchell</h2>
+<p class="text-on-surface-variant font-medium">sarah.mitchell@example.com</p>
+</div>
+<div class="flex gap-4 pt-2">
+<button class="px-6 py-2 rounded-full border border-outline-variant text-primary font-semibold text-sm hover:bg-surface-container-low transition-colors">
+                        Edit Profile
+                    </button>
+<button class="px-6 py-2 rounded-full bg-error-container text-on-error-container font-semibold text-sm hover:opacity-90 transition-opacity">
+                        Sign Out
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Children Management -->
+<section class="space-y-6">
+<div class="flex justify-between items-end px-2">
+<div>
+<h3 class="font-headline text-2xl font-bold text-on-surface">My Children</h3>
+<p class="text-on-surface-variant text-sm">Managing health protection for 2 shields</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-1 group">
+<span class="text-sm">Manage All</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Children Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Child Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl editorial-shadow flex flex-col items-center text-center space-y-4 border border-outline-variant/10">
+<div class="w-20 h-20 rounded-full overflow-hidden bg-primary-fixed ring-4 ring-primary-fixed-dim/30">
+<img class="w-full h-full object-cover" data-alt="Portrait of a laughing toddler with curly hair, bright airy lighting, soft pastel colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdMoabWLzDyp5a0nJ9144UyID11esBorTr3Tb0q1Bd4Pgvgrbks6FIN_yd12f1c2S61yEpyMBWzLtVYY1TGEvICcw2ag5EWkO8Irbxymlb8HDlBypWuumd_UpKEE94f72u-oFOAswC3pdF440X2_2EOaKCUUe0t-32IKFjiNCCiMbjEhEK18hDO_4p434rf6jGN2uH5doxii9FiIhS4ehz_7ZQnlyN501Oasiy4sqWwsAp2nhYpeUvi_h2fEfTyjnbISH72DjEhH0"/>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold">Leo</h4>
+<p class="text-on-surface-variant text-xs">2 years, 4 months</p>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full w-[85%] rounded-full"></div>
+</div>
+<p class="text-[10px] uppercase tracking-widest font-bold text-primary">85% Shielded</p>
+</div>
+<!-- Child Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl editorial-shadow flex flex-col items-center text-center space-y-4 border border-outline-variant/10">
+<div class="w-20 h-20 rounded-full overflow-hidden bg-secondary-fixed ring-4 ring-secondary-fixed-dim/30">
+<img class="w-full h-full object-cover" data-alt="Baby sleeping peacefully wrapped in a soft white organic cotton blanket, soft warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5I8qspl7mEfmSJ544jlaJmTQmA0eiIlKc2r5H7ncWboqrLB-zk09XKUjke1raG4Jfm5qRNKEwxiYIOthlh4Ns3j-Sy3f2w-f3L733JPbzV_TbD2gIfHOcZVGZ5Ls-NBG441T2_19UlrF3iAoGyMBsl5X0B7prc3WVTLYAkI_wdAofj-TMMACLtYeaxKaekCFzcJnlB-g14cvFkpBmUqkqxSV5P2SHUIQEtfe4BgckQ5D8IpdYuRzp3BYEh4dsB2kZq82RQVgr1Vo"/>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold">Maya</h4>
+<p class="text-on-surface-variant text-xs">6 months</p>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-full w-[40%] rounded-full"></div>
+</div>
+<p class="text-[10px] uppercase tracking-widest font-bold text-secondary">40% Shielded</p>
+</div>
+<!-- Add Child Card - Full Width in Grid Mobile / Half in Web -->
+<button class="md:col-span-2 group bg-surface-container-low border-2 border-dashed border-outline-variant/40 p-8 rounded-3xl flex flex-col items-center justify-center space-y-3 hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="add_circle">add_circle</span>
+</div>
+<div class="text-center">
+<p class="font-headline font-bold text-lg">Add Child</p>
+<p class="text-on-surface-variant text-sm">Secure a new shield for your little one</p>
+</div>
+</button>
+</div>
+</section>
+<!-- Settings Quick Access -->
+<section class="mt-12 space-y-4">
+<h3 class="font-headline text-xl font-bold text-on-surface px-2">Quick Settings</h3>
+<div class="bg-surface-container-low rounded-3xl overflow-hidden">
+<div class="flex items-center justify-between p-5 hover:bg-surface-container-high transition-colors cursor-pointer border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="shield_with_heart">shield_with_heart</span>
+</div>
+<span class="font-medium">Medical Data Privacy</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-5 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-secondary-container/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<span class="font-medium">Vaccination Reminders</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#fafaf3]/80 dark:bg-[#1b1c18]/80 backdrop-blur-xl border-t border-[#c4c9b4]/20 shadow-[0_-4px_24px_rgba(27,28,24,0.06)] rounded-t-[2rem]">
+<a class="flex flex-col items-center justify-center text-[#444939] dark:text-[#c4c9b4] px-6 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Be_Vietnam_Pro'] text-xs font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#444939] dark:text-[#c4c9b4] px-6 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event_upcoming">event_upcoming</span>
+<span class="font-['Be_Vietnam_Pro'] text-xs font-medium">Timeline</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#444939] dark:text-[#c4c9b4] px-6 py-2 hover:opacity-80 transition-opacity active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-['Be_Vietnam_Pro'] text-xs font-medium">Doctors</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#476500] text-white dark:bg-[#b0d174] dark:text-[#1b1c18] rounded-full px-6 py-2 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Be_Vietnam_Pro'] text-xs font-medium">Settings</span>
+</a>
+</nav>
+</body></html>

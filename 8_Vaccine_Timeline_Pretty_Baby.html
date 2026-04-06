@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vaccination Timeline | TinyShield</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#0f0f07",
+              "on-primary-container": "#315a45",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#f5cbbf",
+              "tertiary-container": "#bce7f4",
+              "error-container": "#fa746f",
+              "on-secondary-fixed": "#543930",
+              "on-surface": "#393927",
+              "secondary-fixed": "#ffdbd0",
+              "on-surface-variant": "#676551",
+              "error-dim": "#67040d",
+              "secondary-container": "#ffdbd0",
+              "primary-dim": "#37614b",
+              "tertiary-fixed-dim": "#afd8e5",
+              "on-secondary-fixed-variant": "#73544b",
+              "primary-fixed-dim": "#b1dfc3",
+              "outline-variant": "#bdbaa2",
+              "on-background": "#393927",
+              "tertiary-fixed": "#bce7f4",
+              "surface-container": "#f8f4df",
+              "surface-tint": "#436d57",
+              "primary": "#436d57",
+              "tertiary": "#426a75",
+              "surface-bright": "#fffbff",
+              "on-tertiary-fixed-variant": "#375f6a",
+              "inverse-on-surface": "#a09d90",
+              "primary-fixed": "#bfedd1",
+              "on-tertiary-container": "#2d5660",
+              "on-error": "#ffffff",
+              "secondary-dim": "#705148",
+              "secondary": "#7d5d53",
+              "surface-dim": "#e7e3ca",
+              "on-primary-fixed-variant": "#3b644e",
+              "on-secondary": "#ffffff",
+              "surface": "#fffbff",
+              "outline": "#83816c",
+              "on-primary": "#ffffff",
+              "primary-container": "#bfedd1",
+              "surface-container-highest": "#ece9cf",
+              "background": "#fffbff",
+              "on-tertiary-fixed": "#18434d",
+              "error": "#af3d3b",
+              "on-primary-fixed": "#1d4733",
+              "on-secondary-container": "#694b42",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#ece9cf",
+              "surface-container-low": "#fefae7",
+              "tertiary-dim": "#355e69",
+              "surface-container-high": "#f2eed8",
+              "inverse-primary": "#caf9dc",
+              "on-error-container": "#6e0a12"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fffbff; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .memory-bubble {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#FFFBEC]/60 dark:bg-emerald-950/60 backdrop-blur-xl shadow-[0_40px_60px_-5px_rgba(105,75,66,0.06)] flex justify-between items-center px-8 h-20">
+<div class="flex items-center gap-2">
+<button class="text-emerald-800 dark:text-emerald-200 hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+<h1 class="text-2xl font-black tracking-tighter text-emerald-900 dark:text-emerald-50 font-['Plus_Jakarta_Sans']">TinyShield</h1>
+<div class="flex items-center gap-2">
+<button class="text-emerald-800 dark:text-emerald-200 hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-28 pb-32 px-8 max-w-2xl mx-auto">
+<!-- Hero Context -->
+<section class="mb-12">
+<span class="font-label text-[10px] uppercase tracking-[0.05em] font-bold text-primary mb-2 block">Health Journey</span>
+<h2 class="text-4xl font-headline font-bold tracking-tight text-on-surface mb-4">Riley's Timeline</h2>
+<div class="flex items-center gap-4 bg-surface-container-low p-6 rounded-xl">
+<div class="w-16 h-16 memory-bubble bg-primary-container overflow-hidden">
+<img alt="Baby Riley" class="w-full h-full object-cover" data-alt="close-up portrait of a laughing baby with soft natural light and warm cream-colored background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF8O5c_fqvb2NddfVD0Rl0JZpr_FL7eZmzyCCAT_2OopqviVhgHRbIhfA1Rtzui22znGo1kEp-om7GcwgEIGCjjNIcRqES4PRg1z_rqF_TQxDdHxpCGaxCUd-_li2qfFP45LhOud9OLxthZwKSZW4v2P2ZMQ1YwnulBzg7eZHzD-422Cf5VpJkHd8QofbEoO0MtApL1qCpwVn8MWftNScBcxizW8IAcHhcNix5AMQ3OA_AIyKXK4wPfz-UHlklNTM40PEkqvtA-gQ"/>
+</div>
+<div>
+<p class="text-lg font-bold text-on-surface">6 Months Old</p>
+<p class="text-sm text-on-surface-variant">4 Vaccinations Completed</p>
+</div>
+</div>
+</section>
+<!-- Timeline Container -->
+<section class="relative">
+<!-- Continuous Timeline Bar -->
+<div class="absolute left-[27px] top-4 bottom-0 w-1 bg-surface-container-highest rounded-full"></div>
+<div class="space-y-10">
+<!-- Completed Card -->
+<div class="relative pl-16">
+<!-- Timeline Node -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-primary flex items-center justify-center z-10 shadow-lg">
+<span class="material-symbols-outlined text-white" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<div class="bg-primary-container/40 p-8 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.05em] font-bold text-primary mb-1 block">Completed</span>
+<h3 class="text-xl font-bold text-on-primary-container">RV (Rotavirus)</h3>
+<p class="text-on-primary-container/70 text-sm">Dose 2 of 2</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-on-primary-container">Oct 12, 2023</p>
+<p class="text-xs text-on-primary-container/60 uppercase tracking-wider">Health Clinic A</p>
+</div>
+</div>
+</div>
+<!-- Due Soon Card -->
+<div class="relative pl-16">
+<!-- Timeline Node -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-primary" data-icon="schedule" style="font-variation-settings: 'FILL' 1;">schedule</span>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-[0_20px_40px_rgba(105,75,66,0.03)]">
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.05em] font-bold text-tertiary mb-1 block">Due soon</span>
+<h3 class="text-xl font-bold text-on-surface">DTaP Vaccine</h3>
+<p class="text-on-surface-variant text-sm">Dose 3 of 5</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-on-surface">Nov 24, 2023</p>
+<p class="text-xs text-primary font-bold uppercase tracking-wider">In 5 Days</p>
+</div>
+</div>
+</div>
+<!-- Overdue Card -->
+<div class="relative pl-16">
+<!-- Timeline Node -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-error" data-icon="priority_high" style="font-variation-settings: 'wght' 700;">priority_high</span>
+</div>
+<div class="bg-secondary-container/30 p-8 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.05em] font-bold text-error mb-1 block">Overdue</span>
+<h3 class="text-xl font-bold text-on-secondary-container">PCV13 (Pneumococcal)</h3>
+<p class="text-on-secondary-container/70 text-sm">Dose 3 of 4</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-error">Nov 02, 2023</p>
+<p class="text-xs text-error font-bold uppercase tracking-wider">17 Days Late</p>
+</div>
+</div>
+</div>
+<!-- Future Item -->
+<div class="relative pl-16 opacity-50">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-surface-container flex items-center justify-center z-10 border-4 border-surface">
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+</div>
+<div class="p-8 rounded-xl border border-dashed border-outline-variant">
+<h3 class="text-xl font-medium text-on-surface-variant">Influenza (Flu)</h3>
+<p class="text-on-surface-variant/70 text-sm italic">Scheduled for 12 months</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Memory Bubble -->
+<div class="mt-16 p-8 bg-gradient-to-br from-[#436d57] to-[#b1dfc3] rounded-xl text-white relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-2xl font-bold mb-2">Need Help?</h3>
+<p class="text-white/80 mb-6 max-w-[240px]">Consult with Riley's pediatrician about the upcoming schedule.</p>
+<button class="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-surface-container-lowest transition-colors shadow-lg">
+                    Book Consult
+                </button>
+</div>
+<div class="absolute -right-8 -bottom-8 w-48 h-48 memory-bubble bg-white/10 backdrop-blur-sm"></div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 h-24 bg-[#FFFBEC]/60 dark:bg-emerald-950/60 backdrop-blur-xl rounded-t-[3rem] pb-safe z-50 shadow-[0_-20px_40px_rgba(105,75,66,0.04)]">
+<a class="flex flex-col items-center justify-center text-emerald-800/40 dark:text-emerald-200/40 p-2 hover:text-emerald-600 dark:hover:text-emerald-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.05em] font-bold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#436d57] to-[#b1dfc3] text-white rounded-full p-3 w-14 h-14 -mt-10 shadow-lg transition-all duration-500 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[8px] uppercase tracking-[0.05em] font-bold">Timeline</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-800/40 dark:text-emerald-200/40 p-2 hover:text-emerald-600 dark:hover:text-emerald-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.05em] font-bold mt-1">Doctors</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-800/40 dark:text-emerald-200/40 p-2 hover:text-emerald-600 dark:hover:text-emerald-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.05em] font-bold mt-1">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-800/40 dark:text-emerald-200/40 p-2 hover:text-emerald-600 dark:hover:text-emerald-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.05em] font-bold mt-1">FAQ</span>
+</a>
+</nav>
+</body></html>

@@ -32,4 +32,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterYourPassword => 'أدخل كلمة المرور';
+
+  @override
+  String get signUp => 'إنشاء حساب';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get phoneNumber => 'رقم الهاتف';
+
+  @override
+  String get gender => 'الجنس';
+
+  @override
+  String get enterYourName => 'أدخل اسمك';
+
+  @override
+  String get enterYourPhoneNumber => 'أدخل رقم هاتفك';
+
+  @override
+  String get enterYourGender => 'أدخل جنسك';
+
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟ ';
+
+  @override
+  String get alreadyHaveAccount => 'لديك حساب بالفعل؟ ';
 }

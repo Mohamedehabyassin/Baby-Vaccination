@@ -28,6 +28,18 @@ import '../../../features/auth/sign_in/domain/use_cases/sign_in_with_google_use_
     as _i830;
 import '../../../features/auth/sign_in/presentation/bloc/sign_in_bloc.dart'
     as _i829;
+import '../../../features/auth/sign_up/data/data_sources/remote/sign_up_remote_data_source.dart'
+    as _i128;
+import '../../../features/auth/sign_up/data/repository/sign_up_repository_impl.dart'
+    as _i984;
+import '../../../features/auth/sign_up/domain/repository/sign_up_repository.dart'
+    as _i1050;
+import '../../../features/auth/sign_up/domain/use_cases/sign_up_with_email_use_case.dart'
+    as _i561;
+import '../../../features/auth/sign_up/domain/use_cases/sign_up_with_google_use_case.dart'
+    as _i112;
+import '../../../features/auth/sign_up/presentation/bloc/sign_up_bloc.dart'
+    as _i620;
 import '../../data/connectivity/connectivity_manger.dart' as _i961;
 import '../../data/network/firebase/firebase_auth_manger.dart' as _i730;
 import '../../data/network/firebase/firestore_manager.dart' as _i110;
@@ -91,6 +103,37 @@ extension GetItInjectableX on _i174.GetIt {
             gh<_i25.SignInWithEmailAndPasswordUseCase>(),
             gh<_i830.SignInWithGoogleUseCase>(),
             gh<_i509.SignInWithBiometricsUseCase>(),
+          ),
+        );
+      },
+    );
+  }
+
+  // initializes the registration of signUp-scope dependencies inside of GetIt
+  _i174.GetIt initSignUpScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'signUp',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i128.SignUpRemoteDataSource>(
+          () =>
+              _i128.SignUpRemoteDataSourceImpl(gh<_i730.FirebaseAuthManger>()),
+        );
+        gh.lazySingleton<_i1050.SignUpRepository>(
+          () => _i984.SignUpRepositoryImpl(gh<_i128.SignUpRemoteDataSource>()),
+        );
+        gh.lazySingleton<_i561.SignUpWithEmailAndPasswordUseCase>(
+          () => _i561.SignUpWithEmailAndPasswordUseCase(
+            gh<_i1050.SignUpRepository>(),
+          ),
+        );
+        gh.lazySingleton<_i112.SignUpWithGoogleUseCase>(
+          () => _i112.SignUpWithGoogleUseCase(gh<_i1050.SignUpRepository>()),
+        );
+        gh.lazySingleton<_i620.SignUpBloc>(
+          () => _i620.SignUpBloc(
+            gh<_i561.SignUpWithEmailAndPasswordUseCase>(),
+            gh<_i112.SignUpWithGoogleUseCase>(),
           ),
         );
       },

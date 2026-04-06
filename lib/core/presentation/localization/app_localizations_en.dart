@@ -31,4 +31,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enterYourPassword => 'Enter Your Password';
+
+  @override
+  String get signUp => 'Sign Up';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get phoneNumber => 'Phone Number';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get enterYourName => 'Enter Your Name';
+
+  @override
+  String get enterYourPhoneNumber => 'Enter Your Phone Number';
+
+  @override
+  String get enterYourGender => 'Enter Your Gender';
+
+  @override
+  String get dontHaveAccount => 'Don\'t have an account? ';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account? ';
 }

@@ -9,23 +9,22 @@ import 'package:baby_vaccination/core/presentation/widgets/button/custom_button.
 import 'package:baby_vaccination/core/presentation/widgets/text/custom_text.dart';
 import 'package:baby_vaccination/core/presentation/widgets/text_field/custom_text_field.dart';
 import 'package:baby_vaccination/core/presentation/widgets/toast/custom_toast_message.dart';
-import 'package:baby_vaccination/features/auth/sign_in/domain/use_cases/sign_in_with_email_use_case.dart';
-import 'package:baby_vaccination/features/auth/sign_in/domain/use_cases/sign_in_with_google_use_case.dart';
-import 'package:baby_vaccination/features/auth/sign_in/presentation/bloc/sign_in_bloc.dart';
+import 'package:baby_vaccination/features/auth/sign_up/domain/use_cases/sign_up_with_email_use_case.dart';
+import 'package:baby_vaccination/features/auth/sign_up/domain/use_cases/sign_up_with_google_use_case.dart';
+import 'package:baby_vaccination/features/auth/sign_up/presentation/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:go_router/go_router.dart';
 import 'package:baby_vaccination/core/presentation/routing/app_routes.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final SignInBloc bloc = context.read<SignInBloc>();
-    return BlocConsumer<SignInBloc, SignInState>(
+    final SignUpBloc bloc = context.read<SignUpBloc>();
+    return BlocConsumer<SignUpBloc, SignUpState>(
       listener: (context, state) {
         if (state is Error) {
           CustomToastMessage.show(
@@ -45,26 +44,32 @@ class SignInScreen extends StatelessWidget {
                 children: <Widget>[
                   SpaceHeight32(),
                   CustomText(
-                    text: context.loc.signIn,
+                    text: context.loc.signUp,
                     style: CustomTextStyle.h1Bold,
                   ),
-                  BlocBuilder<SignInBloc, SignInState>(
-                    builder: (context, state) {
-                      return SizedBox(
-                        height: 200.h,
-                        width: 200.w,
-                        child: FlareActor(
-                          Assets.flare.teddyTest,
-                          animation: bloc.animationType,
-                        ),
-                      );
-                    },
-                  ),
                   SpaceHeight32(),
+                  CustomTextField(
+                    label: context.loc.name,
+                    controller: bloc.nameController,
+                    hint: context.loc.enterYourName,
+                  ),
+                  SpaceHeight12(),
                   CustomTextField(
                     label: context.loc.email,
                     controller: bloc.emailController,
                     hint: context.loc.enterYourEmail,
+                  ),
+                  SpaceHeight12(),
+                  CustomTextField(
+                    label: context.loc.phoneNumber,
+                    controller: bloc.phoneController,
+                    hint: context.loc.enterYourPhoneNumber,
+                  ),
+                  SpaceHeight12(),
+                  CustomTextField(
+                    label: context.loc.gender,
+                    controller: bloc.genderController,
+                    hint: context.loc.enterYourGender,
                   ),
                   SpaceHeight12(),
                   CustomTextField(
@@ -73,32 +78,30 @@ class SignInScreen extends StatelessWidget {
                     hint: context.loc.enterYourPassword,
                   ),
                   SpaceHeight32(),
-                  BlocBuilder<SignInBloc, SignInState>(
+                  BlocBuilder<SignUpBloc, SignUpState>(
                     builder: (context, state) {
-                      return state is Loading<SignInWithEmailAndPasswordUseCase>
+                      return state is Loading<SignUpWithEmailAndPasswordUseCase>
                           ? const CircularProgressIndicator.adaptive()
                           : CustomButton(
                               onPressed: () {
-                                bloc.add(
-                                  const SignInEvent.signInWithEmailAndPassword(),
-                                );
+                                bloc.add(const SignUpEvent.signUpWithEmailAndPassword());
                               },
                               child: CustomText(
-                                text: context.loc.signIn,
+                                text: context.loc.signUp,
                                 style: CustomTextStyle.mediumElementsBold,
                               ),
                             );
                     },
                   ),
                   SpaceHeight12(),
-                  BlocBuilder<SignInBloc, SignInState>(
+                  BlocBuilder<SignUpBloc, SignUpState>(
                     builder: (context, state) {
-                      return state is Loading<SignInWithGoogleUseCase>
+                      return state is Loading<SignUpWithGoogleUseCase>
                           ? const CircularProgressIndicator.adaptive()
                           : CustomButton(
                               backgroundColor: currentTheme.neutral100,
                               onPressed: () {
-                                bloc.add(const SignInEvent.signInWithGoogle());
+                                bloc.add(const SignUpEvent.signUpWithGoogle());
                               },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -122,13 +125,13 @@ class SignInScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomText(
-                        text: context.loc.dontHaveAccount,
+                        text: context.loc.alreadyHaveAccount,
                         style: CustomTextStyle.mediumElementsRegular,
                       ),
                       GestureDetector(
-                        onTap: () => context.go(AppRoutes.signUp),
+                        onTap: () => context.go(AppRoutes.signIn),
                         child: CustomText(
-                          text: context.loc.signUp,
+                          text: context.loc.signIn,
                           style: CustomTextStyle.mediumElementsBold,
                         ),
                       ),
