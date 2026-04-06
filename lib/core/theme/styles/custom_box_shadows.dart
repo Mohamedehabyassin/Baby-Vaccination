@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
-
 import 'package:baby_vaccination/core/theme/components/theme_factory.dart';
 
 class CustomBoxShadows {
-  static BoxShadow dropShadow = BoxShadow(
-    color: currentTheme.leafGreen.withValues(alpha: 0.2),
-    blurRadius: 4,
-    offset: const Offset(0, 4),
+  /// Ambient Shadow following the "Elevated Nursery" rules:
+  /// - Color: onSecondaryContainer (#694b42) at 6% opacity
+  /// - Blur: 40px to 60px
+  /// - Spread: -5px
+  static BoxShadow ambientShadow = BoxShadow(
+    color: currentTheme.onSecondaryContainer.withValues(alpha: 0.06),
+    blurRadius: 50,
+    spreadRadius: -5,
+    offset: const Offset(0, 10), // Subtle downward bias for depth
   );
+
+  //! Compatibility Alias
+  static BoxShadow get dropShadow => ambientShadow;
 }

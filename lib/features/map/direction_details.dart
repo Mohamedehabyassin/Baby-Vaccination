@@ -1,11 +1,6 @@
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 
 class DirectionDetails {
-  int distanceValue;
-  int durationValue;
-  String distanceText;
-  String durationText;
-  List<PointLatLng> encodedPoints;
 
   DirectionDetails(
     this.distanceValue,
@@ -14,4 +9,9 @@ class DirectionDetails {
     this.durationText,
     this.encodedPoints,
   );
+  int distanceValue;
+  int durationValue;
+  String distanceText;
+  String durationText;
+  List<PointLatLng> encodedPoints;
 }

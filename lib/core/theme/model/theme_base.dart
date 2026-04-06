@@ -1,64 +1,45 @@
 import 'package:flutter/material.dart';
 
-/// Elevated Nursery palette — base tones:
-/// - Primary (sage): `#A8D5BA`
-/// - Secondary (peach): `#FAD0C4`
-/// - Tertiary (sky): `#B9E3F0`
-/// - Neutral (cream): `#FFFBEC`
+/// The Elevated Nursery Design System — Base Tones:
+/// - Philosophy: "The Weightless Archive"
 abstract class ThemeBase {
   String get name;
 
-  Color get primary100;
-  Color get primary200;
-  Color get primary300;
-  Color get primary400;
-  Color get primary500;
-  Color get primary600;
-  Color get primary700;
-  Color get primary800;
-  Color get primary900;
+  //! Core Brand
+  Color get primary;
+  Color get primaryFixedDim;
+  Color get secondaryContainer;
+  Color get onSecondaryContainer;
 
-  Color get secondary100;
-  Color get secondary200;
-  Color get secondary300;
-  Color get secondary400;
-  Color get secondary500;
-  Color get secondary600;
-  Color get secondary700;
-  Color get secondary800;
-  Color get secondary900;
+  //! Surfaces & Hierarchy (The "No-Line" Rule)
+  Color get surface; // #fffbff - The infinite canvas
+  Color get surfaceContainerLow; // #fefae7 - Content grouping
+  Color get surfaceContainerHighest; // #ece9cf - Elevated interactive elements
+  Color get surfaceContainerLowest; // #ffffff - Card layering base
+  Color get surfaceContainer; // #f8f4df - Background for layering
 
-  Color get tertiary100;
-  Color get tertiary200;
-  Color get tertiary300;
-  Color get tertiary400;
-  Color get tertiary500;
-  Color get tertiary600;
-  Color get tertiary700;
-  Color get tertiary800;
-  Color get tertiary900;
+  //! Text & Lines (Editorial Contrast)
+  Color get onSurface; // #393927 - Body/Headline (Dark but not harsh)
+  Color get outlineVariant; // #bdbaa2 - Ghost boundaries
 
-  Color get neutral100;
-  Color get neutral200;
-  Color get neutral300;
-  Color get neutral400;
-  Color get neutral500;
-  Color get neutral600;
-  Color get neutral700;
-  Color get neutral800;
-  Color get neutral900;
-
+  //! Utility
   Color get success;
   Color get warning;
   Color get error;
   Color get info;
 
-  /// Scaffold / canvas (neutral cream in light theme).
-  Color get mistWhite;
-
-  /// Strong primary sage for overlays, accents, and focus.
-  Color get leafGreen;
-
-  /// Primary body/headline text on surface.
+  //! --- Compatibility Logic (Aliases for existing widgets) ---
+  Color get primary100;
+  Color get primary300;
+  Color get primary500;
+  Color get primary600;
   Color get darkText;
+  Color get mistWhite;
+  Color get tertiary400;
+
+  // Added aliases to fix lint errors in existing components
+  Color get neutral100; // Maps to surface
+  Color get neutral300; // Maps to surfaceContainerHighest
+  Color get neutral400; // Maps to onSurface
+  Color get neutral800; // Maps to onSurface
 }

@@ -1,6 +1,6 @@
 import 'package:baby_vaccination/core/constants/strings.dart';
 import 'package:baby_vaccination/core/utils/extensions/string_extension.dart';
-import 'package:baby_vaccination/core/localization/cubit/localization_cubit.dart';
+import 'package:baby_vaccination/core/localization/bloc/localization_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,12 +28,12 @@ class CustomText extends StatelessWidget {
             overflow: overflow,
             style: style.copyWith(
               fontFamily:
-                  context.read<LocalizationCubit>().applicationLocale ==
-                      Locale(AppStrings.arabic)
+                  context.read<LocalizationBloc>().applicationLocale ==
+                      const Locale(AppStrings.arabic)
                   ? AppStrings.beiruti
                   : AppStrings.nunito,
             ),
           )
-        : SizedBox.shrink();
+        : const SizedBox.shrink();
   }
 }

@@ -11,7 +11,7 @@ String APP_VERSION = '1.0.0';
 
 class DeviceInfo {
   static final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-  static final AndroidId _androidIdPlugin = const AndroidId();
+  static const AndroidId _androidIdPlugin = AndroidId();
 
   static String deviceData = '';
   static String androidId = '';

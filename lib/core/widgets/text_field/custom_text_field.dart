@@ -73,7 +73,7 @@ class CustomTextField extends StatelessWidget {
       children: [
         if (label.isValid) ...[
           CustomText(text: label, style: CustomTextStyle.mediumElementsBold),
-          SpaceHeight6(),
+          AppSpacing.vertical6(),
         ],
         TextFormField(
           textDirection: textDirection,
@@ -90,7 +90,7 @@ class CustomTextField extends StatelessWidget {
           textInputAction: textInputAction ?? TextInputAction.next,
           onEditingComplete: onEditingCompleted,
           keyboardType: keyboardType,
-          cursorColor: currentTheme.leafGreen,
+          cursorColor: currentTheme.primary,
           validator: validate,
           onTap: onTap,
           decoration: _buildDecoration(),
@@ -129,18 +129,15 @@ class CustomTextField extends StatelessWidget {
           : null,
       alignLabelWithHint: true,
       // contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
-      fillColor: fillColor ?? currentTheme.neutral100,
+      fillColor: fillColor ?? currentTheme.surfaceContainerLowest,
       filled: true,
-      // labelStyle: const TextStyle(
-      //   fontFamily: "SF Pro",
-      // ),
-      hintStyle: CustomTextStyle.mediumElementsMedium.copyWith(
-        color: currentTheme.neutral800,
+      hintStyle: CustomTextStyle.secondaryMedium.copyWith(
+        color: currentTheme.outlineVariant,
       ),
       helperStyle: CustomTextStyle.secondaryBold,
       border: InputBorder.none,
-      focusColor: currentTheme.leafGreen,
-      focusedBorder: _buildBorder(colorBorder ?? currentTheme.leafGreen),
+      focusColor: currentTheme.primary,
+      focusedBorder: _buildBorder(colorBorder ?? currentTheme.primary),
       focusedErrorBorder: _buildBorder(colorBorder ?? currentTheme.error),
       enabledBorder: _buildBorder(colorBorder ?? currentTheme.primary500),
       disabledBorder: _buildBorder(colorBorder ?? currentTheme.neutral300),
@@ -150,7 +147,7 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder _buildBorder(Color colorBorder) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(Dimensions.radius6),
+      borderRadius: BorderRadius.circular(Dimensions.radius8),
       borderSide: BorderSide(color: colorBorder),
     );
   }

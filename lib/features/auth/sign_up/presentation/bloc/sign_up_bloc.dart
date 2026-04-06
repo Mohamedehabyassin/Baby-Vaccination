@@ -13,7 +13,7 @@ part 'sign_up_event.dart';
 part 'sign_up_state.dart';
 part 'sign_up_bloc.freezed.dart';
 
-@LazySingleton(scope: 'signUp')
+@Injectable(scope: 'signUp')
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   SignUpBloc(this._emailUseCase, this._googleUseCase)
     : super(const _Initial()) {

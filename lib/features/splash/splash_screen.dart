@@ -20,7 +20,7 @@ class SplashScreen extends StatelessWidget {
         );
       },
 
-      until: () => Future.delayed(const Duration(seconds: 5)),
+      until: () => Future.delayed(const Duration(seconds: 3)),
       startAnimation: "tap",
     );
     return Scaffold(body: animated);

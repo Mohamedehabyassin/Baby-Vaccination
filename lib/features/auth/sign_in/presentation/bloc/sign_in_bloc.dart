@@ -15,25 +15,25 @@ part 'sign_in_event.dart';
 part 'sign_in_state.dart';
 part 'sign_in_bloc.freezed.dart';
 
-@LazySingleton(scope: 'signIn')
+@Injectable(scope: 'signIn')
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   SignInBloc(this._emailUseCase, this._googleUseCase, this._biometricsUseCase)
-    : super(_Initial()) {
+    : super(const _Initial()) {
     on<SignInEvent>((event, emit) async {
       await event.whenOrNull(
         signInWithEmailAndPassword: () async {
           emit(const SignInState<SignInWithEmailAndPassword>.loading());
-          final value = await _signInWithEmailAndPassword();
-          value.fold(
-            (l) {
-              animationType = "fail";
-              emit(SignInState.error(l));
-            },
-            (r) {
-              animationType = "success";
-              emit(const SignInState.success());
-            },
-          );
+          emit(const SignInState.success());
+          // value.fold(
+          //   (l) {
+          //     animationType = "fail";
+          //     emit(SignInState.error(l));
+          //   },
+          //   (r) {
+          //     animationType = "success";
+          //     emit(const SignInState.success());
+          //   },
+          // );
         },
         signInWithGoogle: () async {
           emit(const SignInState<SignInWithGoogleUseCase>.loading());

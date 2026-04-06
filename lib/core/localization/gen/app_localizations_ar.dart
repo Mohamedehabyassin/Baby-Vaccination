@@ -28,6 +28,18 @@ class AppLocalizationsAr extends AppLocalizations {
   String get forgetPassword => 'نسيت كلمة المرور؟';
 
   @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get babies => 'الأطفال';
+
+  @override
+  String get facilities => 'المرافق';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
   String get enterYourEmail => 'أدخل بريدك الإلكتروني';
 
   @override

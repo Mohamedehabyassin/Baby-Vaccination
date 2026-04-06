@@ -34,6 +34,9 @@ class SignInScreen extends StatelessWidget {
             type: ToastType.error,
           );
         }
+        if (state is Success) {
+          context.go(AppRoutes.mainNav);
+        }
       },
       builder: (context, state) {
         return Scaffold(
@@ -43,7 +46,7 @@ class SignInScreen extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: <Widget>[
-                  SpaceHeight32(),
+                  AppSpacing.vertical32(),
                   CustomText(
                     text: context.loc.signIn,
                     style: CustomTextStyle.h1Bold,
@@ -60,19 +63,19 @@ class SignInScreen extends StatelessWidget {
                       );
                     },
                   ),
-                  SpaceHeight32(),
+                  AppSpacing.vertical32(),
                   CustomTextField(
                     label: context.loc.email,
                     controller: bloc.emailController,
                     hint: context.loc.enterYourEmail,
                   ),
-                  SpaceHeight12(),
+                  AppSpacing.vertical12(),
                   CustomTextField(
                     label: context.loc.password,
                     controller: bloc.passwordController,
                     hint: context.loc.enterYourPassword,
                   ),
-                  SpaceHeight32(),
+                  AppSpacing.vertical32(),
                   BlocBuilder<SignInBloc, SignInState>(
                     builder: (context, state) {
                       return state is Loading<SignInWithEmailAndPasswordUseCase>
@@ -85,18 +88,20 @@ class SignInScreen extends StatelessWidget {
                               },
                               child: CustomText(
                                 text: context.loc.signIn,
-                                style: CustomTextStyle.mediumElementsBold,
+                                style: CustomTextStyle.mediumElementsBold
+                                    .copyWith(color: currentTheme.surface),
                               ),
                             );
                     },
                   ),
-                  SpaceHeight12(),
+                  AppSpacing.vertical12(),
                   BlocBuilder<SignInBloc, SignInState>(
                     builder: (context, state) {
                       return state is Loading<SignInWithGoogleUseCase>
                           ? const CircularProgressIndicator.adaptive()
                           : CustomButton(
                               backgroundColor: currentTheme.neutral100,
+                              borderColor: currentTheme.primary600,
                               onPressed: () {
                                 bloc.add(const SignInEvent.signInWithGoogle());
                               },
@@ -107,7 +112,7 @@ class SignInScreen extends StatelessWidget {
                                     text: context.loc.signInWithGoogle,
                                     style: CustomTextStyle.mediumElementsBold,
                                   ),
-                                  SpaceWidth16(),
+                                  AppSpacing.horizontal16(),
                                   Assets.icons.google.svg(
                                     width: 24.w,
                                     height: 24.h,
@@ -117,7 +122,7 @@ class SignInScreen extends StatelessWidget {
                             );
                     },
                   ),
-                  SpaceHeight12(),
+                  AppSpacing.vertical12(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

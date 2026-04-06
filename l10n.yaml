@@ -1,6 +1,6 @@
-arb-dir: lib/core/localization
+arb-dir: lib/core/localization/intl
 template-arb-file: intl_en.arb
-output-dir: lib/core/localization
+output-dir: lib/core/localization/gen
 output-localization-file: app_localizations.dart
 
 

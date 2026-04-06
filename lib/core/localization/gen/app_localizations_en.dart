@@ -27,6 +27,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get forgetPassword => 'Forgot Password?';
 
   @override
+  String get home => 'Home';
+
+  @override
+  String get babies => 'Babies';
+
+  @override
+  String get facilities => 'Facilities';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
   String get enterYourEmail => 'Enter Your Email';
 
   @override

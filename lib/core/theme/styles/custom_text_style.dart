@@ -6,268 +6,143 @@ import 'package:baby_vaccination/core/theme/components/theme_factory.dart';
 class CustomTextStyle {
   CustomTextStyle._();
 
-  //! Headings
+  //! Display (Massive, editorial, joyful)
+  static final TextStyle displayLarge = TextStyle(
+    color: currentTheme.onSurface,
+    fontSize: 48.sp,
+    fontWeight: FontWeight.w800,
+    fontFamily: AppStrings.nunito,
+    height: 1.2,
+  );
+
+  static final TextStyle displayMedium = TextStyle(
+    color: currentTheme.onSurface,
+    fontSize: 40.sp,
+    fontWeight: FontWeight.w700,
+    fontFamily: AppStrings.nunito,
+    height: 1.2,
+  );
+
+  //! Headlines (Section Titles)
   static final TextStyle h1Bold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 38.sp,
+    color: currentTheme.onSurface,
+    fontSize: 32.sp,
     fontWeight: FontWeight.w700,
     fontFamily: AppStrings.nunito,
-    height: 1.5,
+    height: 1.4,
   );
-  static final TextStyle h1Medium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 38.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle h1Regular = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 38.sp,
-    fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle h1Light = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 38.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  //! Subheadings
+
   static final TextStyle h2Bold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 32.sp,
+    color: currentTheme.onSurface,
+    fontSize: 28.sp,
     fontWeight: FontWeight.w700,
     fontFamily: AppStrings.nunito,
-    height: 1.5,
+    height: 1.4,
   );
-  static final TextStyle h2Medium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 32.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle h2Regular = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 32.sp,
-    fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle h2Light = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 32.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  //! h3 headings
+
   static final TextStyle h3Bold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 28.sp,
+    color: currentTheme.onSurface,
+    fontSize: 24.sp,
     fontWeight: FontWeight.w700,
     fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle h3Medium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 28.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle h3Regular = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 28.sp,
-    fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle h3Light = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 28.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
+    height: 1.4,
   );
 
-  //! h4 headings
   static final TextStyle h4Bold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 24.sp,
+    color: currentTheme.onSurface,
+    fontSize: 20.sp,
     fontWeight: FontWeight.w700,
     fontFamily: AppStrings.nunito,
-    height: 1.5,
+    height: 1.4,
   );
 
-  static final TextStyle h4Medium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 24.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle h4Regular = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 24.sp,
+  //! Body (Plus Jakarta Sans, high line height for airiness)
+  static final TextStyle bodyLarge = TextStyle(
+    color: currentTheme.onSurface,
+    fontSize: 18.sp,
     fontWeight: FontWeight.w400,
     fontFamily: AppStrings.nunito,
-    height: 1.5,
-  );
-  static final TextStyle h4Light = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 24.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.nunito,
-    height: 1.5,
+    height: 1.6,
   );
 
-  //! Emphasized
-  static final TextStyle emphasizedBold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 20.sp,
-    fontWeight: FontWeight.w700,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle emphasizedMedium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 20.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle emphasizedRegular = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 20.sp,
-    fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle emphasizedLight = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 20.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  //! Body Text
-  static final TextStyle bodyBaseBold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 18.sp,
-    fontWeight: FontWeight.w700,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle bodyBaseMedium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 18.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle bodyBaseRegular = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 18.sp,
-    fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle bodyBaseLight = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 18.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  //! Medium Elements
-  static final TextStyle mediumElementsBold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w700,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle mediumElementsMedium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle mediumElementsRegular = TextStyle(
-    color: currentTheme.darkText,
+  static final TextStyle bodyMedium = TextStyle(
+    color: currentTheme.onSurface,
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
+    fontFamily: AppStrings.nunito,
+    height: 1.6,
   );
-  static final TextStyle mediumElementsLight = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  //! Secondary
-  static final TextStyle secondaryBold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w700,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle secondaryMedium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle secondaryRegular = TextStyle(
-    color: currentTheme.darkText,
+
+  static final TextStyle bodySmall = TextStyle(
+    color: currentTheme.onSurface,
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
+    fontFamily: AppStrings.nunito,
+    height: 1.6,
   );
-  static final TextStyle secondaryLight = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
+
+  //! Labels (Functional, sophisticated, tracked out)
+  static final TextStyle labelLarge = TextStyle(
+    color: currentTheme.onSurface,
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w600,
+    fontFamily: AppStrings.nunito,
+    textBaseline: TextBaseline.alphabetic,
   );
-  //! Fine Print
-  static final TextStyle finePrintBold = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 12.sp,
-    fontWeight: FontWeight.w700,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
+
+  static final TextStyle labelMedium = TextStyle(
+    color: currentTheme.onSurface,
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w600,
+    fontFamily: AppStrings.nunito,
+    textBaseline: TextBaseline.alphabetic,
   );
-  static final TextStyle finePrintMedium = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 12.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle finePrintRegular = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 12.sp,
-    fontWeight: FontWeight.w400,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
-  static final TextStyle finePrintLight = TextStyle(
-    color: currentTheme.darkText,
-    fontSize: 12.sp,
-    fontWeight: FontWeight.w300,
-    fontFamily: AppStrings.beiruti,
-    height: 1.5,
-  );
+
+  //! Compatibility Aliases for existing components
+  static TextStyle get h1Medium => h1Bold.copyWith(fontWeight: FontWeight.w500);
+  static TextStyle get h1Regular =>
+      h1Bold.copyWith(fontWeight: FontWeight.w400);
+  static TextStyle get h1Light => h1Bold.copyWith(fontWeight: FontWeight.w300);
+
+  static TextStyle get h2Medium => h2Bold.copyWith(fontWeight: FontWeight.w500);
+  static TextStyle get h2Regular =>
+      h2Bold.copyWith(fontWeight: FontWeight.w400);
+
+  static TextStyle get h3Medium => h3Bold.copyWith(fontWeight: FontWeight.w500);
+  static TextStyle get h3Regular =>
+      h3Bold.copyWith(fontWeight: FontWeight.w400);
+
+  static TextStyle get h4Medium => h4Bold.copyWith(fontWeight: FontWeight.w500);
+  static TextStyle get h4Regular =>
+      h4Bold.copyWith(fontWeight: FontWeight.w400);
+
+  static TextStyle get emphasizedBold =>
+      bodyLarge.copyWith(fontWeight: FontWeight.w700);
+  static TextStyle get emphasizedMedium =>
+      bodyLarge.copyWith(fontWeight: FontWeight.w500);
+  static TextStyle get emphasizedRegular => bodyLarge;
+
+  static TextStyle get bodyBaseBold =>
+      bodyMedium.copyWith(fontWeight: FontWeight.w700);
+  static TextStyle get bodyBaseMedium =>
+      bodyMedium.copyWith(fontWeight: FontWeight.w500);
+  static TextStyle get bodyBaseRegular => bodyMedium;
+
+  static TextStyle get mediumElementsBold =>
+      bodySmall.copyWith(fontWeight: FontWeight.w700);
+  static TextStyle get mediumElementsMedium =>
+      bodySmall.copyWith(fontWeight: FontWeight.w500);
+  static TextStyle get mediumElementsRegular => bodySmall;
+
+  static TextStyle get secondaryBold =>
+      bodySmall.copyWith(fontWeight: FontWeight.w700);
+  static TextStyle get secondaryMedium =>
+      bodySmall.copyWith(fontWeight: FontWeight.w500);
+  static TextStyle get secondaryRegular => bodySmall;
+  static TextStyle get secondaryLight =>
+      bodySmall.copyWith(fontWeight: FontWeight.w300);
+
+  static TextStyle get finePrintBold =>
+      labelMedium.copyWith(fontWeight: FontWeight.w700);
+  static TextStyle get finePrintRegular => labelMedium;
 }

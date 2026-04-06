@@ -1,108 +1,70 @@
 import 'package:flutter/material.dart';
-
 import '../model/theme_base.dart';
 
-/// The Elevated Nursery — light palette (reference bases):
-/// Primary `#A8D5BA`, Secondary `#FAD0C4`, Tertiary `#B9E3F0`, Neutral `#FFFBEC`.
-class LightTheme extends ThemeBase {
+class LightTheme implements ThemeBase {
   @override
-  String get name => 'light';
+  String get name => "lightTheme";
 
-  // —— Primary (sage) ——
+  //! --- Core Brand & Primary Palette ---
   @override
-  Color get primary100 => const Color(0xFFEEF7F1);
+  Color get primary => const Color(0xff436d57); // The signature Sage
   @override
-  Color get primary200 => const Color(0xFFD4EEE0);
+  Color get primaryFixedDim => const Color(0xffb1dfc3); // Soft Sage for gradients
   @override
-  Color get primary300 => const Color(0xFFB8E3C8);
+  Color get secondaryContainer => const Color(0xffffdbd0); // Pastoral Peach
   @override
-  Color get primary400 => const Color(0xFFABDDCC);
-  @override
-  Color get primary500 => const Color(0xFFA8D5BA);
-  @override
-  Color get primary600 => const Color(0xFF8CC4A0);
-  @override
-  Color get primary700 => const Color(0xFF70A882);
-  @override
-  Color get primary800 => const Color(0xFF558A65);
-  @override
-  Color get primary900 => const Color(0xFF3D6648);
+  Color get onSecondaryContainer => const Color(0xff694b42); // Warm Cocoa for text and shadows
 
-  // —— Secondary (peach) ——
+  //! --- Surfaces & Hierarchy (The "No-Line" Rule) ---
   @override
-  Color get secondary100 => const Color(0xFFFFF8F6);
+  Color get surface => const Color(0xfffffbff); // The infinite canvas
   @override
-  Color get secondary200 => const Color(0xFFFEEFEA);
+  Color get surfaceContainerLow => const Color(0xfffefae7); // Content grouping
   @override
-  Color get secondary300 => const Color(0xFFFCE9E3);
+  Color get surfaceContainerHighest => const Color(0xffece9cf); // Elevated interactive elements
   @override
-  Color get secondary400 => const Color(0xFFFBD9D0);
+  Color get surfaceContainerLowest => const Color(0xffffffff); // Card layering
   @override
-  Color get secondary500 => const Color(0xFFFAD0C4);
-  @override
-  Color get secondary600 => const Color(0xFFE8B5A0);
-  @override
-  Color get secondary700 => const Color(0xFFD4937A);
-  @override
-  Color get secondary800 => const Color(0xFFB86F52);
-  @override
-  Color get secondary900 => const Color(0xFF8F4A35);
+  Color get surfaceContainer => const Color(0xfff8f4df); // Background for layering
 
-  // —— Tertiary (sky) ——
+  //! --- Text & Lines (Editorial Contrast) ---
   @override
-  Color get tertiary100 => const Color(0xFFF0FAFC);
+  Color get onSurface => const Color(0xff393927); // Body/Headline (Dark but not harsh)
   @override
-  Color get tertiary200 => const Color(0xFFD4F1F9);
-  @override
-  Color get tertiary300 => const Color(0xFFC0E5F0);
-  @override
-  Color get tertiary400 => const Color(0xFF9DD9E8);
-  @override
-  Color get tertiary500 => const Color(0xFFB9E3F0);
-  @override
-  Color get tertiary600 => const Color(0xFF8BCFE1);
-  @override
-  Color get tertiary700 => const Color(0xFF5FB8D0);
-  @override
-  Color get tertiary800 => const Color(0xFF3D9AB3);
-  @override
-  Color get tertiary900 => const Color(0xFF2A7A8F);
+  Color get outlineVariant => const Color(0xffbdbaa2); // The Ghost Border
 
-  // —— Neutral (cream) ——
+  //! --- Utility Palette ---
   @override
-  Color get neutral100 => const Color(0xFFFEFEF9);
+  Color get success => const Color(0xFF6EDD9F);
   @override
-  Color get neutral200 => const Color(0xFFFEFBF6);
+  Color get warning => const Color(0xFFFACC15);
   @override
-  Color get neutral300 => const Color(0xFFFEFCF0);
+  Color get error => const Color(0xFFF87171);
   @override
-  Color get neutral400 => const Color(0xFFFFFBF8);
+  Color get info => const Color(0xFF60A5FA);
+
+  //! --- Compatibility Logic (Aliases for existing widgets) ---
   @override
-  Color get neutral500 => const Color(0xFFFFFBEC);
+  Color get primary100 => surface; // Mapped to the airy background
   @override
-  Color get neutral600 => const Color(0xFFE8E4D0);
+  Color get primary300 => primaryFixedDim;
   @override
-  Color get neutral700 => const Color(0xFFC9C4B0);
+  Color get primary500 => primary;
   @override
-  Color get neutral800 => const Color(0xFF9A9478);
+  Color get primary600 => primary;
   @override
-  Color get neutral900 => const Color(0xFF3D3528);
+  Color get darkText => onSurface;
+  @override
+  Color get mistWhite => surface;
+  @override
+  Color get tertiary400 => primaryFixedDim;
 
   @override
-  Color get success => const Color(0xFF4CAF50);
+  Color get neutral100 => surface;
   @override
-  Color get warning => const Color(0xFFFFB74D);
+  Color get neutral300 => surfaceContainerHighest;
   @override
-  Color get error => const Color(0xFFE57373);
+  Color get neutral400 => onSurface;
   @override
-  Color get info => tertiary500;
-
-  @override
-  Color get mistWhite => neutral500;
-
-  @override
-  Color get leafGreen => primary700;
-
-  @override
-  Color get darkText => const Color(0xFF393927);
+  Color get neutral800 => onSurface;
 }

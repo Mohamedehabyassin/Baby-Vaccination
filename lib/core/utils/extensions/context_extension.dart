@@ -1,4 +1,4 @@
-import 'package:baby_vaccination/core/localization/app_localizations.dart';
+import 'package:baby_vaccination/core/localization/gen/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

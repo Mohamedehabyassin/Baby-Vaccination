@@ -13,5 +13,5 @@ void main() async {
   configureDependencies();
   getIt.initSignInScope();
   getIt.initSignUpScope();
-  runApp(MyApp());
+  runApp(const MyApp());
 }

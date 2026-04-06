@@ -35,9 +35,8 @@ class CustomButton extends StatelessWidget {
         elevation: elevation,
         disabledForegroundColor: currentTheme.neutral400,
         disabledBackgroundColor: currentTheme.neutral400,
-
         padding: padding,
-        backgroundColor: backgroundColor ?? currentTheme.primary500,
+        backgroundColor: backgroundColor ?? currentTheme.primary600,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(Dimensions.radius8),
           side: BorderSide(

@@ -3,6 +3,8 @@ import 'package:baby_vaccination/features/auth/sign_in/presentation/bloc/sign_in
 import 'package:baby_vaccination/features/auth/sign_in/presentation/screen/sign_in_screen.dart';
 import 'package:baby_vaccination/features/auth/sign_up/presentation/bloc/sign_up_bloc.dart';
 import 'package:baby_vaccination/features/auth/sign_up/presentation/screen/sign_up_screen.dart';
+import 'package:baby_vaccination/features/main_navigation/presentation/bloc/navigation_bloc.dart';
+import 'package:baby_vaccination/features/main_navigation/presentation/screen/main_navigation_screen.dart';
 import 'package:baby_vaccination/features/splash/splash_screen.dart';
 import 'package:baby_vaccination/core/routing/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +40,13 @@ class CustomRouter {
         builder: (context, state) => BlocProvider(
           create: (_) => getIt<SignUpBloc>(),
           child: const SignUpScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.mainNav,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<NavigationBloc>(),
+          child: const MainNavigationScreen(),
         ),
       ),
     ],

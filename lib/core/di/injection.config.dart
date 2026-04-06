@@ -40,11 +40,13 @@ import '../../features/auth/sign_up/domain/use_cases/sign_up_with_google_use_cas
     as _i862;
 import '../../features/auth/sign_up/presentation/bloc/sign_up_bloc.dart'
     as _i130;
-import '../localization/cubit/localization_cubit.dart' as _i998;
+import '../../features/main_navigation/presentation/bloc/navigation_bloc.dart'
+    as _i999;
+import '../localization/bloc/localization_bloc.dart' as _i434;
 import '../network/firebase_auth_manger.dart' as _i788;
 import '../network/firestore_manager.dart' as _i1071;
 import '../services/connectivity_manger.dart' as _i608;
-import '../theme/cubit/theme_cubit.dart' as _i194;
+import '../theme/bloc/theme_bloc.dart' as _i279;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -53,11 +55,12 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
-    gh.lazySingleton<_i998.LocalizationCubit>(() => _i998.LocalizationCubit());
+    gh.factory<_i999.NavigationBloc>(() => _i999.NavigationBloc());
+    gh.lazySingleton<_i434.LocalizationBloc>(() => _i434.LocalizationBloc());
     gh.lazySingleton<_i788.FirebaseAuthManger>(
       () => _i788.FirebaseAuthManger(),
     );
-    gh.lazySingleton<_i194.ThemeCubit>(() => _i194.ThemeCubit());
+    gh.lazySingleton<_i279.ThemeBloc>(() => _i279.ThemeBloc());
     gh.lazySingleton<_i1071.FirebaseManager>(
       () => _i1071.FirebaseManager(
         gh<_i608.ConnectivityManager>(),
@@ -97,7 +100,7 @@ extension GetItInjectableX on _i174.GetIt {
         gh.lazySingleton<_i310.SignInWithGoogleUseCase>(
           () => _i310.SignInWithGoogleUseCase(gh<_i17.SignInRepository>()),
         );
-        gh.lazySingleton<_i603.SignInBloc>(
+        gh.factory<_i603.SignInBloc>(
           () => _i603.SignInBloc(
             gh<_i1030.SignInWithEmailAndPasswordUseCase>(),
             gh<_i310.SignInWithGoogleUseCase>(),
@@ -129,7 +132,7 @@ extension GetItInjectableX on _i174.GetIt {
         gh.lazySingleton<_i862.SignUpWithGoogleUseCase>(
           () => _i862.SignUpWithGoogleUseCase(gh<_i988.SignUpRepository>()),
         );
-        gh.lazySingleton<_i130.SignUpBloc>(
+        gh.factory<_i130.SignUpBloc>(
           () => _i130.SignUpBloc(
             gh<_i193.SignUpWithEmailAndPasswordUseCase>(),
             gh<_i862.SignUpWithGoogleUseCase>(),

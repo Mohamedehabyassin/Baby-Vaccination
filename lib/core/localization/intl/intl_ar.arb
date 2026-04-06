@@ -16,5 +16,9 @@
     "enterYourPhoneNumber": "أدخل رقم هاتفك",
     "enterYourGender": "أدخل جنسك",
     "dontHaveAccount": "ليس لديك حساب؟ ",
-    "alreadyHaveAccount": "لديك حساب بالفعل؟ "
+    "alreadyHaveAccount": "لديك حساب بالفعل؟ ",
+    "home": "الرئيسية",
+    "babies": "الأطفال",
+    "facilities": "المرافق",
+    "profile": "الملف الشخصي"
 }

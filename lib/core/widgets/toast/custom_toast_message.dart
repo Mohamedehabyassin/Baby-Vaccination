@@ -77,7 +77,7 @@ class CustomToastMessage {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // SizedBox(height: 24, width: 24, child: getIcon(type)),
-                  SpaceWidth12(),
+                  AppSpacing.horizontal12(),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,7 +88,7 @@ class CustomToastMessage {
                             text: label,
                             style: CustomTextStyle.bodyBaseBold,
                           ),
-                          SpaceHeight4(),
+                          AppSpacing.vertical4(),
                         ],
                         CustomText(
                           text: message,
@@ -97,7 +97,7 @@ class CustomToastMessage {
                       ],
                     ),
                   ),
-                  SpaceWidth12(),
+                  AppSpacing.horizontal12(),
                   // if (goTo != null)
                   //   GestureDetector(
                   //     onTap: goTo,

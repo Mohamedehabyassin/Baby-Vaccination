@@ -32,6 +32,8 @@ class SignUpScreen extends StatelessWidget {
             message: state.failure.message,
             type: ToastType.error,
           );
+        } else if (state is Success) {
+          context.go(AppRoutes.mainNav);
         }
       },
       builder: (context, state) {
@@ -42,42 +44,42 @@ class SignUpScreen extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: <Widget>[
-                  SpaceHeight32(),
+                  AppSpacing.vertical32(),
                   CustomText(
                     text: context.loc.signUp,
                     style: CustomTextStyle.h1Bold,
                   ),
-                  SpaceHeight32(),
+                  AppSpacing.vertical32(),
                   CustomTextField(
                     label: context.loc.name,
                     controller: bloc.nameController,
                     hint: context.loc.enterYourName,
                   ),
-                  SpaceHeight12(),
+                  AppSpacing.vertical12(),
                   CustomTextField(
                     label: context.loc.email,
                     controller: bloc.emailController,
                     hint: context.loc.enterYourEmail,
                   ),
-                  SpaceHeight12(),
+                  AppSpacing.vertical12(),
                   CustomTextField(
                     label: context.loc.phoneNumber,
                     controller: bloc.phoneController,
                     hint: context.loc.enterYourPhoneNumber,
                   ),
-                  SpaceHeight12(),
+                  AppSpacing.vertical12(),
                   CustomTextField(
                     label: context.loc.gender,
                     controller: bloc.genderController,
                     hint: context.loc.enterYourGender,
                   ),
-                  SpaceHeight12(),
+                  AppSpacing.vertical12(),
                   CustomTextField(
                     label: context.loc.password,
                     controller: bloc.passwordController,
                     hint: context.loc.enterYourPassword,
                   ),
-                  SpaceHeight32(),
+                  AppSpacing.vertical32(),
                   BlocBuilder<SignUpBloc, SignUpState>(
                     builder: (context, state) {
                       return state is Loading<SignUpWithEmailAndPasswordUseCase>
@@ -95,7 +97,7 @@ class SignUpScreen extends StatelessWidget {
                             );
                     },
                   ),
-                  SpaceHeight12(),
+                  AppSpacing.vertical12(),
                   BlocBuilder<SignUpBloc, SignUpState>(
                     builder: (context, state) {
                       return state is Loading<SignUpWithGoogleUseCase>
@@ -112,7 +114,7 @@ class SignUpScreen extends StatelessWidget {
                                     text: context.loc.signInWithGoogle,
                                     style: CustomTextStyle.mediumElementsBold,
                                   ),
-                                  SpaceWidth16(),
+                                  AppSpacing.horizontal16(),
                                   Assets.icons.google.svg(
                                     width: 24.w,
                                     height: 24.h,
@@ -122,7 +124,7 @@ class SignUpScreen extends StatelessWidget {
                             );
                     },
                   ),
-                  SpaceHeight12(),
+                  AppSpacing.vertical12(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

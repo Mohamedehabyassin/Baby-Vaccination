@@ -18,7 +18,7 @@ import 'app_localizations_en.dart';
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'localization/app_localizations.dart';
+/// import 'gen/app_localizations.dart';
 ///
 /// return MaterialApp(
 ///   localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -133,6 +133,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Forgot Password?'**
   String get forgetPassword;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @babies.
+  ///
+  /// In en, this message translates to:
+  /// **'Babies'**
+  String get babies;
+
+  /// No description provided for @facilities.
+  ///
+  /// In en, this message translates to:
+  /// **'Facilities'**
+  String get facilities;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
 
   /// No description provided for @enterYourEmail.
   ///

@@ -22,12 +22,12 @@ class SignInRemoteDataSourceImpl implements SignInRemoteDataSource {
       password,
     );
 
-    return response.fold((failure) => Left(failure), (user) => Right(true));
+    return response.fold((failure) => Left(failure), (user) => const Right(true));
   }
 
   @override
   Future<Either<Failure, bool>> signInWithGoogle() async {
     final response = await firebaseAuth.signInWithGoogle();
-    return response.fold((failure) => Left(failure), (user) => Right(true));
+    return response.fold((failure) => Left(failure), (user) => const Right(true));
   }
 }
