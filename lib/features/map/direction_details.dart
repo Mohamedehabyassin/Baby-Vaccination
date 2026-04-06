@@ -7,6 +7,11 @@ class DirectionDetails {
   String durationText;
   List<PointLatLng> encodedPoints;
 
-  DirectionDetails(this.distanceValue, this.durationValue, this.distanceText,
-      this.durationText, this.encodedPoints);
+  DirectionDetails(
+    this.distanceValue,
+    this.durationValue,
+    this.distanceText,
+    this.durationText,
+    this.encodedPoints,
+  );
 }

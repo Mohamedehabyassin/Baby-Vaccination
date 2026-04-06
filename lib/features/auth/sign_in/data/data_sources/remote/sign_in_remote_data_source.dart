@@ -1,5 +1,5 @@
-import 'package:baby_vaccination/core/data/network/failure.dart';
-import 'package:baby_vaccination/core/data/network/firebase/firebase_auth_manger.dart';
+import 'package:baby_vaccination/core/errors/failure.dart';
+import 'package:baby_vaccination/core/network/firebase_auth_manger.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 

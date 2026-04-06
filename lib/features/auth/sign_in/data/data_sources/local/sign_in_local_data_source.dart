@@ -1,4 +1,4 @@
-import 'package:baby_vaccination/core/data/network/failure.dart';
+import 'package:baby_vaccination/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 

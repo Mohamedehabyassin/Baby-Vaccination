@@ -1,4 +1,4 @@
-import 'package:baby_vaccination/core/domain/injection/injection.dart';
+import 'package:baby_vaccination/core/di/injection.dart';
 import 'package:baby_vaccination/core/gen/assets.gen.dart';
 import 'package:baby_vaccination/features/auth/sign_in/presentation/bloc/sign_in_bloc.dart';
 import 'package:baby_vaccination/features/auth/sign_in/presentation/screen/sign_in_screen.dart';

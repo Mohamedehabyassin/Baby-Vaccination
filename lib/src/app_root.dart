@@ -1,8 +1,8 @@
-import 'package:baby_vaccination/core/domain/injection/injection.dart';
-import 'package:baby_vaccination/core/presentation/localization/cubit/localization_cubit.dart';
-import 'package:baby_vaccination/core/presentation/routing/custom_router.dart';
-import 'package:baby_vaccination/core/presentation/theme/cubit/theme_cubit.dart';
-import 'package:baby_vaccination/core/presentation/localization/app_localizations.dart';
+import 'package:baby_vaccination/core/di/injection.dart';
+import 'package:baby_vaccination/core/localization/cubit/localization_cubit.dart';
+import 'package:baby_vaccination/core/routing/custom_router.dart';
+import 'package:baby_vaccination/core/theme/cubit/theme_cubit.dart';
+import 'package:baby_vaccination/core/localization/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

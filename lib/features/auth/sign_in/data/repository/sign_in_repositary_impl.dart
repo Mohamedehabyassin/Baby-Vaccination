@@ -1,4 +1,4 @@
-import 'package:baby_vaccination/core/data/network/failure.dart';
+import 'package:baby_vaccination/core/errors/failure.dart';
 import 'package:baby_vaccination/features/auth/sign_in/data/data_sources/local/sign_in_local_data_source.dart';
 import 'package:baby_vaccination/features/auth/sign_in/data/data_sources/remote/sign_in_remote_data_source.dart';
 import 'package:baby_vaccination/features/auth/sign_in/domain/entity/sign_in_params_entity.dart';

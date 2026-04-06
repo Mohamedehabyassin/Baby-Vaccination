@@ -1,14 +1,14 @@
-import 'package:baby_vaccination/core/domain/constants/enums.dart';
-import 'package:baby_vaccination/core/domain/extensions/context_extension.dart';
+import 'package:baby_vaccination/core/constants/enums.dart';
+import 'package:baby_vaccination/core/utils/extensions/context_extension.dart';
 import 'package:baby_vaccination/core/gen/assets.gen.dart';
-import 'package:baby_vaccination/core/presentation/theme/components/theme_factory.dart';
-import 'package:baby_vaccination/core/presentation/theme/sizes/application_size.dart';
-import 'package:baby_vaccination/core/presentation/theme/sizes/dimension_manager.dart';
-import 'package:baby_vaccination/core/presentation/theme/styles/custom_text_style.dart';
-import 'package:baby_vaccination/core/presentation/widgets/button/custom_button.dart';
-import 'package:baby_vaccination/core/presentation/widgets/text/custom_text.dart';
-import 'package:baby_vaccination/core/presentation/widgets/text_field/custom_text_field.dart';
-import 'package:baby_vaccination/core/presentation/widgets/toast/custom_toast_message.dart';
+import 'package:baby_vaccination/core/theme/components/theme_factory.dart';
+import 'package:baby_vaccination/core/theme/sizes/application_size.dart';
+import 'package:baby_vaccination/core/theme/sizes/dimension_manager.dart';
+import 'package:baby_vaccination/core/theme/styles/custom_text_style.dart';
+import 'package:baby_vaccination/core/widgets/button/custom_button.dart';
+import 'package:baby_vaccination/core/widgets/text/custom_text.dart';
+import 'package:baby_vaccination/core/widgets/text_field/custom_text_field.dart';
+import 'package:baby_vaccination/core/widgets/toast/custom_toast_message.dart';
 import 'package:baby_vaccination/features/auth/sign_up/domain/use_cases/sign_up_with_email_use_case.dart';
 import 'package:baby_vaccination/features/auth/sign_up/domain/use_cases/sign_up_with_google_use_case.dart';
 import 'package:baby_vaccination/features/auth/sign_up/presentation/bloc/sign_up_bloc.dart';
@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:baby_vaccination/core/presentation/routing/app_routes.dart';
+import 'package:baby_vaccination/core/routing/app_routes.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -84,7 +84,9 @@ class SignUpScreen extends StatelessWidget {
                           ? const CircularProgressIndicator.adaptive()
                           : CustomButton(
                               onPressed: () {
-                                bloc.add(const SignUpEvent.signUpWithEmailAndPassword());
+                                bloc.add(
+                                  const SignUpEvent.signUpWithEmailAndPassword(),
+                                );
                               },
                               child: CustomText(
                                 text: context.loc.signUp,

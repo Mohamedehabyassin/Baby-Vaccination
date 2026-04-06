@@ -1,6 +1,6 @@
-import 'package:baby_vaccination/core/data/network/failure.dart';
-import 'package:baby_vaccination/core/data/network/no_paramters.dart';
-import 'package:baby_vaccination/core/domain/constants/enums.dart';
+import 'package:baby_vaccination/core/errors/failure.dart';
+import 'package:baby_vaccination/core/usecases/no_paramters.dart';
+import 'package:baby_vaccination/core/constants/enums.dart';
 import 'package:baby_vaccination/features/auth/sign_in/domain/entity/sign_in_params_entity.dart';
 import 'package:baby_vaccination/features/auth/sign_in/domain/use_cases/sign_in_with_biometrics_use_case.dart';
 import 'package:baby_vaccination/features/auth/sign_in/domain/use_cases/sign_in_with_email_use_case.dart';

@@ -1,5 +1,5 @@
-import 'package:baby_vaccination/core/data/network/failure.dart';
-import 'package:baby_vaccination/core/data/network/no_paramters.dart';
+import 'package:baby_vaccination/core/errors/failure.dart';
+import 'package:baby_vaccination/core/usecases/no_paramters.dart';
 import 'package:baby_vaccination/features/auth/sign_up/domain/entity/sign_up_params_entity.dart';
 import 'package:baby_vaccination/features/auth/sign_up/domain/use_cases/sign_up_with_email_use_case.dart';
 import 'package:baby_vaccination/features/auth/sign_up/domain/use_cases/sign_up_with_google_use_case.dart';
@@ -15,7 +15,8 @@ part 'sign_up_bloc.freezed.dart';
 
 @LazySingleton(scope: 'signUp')
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
-  SignUpBloc(this._emailUseCase, this._googleUseCase) : super(const _Initial()) {
+  SignUpBloc(this._emailUseCase, this._googleUseCase)
+    : super(const _Initial()) {
     on<SignUpEvent>((event, emit) async {
       await event.whenOrNull(
         signUpWithEmailAndPassword: () async {

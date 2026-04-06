@@ -1,4 +1,4 @@
-import 'package:baby_vaccination/core/data/network/failure.dart';
+import 'package:baby_vaccination/core/errors/failure.dart';
 import 'package:baby_vaccination/features/auth/sign_up/data/data_sources/remote/sign_up_remote_data_source.dart';
 import 'package:baby_vaccination/features/auth/sign_up/domain/entity/sign_up_params_entity.dart';
 import 'package:baby_vaccination/features/auth/sign_up/domain/repository/sign_up_repository.dart';
@@ -11,7 +11,9 @@ class SignUpRepositoryImpl implements SignUpRepository {
   final SignUpRemoteDataSource _signUpRemoteDataSource;
 
   @override
-  Future<Either<Failure, bool>> signUpWithEmail(SignUpParamsEntity params) async {
+  Future<Either<Failure, bool>> signUpWithEmail(
+    SignUpParamsEntity params,
+  ) async {
     return await _signUpRemoteDataSource.signUpWithEmail(params);
   }
 
