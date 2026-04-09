@@ -8,9 +8,11 @@ class AppSpacing {
   static SizedBox vertical8() => SizedBox(height: 8.h);
   static SizedBox vertical12() => SizedBox(height: 12.h);
   static SizedBox vertical16() => SizedBox(height: 16.h);
+  static SizedBox vertical24() => SizedBox(height: 24.h);
   static SizedBox vertical32() => SizedBox(height: 32.h);
   static SizedBox vertical48() => SizedBox(height: 48.h);
   static SizedBox vertical56() => SizedBox(height: 56.h);
+  static SizedBox vertical120() => SizedBox(height: 120.h);
 
   static SizedBox horizontal4() => SizedBox(width: 4.w);
   static SizedBox horizontal6() => SizedBox(width: 6.w);

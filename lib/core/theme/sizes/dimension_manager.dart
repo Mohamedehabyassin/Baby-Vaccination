@@ -13,12 +13,12 @@ class Dimensions {
   static double padding30 = 30.sp;
 
   //! Radius
-  static const double radius6 = 6.0;
-  static const double radius8 = 8.0;
-  static const double radius10 = 10.0;
-  static const double radius12 = 12.0;
-  static const double radius16 = 16.0;
-  static const double radius20 = 20.0;
-  static const double radius24 = 24.0;
-  static const double radius30 = 30.0;
+  static double radius6 = 6.r;
+  static double radius8 = 8.r;
+  static double radius10 = 10.r;
+  static double radius12 = 12.r;
+  static double radius16 = 16.r;
+  static double radius20 = 20.r;
+  static double radius24 = 24.r;
+  static double radius30 = 30.r;
 }

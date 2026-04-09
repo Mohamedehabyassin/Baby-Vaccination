@@ -140,6 +140,12 @@ abstract class AppLocalizations {
   /// **'Home'**
   String get home;
 
+  /// No description provided for @upcomingVaccines.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get upcomingVaccines;
+
   /// No description provided for @babies.
   ///
   /// In en, this message translates to:
@@ -223,6 +229,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Already have an account? '**
   String get alreadyHaveAccount;
+
+  /// No description provided for @appSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'THE NURTURING GUARDIAN'**
+  String get appSubtitle;
+
+  /// No description provided for @goodMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Good morning,'**
+  String get goodMorning;
+
+  /// No description provided for @protectionOnTrack.
+  ///
+  /// In en, this message translates to:
+  /// **'Protection is on track.'**
+  String get protectionOnTrack;
+
+  /// No description provided for @upcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'UPCOMING'**
+  String get upcoming;
+
+  /// No description provided for @viewDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'View Details'**
+  String get viewDetails;
+
+  /// No description provided for @dueDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Due: {date}'**
+  String dueDate(String date);
+
+  /// No description provided for @quickActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Actions'**
+  String get quickActions;
+
+  /// No description provided for @viewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'VIEW ALL'**
+  String get viewAll;
+
+  /// No description provided for @logVaccine.
+  ///
+  /// In en, this message translates to:
+  /// **'Log a vaccine'**
+  String get logVaccine;
+
+  /// No description provided for @addChild.
+  ///
+  /// In en, this message translates to:
+  /// **'Add child'**
+  String get addChild;
+
+  /// No description provided for @findClinic.
+  ///
+  /// In en, this message translates to:
+  /// **'Find a clinic'**
+  String get findClinic;
+
+  /// No description provided for @shieldStrength.
+  ///
+  /// In en, this message translates to:
+  /// **'Shield Strength'**
+  String get shieldStrength;
+
+  /// No description provided for @milestonesCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'{completed} of {total} milestones completed'**
+  String milestonesCompleted(int completed, int total);
+
+  /// No description provided for @protectedAgainst.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is currently protected against '**
+  String protectedAgainst(String name);
+
+  /// No description provided for @protectedDiseases.
+  ///
+  /// In en, this message translates to:
+  /// **'Polio, HepB, and Pneumococcal'**
+  String get protectedDiseases;
+
+  /// No description provided for @diseasesSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **' diseases.'**
+  String get diseasesSuffix;
+
+  /// No description provided for @resources.
+  ///
+  /// In en, this message translates to:
+  /// **'RESOURCES'**
+  String get resources;
+
+  /// No description provided for @assistance.
+  ///
+  /// In en, this message translates to:
+  /// **'ASSISTANCE'**
+  String get assistance;
+
+  /// No description provided for @sideEffectsGuide.
+  ///
+  /// In en, this message translates to:
+  /// **'Vaccine Side Effects Guide'**
+  String get sideEffectsGuide;
+
+  /// No description provided for @talkToNurse.
+  ///
+  /// In en, this message translates to:
+  /// **'Talk to a Pediatric Nurse'**
+  String get talkToNurse;
+
+  /// No description provided for @upcomingVaccineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'6-Month Checkup - Rotavirus & DTaP'**
+  String get upcomingVaccineTitle;
+
+  /// No description provided for @locationServiceDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are disabled.'**
+  String get locationServiceDisabled;
+
+  /// No description provided for @locationPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission denied.'**
+  String get locationPermissionDenied;
+
+  /// No description provided for @locationPermissionDeniedForever.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission denied forever.'**
+  String get locationPermissionDeniedForever;
+
+  /// No description provided for @locationPermissionRestricted.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission restricted.'**
+  String get locationPermissionRestricted;
+
+  /// No description provided for @locationPermissionUnableToDetermine.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission unable to determine.'**
+  String get locationPermissionUnableToDetermine;
+
+  /// No description provided for @locationFetchException.
+  ///
+  /// In en, this message translates to:
+  /// **'Location fetch exception.'**
+  String get locationFetchException;
+
+  /// No description provided for @locationServiceDisabledMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are disabled.'**
+  String get locationServiceDisabledMessage;
+
+  /// No description provided for @locationPermissionDeniedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission denied.'**
+  String get locationPermissionDeniedMessage;
+
+  /// No description provided for @locationPermissionDeniedForeverMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission denied forever.'**
+  String get locationPermissionDeniedForeverMessage;
+
+  /// No description provided for @locationPermissionRestrictedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission restricted.'**
+  String get locationPermissionRestrictedMessage;
+
+  /// No description provided for @locationPermissionUnableToDetermineMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission unable to determine.'**
+  String get locationPermissionUnableToDetermineMessage;
+
+  /// No description provided for @locationFetchExceptionMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Location fetch exception.'**
+  String get locationFetchExceptionMessage;
+
+  /// No description provided for @locationServiceDisabledTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are disabled.'**
+  String get locationServiceDisabledTitle;
+
+  /// No description provided for @locationPermissionDeniedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission denied.'**
+  String get locationPermissionDeniedTitle;
+
+  /// No description provided for @locationPermissionDeniedForeverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission denied forever.'**
+  String get locationPermissionDeniedForeverTitle;
+
+  /// No description provided for @locationPermissionRestrictedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission restricted.'**
+  String get locationPermissionRestrictedTitle;
+
+  /// No description provided for @locationPermissionUnableToDetermineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission unable to determine.'**
+  String get locationPermissionUnableToDetermineTitle;
+
+  /// No description provided for @locationFetchExceptionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location fetch exception.'**
+  String get locationFetchExceptionTitle;
+
+  /// No description provided for @locationServiceDisabledAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Location Services'**
+  String get locationServiceDisabledAction;
+
+  /// No description provided for @locationPermissionDeniedAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Permission'**
+  String get locationPermissionDeniedAction;
+
+  /// No description provided for @locationPermissionDeniedForeverAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Settings'**
+  String get locationPermissionDeniedForeverAction;
+
+  /// No description provided for @locationPermissionRestrictedAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Settings'**
+  String get locationPermissionRestrictedAction;
+
+  /// No description provided for @locationPermissionUnableToDetermineAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Permission'**
+  String get locationPermissionUnableToDetermineAction;
+
+  /// No description provided for @locationFetchExceptionAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get locationFetchExceptionAction;
 }
 
 class _AppLocalizationsDelegate

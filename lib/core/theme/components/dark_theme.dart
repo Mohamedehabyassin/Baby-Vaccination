@@ -7,7 +7,7 @@ class DarkTheme implements ThemeBase {
 
   //! --- Core Brand & Primary Palette ---
   @override
-  Color get primary => const Color(0xffb1dfc3); // Brighter Sage for dark mode
+  Color get primary500 => const Color(0xffb1dfc3); // Brighter Sage for dark mode
   @override
   Color get primaryFixedDim => const Color(0xff436d57); // Deep Sage
   @override
@@ -49,22 +49,62 @@ class DarkTheme implements ThemeBase {
   @override
   Color get primary300 => primaryFixedDim;
   @override
-  Color get primary500 => primary;
   @override
-  Color get primary600 => primary;
+  Color get primary600 => primary500;
   @override
   Color get darkText => onSurface;
   @override
   Color get mistWhite => surface;
   @override
   Color get tertiary400 => primaryFixedDim;
+  @override
+  Color get neutral50 => const Color(0xFFFAFAFA); // almost white
+  @override
+  Color get neutral100 => const Color(0xFFF5F5F5); // soft gray
+  @override
+  Color get neutral200 => const Color(0xFFEEEEEE);
+  @override
+  Color get neutral300 => const Color(0xFFE0E0E0);
+  @override
+  Color get neutral400 => const Color(0xFFBDBDBD); // mid gray
+  @override
+  Color get neutral500 => const Color(0xFF9E9E9E); // true mid gray
+  @override
+  Color get neutral600 => const Color(0xFF757575);
+  @override
+  Color get neutral700 => const Color(0xFF616161);
+  @override
+  Color get neutral800 => const Color(0xFF424242);
+  @override
+  Color get neutral900 => const Color(0xFF212121); // very dark gray
+  @override
+  Color get neutral950 => const Color(0xFF121212);
 
   @override
-  Color get neutral100 => surface;
+  // TODO: implement primary200
+  Color get primary200 => throw UnimplementedError();
+
   @override
-  Color get neutral300 => surfaceContainerHighest;
+  // TODO: implement primary400
+  Color get primary400 => throw UnimplementedError();
+
   @override
-  Color get neutral400 => onSurface;
+  // TODO: implement primary50
+  Color get primary50 => throw UnimplementedError();
+
   @override
-  Color get neutral800 => onSurface;
+  // TODO: implement primary700
+  Color get primary700 => throw UnimplementedError();
+
+  @override
+  // TODO: implement primary800
+  Color get primary800 => throw UnimplementedError();
+
+  @override
+  // TODO: implement primary900
+  Color get primary900 => throw UnimplementedError();
+
+  @override
+  // TODO: implement primary950
+  Color get primary950 => throw UnimplementedError(); // near black
 }

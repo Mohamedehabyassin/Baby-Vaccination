@@ -1,5 +1,5 @@
 class Failure<T> {
-  Failure({this.message, this.errorObject});
+  Failure({this.message, this.error});
   String? message;
-  T? errorObject;
+  T? error;
 }

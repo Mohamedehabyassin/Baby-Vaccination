@@ -1,6 +1,6 @@
-import 'package:baby_vaccination/core/services/connectivity_manger.dart';
+import 'package:baby_vaccination/core/services/connectivity/connectivity_manger.dart';
 import 'package:baby_vaccination/core/errors/failure.dart';
-import 'package:baby_vaccination/core/network/firebase_auth_manger.dart';
+import 'package:baby_vaccination/core/services/firebase/firebase_auth_manger.dart';
 import 'package:baby_vaccination/core/models/success.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
@@ -30,7 +30,7 @@ class FirebaseManager {
         final response = await col.add(data);
         return Right(Success(data: response));
       } catch (error) {
-        return Left(Failure(message: error.toString(), errorObject: error));
+        return Left(Failure(message: error.toString(), error: error));
       }
     } else {
       return Left(Failure(message: "No Internet connection"));

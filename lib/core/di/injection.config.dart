@@ -40,12 +40,28 @@ import '../../features/auth/sign_up/domain/use_cases/sign_up_with_google_use_cas
     as _i862;
 import '../../features/auth/sign_up/presentation/bloc/sign_up_bloc.dart'
     as _i130;
+import '../../features/babies/presentation/bloc/babies_bloc.dart' as _i577;
+import '../../features/facilities/presentation/bloc/facilities_bloc.dart'
+    as _i90;
+import '../../features/home/presentation/bloc/home_bloc.dart' as _i202;
+import '../../features/llm_chat/data/repositories/chat_repository_impl.dart'
+    as _i578;
+import '../../features/llm_chat/data/sources/gemini_data_source.dart' as _i16;
+import '../../features/llm_chat/domain/repositories/i_chat_repository.dart'
+    as _i964;
+import '../../features/llm_chat/domain/use_cases/get_chat_response_use_case.dart'
+    as _i519;
+import '../../features/llm_chat/presentation/bloc/llm_chat_bloc.dart' as _i184;
 import '../../features/main_navigation/presentation/bloc/navigation_bloc.dart'
     as _i999;
+import '../../features/profile/presentation/bloc/profile_bloc.dart' as _i469;
 import '../localization/bloc/localization_bloc.dart' as _i434;
-import '../network/firebase_auth_manger.dart' as _i788;
-import '../network/firestore_manager.dart' as _i1071;
-import '../services/connectivity_manger.dart' as _i608;
+import '../localization/wrapper/localization_wrapper.dart' as _i213;
+import '../services/connectivity/connectivity_manger.dart' as _i260;
+import '../services/firebase/firebase_auth_manger.dart' as _i754;
+import '../services/firebase/firestore_manager.dart' as _i362;
+import '../services/gemini/gemini_service.dart' as _i671;
+import '../services/location/location_service.dart' as _i1046;
 import '../theme/bloc/theme_bloc.dart' as _i279;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -55,19 +71,75 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    gh.factory<_i577.BabiesBloc>(() => _i577.BabiesBloc());
+    gh.factory<_i202.HomeBloc>(() => _i202.HomeBloc());
     gh.factory<_i999.NavigationBloc>(() => _i999.NavigationBloc());
+    gh.factory<_i469.ProfileBloc>(() => _i469.ProfileBloc());
     gh.lazySingleton<_i434.LocalizationBloc>(() => _i434.LocalizationBloc());
-    gh.lazySingleton<_i788.FirebaseAuthManger>(
-      () => _i788.FirebaseAuthManger(),
+    gh.lazySingleton<_i213.LocalizationWrapper>(
+      () => _i213.LocalizationWrapper(),
+    );
+    gh.lazySingleton<_i754.FirebaseAuthManger>(
+      () => _i754.FirebaseAuthManger(),
+    );
+    gh.lazySingleton<_i671.GeminiService>(() => _i671.GeminiService());
+    gh.lazySingleton<_i1046.LocationServiceImpl>(
+      () => _i1046.LocationServiceImpl(),
     );
     gh.lazySingleton<_i279.ThemeBloc>(() => _i279.ThemeBloc());
-    gh.lazySingleton<_i1071.FirebaseManager>(
-      () => _i1071.FirebaseManager(
-        gh<_i608.ConnectivityManager>(),
-        gh<_i788.FirebaseAuthManger>(),
+    gh.factory<_i90.FacilitiesBloc>(
+      () => _i90.FacilitiesBloc(gh<_i1046.LocationServiceImpl>()),
+    );
+    gh.lazySingleton<_i362.FirebaseManager>(
+      () => _i362.FirebaseManager(
+        gh<_i260.ConnectivityManager>(),
+        gh<_i754.FirebaseAuthManger>(),
       ),
     );
+    gh.lazySingleton<_i16.IGeminiDataSource>(
+      () => _i16.GeminiDataSourceImpl(gh<_i671.GeminiService>()),
+    );
+    gh.lazySingleton<_i964.IChatRepository>(
+      () => _i578.ChatRepositoryImpl(gh<_i16.IGeminiDataSource>()),
+    );
+    gh.lazySingleton<_i519.GetChatResponseUseCase>(
+      () => _i519.GetChatResponseUseCase(gh<_i964.IChatRepository>()),
+    );
+    gh.factory<_i184.LlmChatBloc>(
+      () => _i184.LlmChatBloc(gh<_i519.GetChatResponseUseCase>()),
+    );
     return this;
+  }
+
+  // initializes the registration of signUp-scope dependencies inside of GetIt
+  _i174.GetIt initSignUpScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'signUp',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i362.SignUpRemoteDataSource>(
+          () =>
+              _i362.SignUpRemoteDataSourceImpl(gh<_i754.FirebaseAuthManger>()),
+        );
+        gh.lazySingleton<_i988.SignUpRepository>(
+          () => _i590.SignUpRepositoryImpl(gh<_i362.SignUpRemoteDataSource>()),
+        );
+        gh.lazySingleton<_i193.SignUpWithEmailAndPasswordUseCase>(
+          () => _i193.SignUpWithEmailAndPasswordUseCase(
+            gh<_i988.SignUpRepository>(),
+          ),
+        );
+        gh.lazySingleton<_i862.SignUpWithGoogleUseCase>(
+          () => _i862.SignUpWithGoogleUseCase(gh<_i988.SignUpRepository>()),
+        );
+        gh.factory<_i130.SignUpBloc>(
+          () => _i130.SignUpBloc(
+            gh<_i193.SignUpWithEmailAndPasswordUseCase>(),
+            gh<_i862.SignUpWithGoogleUseCase>(),
+          ),
+        );
+      },
+    );
   }
 
   // initializes the registration of signIn-scope dependencies inside of GetIt
@@ -78,7 +150,7 @@ extension GetItInjectableX on _i174.GetIt {
       init: (_i526.GetItHelper gh) {
         gh.lazySingleton<_i128.SignInRemoteDataSource>(
           () =>
-              _i128.SignInRemoteDataSourceImpl(gh<_i788.FirebaseAuthManger>()),
+              _i128.SignInRemoteDataSourceImpl(gh<_i754.FirebaseAuthManger>()),
         );
         gh.lazySingleton<_i486.SignInLocalDataSource>(
           () => _i486.SignInLocalDataSourceImpl(),
@@ -105,37 +177,6 @@ extension GetItInjectableX on _i174.GetIt {
             gh<_i1030.SignInWithEmailAndPasswordUseCase>(),
             gh<_i310.SignInWithGoogleUseCase>(),
             gh<_i868.SignInWithBiometricsUseCase>(),
-          ),
-        );
-      },
-    );
-  }
-
-  // initializes the registration of signUp-scope dependencies inside of GetIt
-  _i174.GetIt initSignUpScope({_i174.ScopeDisposeFunc? dispose}) {
-    return _i526.GetItHelper(this).initScope(
-      'signUp',
-      dispose: dispose,
-      init: (_i526.GetItHelper gh) {
-        gh.lazySingleton<_i362.SignUpRemoteDataSource>(
-          () =>
-              _i362.SignUpRemoteDataSourceImpl(gh<_i788.FirebaseAuthManger>()),
-        );
-        gh.lazySingleton<_i988.SignUpRepository>(
-          () => _i590.SignUpRepositoryImpl(gh<_i362.SignUpRemoteDataSource>()),
-        );
-        gh.lazySingleton<_i193.SignUpWithEmailAndPasswordUseCase>(
-          () => _i193.SignUpWithEmailAndPasswordUseCase(
-            gh<_i988.SignUpRepository>(),
-          ),
-        );
-        gh.lazySingleton<_i862.SignUpWithGoogleUseCase>(
-          () => _i862.SignUpWithGoogleUseCase(gh<_i988.SignUpRepository>()),
-        );
-        gh.factory<_i130.SignUpBloc>(
-          () => _i130.SignUpBloc(
-            gh<_i193.SignUpWithEmailAndPasswordUseCase>(),
-            gh<_i862.SignUpWithGoogleUseCase>(),
           ),
         );
       },

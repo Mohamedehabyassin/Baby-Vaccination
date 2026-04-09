@@ -6,7 +6,18 @@ abstract class ThemeBase {
   String get name;
 
   //! Core Brand
-  Color get primary;
+  Color get primary50;
+  Color get primary100;
+  Color get primary200;
+  Color get primary300;
+  Color get primary400;
+  Color get primary500;
+  Color get primary600;
+  Color get primary700;
+  Color get primary800;
+  Color get primary900;
+  Color get primary950;
+
   Color get primaryFixedDim;
   Color get secondaryContainer;
   Color get onSecondaryContainer;
@@ -28,18 +39,18 @@ abstract class ThemeBase {
   Color get error;
   Color get info;
 
-  //! --- Compatibility Logic (Aliases for existing widgets) ---
-  Color get primary100;
-  Color get primary300;
-  Color get primary500;
-  Color get primary600;
-  Color get darkText;
-  Color get mistWhite;
   Color get tertiary400;
 
   // Added aliases to fix lint errors in existing components
-  Color get neutral100; // Maps to surface
-  Color get neutral300; // Maps to surfaceContainerHighest
-  Color get neutral400; // Maps to onSurface
-  Color get neutral800; // Maps to onSurface
+  Color get neutral50;
+  Color get neutral100;
+  Color get neutral200;
+  Color get neutral300;
+  Color get neutral400;
+  Color get neutral500;
+  Color get neutral600;
+  Color get neutral700;
+  Color get neutral800;
+  Color get neutral900;
+  Color get neutral950;
 }

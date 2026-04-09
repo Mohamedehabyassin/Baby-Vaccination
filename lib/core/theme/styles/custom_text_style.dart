@@ -145,4 +145,11 @@ class CustomTextStyle {
   static TextStyle get finePrintBold =>
       labelMedium.copyWith(fontWeight: FontWeight.w700);
   static TextStyle get finePrintRegular => labelMedium;
+  static final TextStyle labelSmall = TextStyle(
+    color: currentTheme.onSurface,
+    fontSize: 9.sp,
+    fontWeight: FontWeight.w600,
+    fontFamily: AppStrings.nunito,
+    textBaseline: TextBaseline.alphabetic,
+  );
 }

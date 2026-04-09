@@ -13,6 +13,7 @@
     "forgetPassword": "Forgot Password?",
     "@forgetPassword": {},
     "home": "Home",
+    "upcomingVaccines": "Upcoming",
     "@home": {},
     "babies": "Babies",
     "@babies": {},
@@ -41,5 +42,116 @@
     "dontHaveAccount": "Don't have an account? ",
     "@dontHaveAccount": {},
     "alreadyHaveAccount": "Already have an account? ",
-    "@alreadyHaveAccount": {}
+    "@alreadyHaveAccount": {},
+    "appSubtitle": "THE NURTURING GUARDIAN",
+    "@appSubtitle": {},
+    "goodMorning": "Good morning,",
+    "@goodMorning": {},
+    "protectionOnTrack": "Protection is on track.",
+    "@protectionOnTrack": {},
+    "upcoming": "UPCOMING",
+    "@upcoming": {},
+    "viewDetails": "View Details",
+    "@viewDetails": {},
+    "dueDate": "Due: {date}",
+    "@dueDate": {
+        "placeholders": {
+            "date": {
+                "type": "String"
+            }
+        }
+    },
+    "quickActions": "Quick Actions",
+    "@quickActions": {},
+    "viewAll": "VIEW ALL",
+    "@viewAll": {},
+    "logVaccine": "Log a vaccine",
+    "@logVaccine": {},
+    "addChild": "Add child",
+    "@addChild": {},
+    "findClinic": "Find a clinic",
+    "@findClinic": {},
+    "shieldStrength": "Shield Strength",
+    "@shieldStrength": {},
+    "milestonesCompleted": "{completed} of {total} milestones completed",
+    "@milestonesCompleted": {
+        "placeholders": {
+            "completed": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        }
+    },
+    "protectedAgainst": "{name} is currently protected against ",
+    "@protectedAgainst": {
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    },
+    "protectedDiseases": "Polio, HepB, and Pneumococcal",
+    "@protectedDiseases": {},
+    "diseasesSuffix": " diseases.",
+    "@diseasesSuffix": {},
+    "resources": "RESOURCES",
+    "@resources": {},
+    "assistance": "ASSISTANCE",
+    "@assistance": {},
+    "sideEffectsGuide": "Vaccine Side Effects Guide",
+    "@sideEffectsGuide": {},
+    "talkToNurse": "Talk to a Pediatric Nurse",
+    "@talkToNurse": {},
+    "upcomingVaccineTitle": "6-Month Checkup - Rotavirus & DTaP",
+    "@upcomingVaccineTitle": {},
+    "locationServiceDisabled": "Location services are disabled.",
+    "@locationServiceDisabled": {},
+    "locationPermissionDenied": "Location permission denied.",
+    "@locationPermissionDenied": {},
+    "locationPermissionDeniedForever": "Location permission denied forever.",
+    "@locationPermissionDeniedForever": {},
+    "locationPermissionRestricted": "Location permission restricted.",
+    "@locationPermissionRestricted": {},
+    "locationPermissionUnableToDetermine": "Location permission unable to determine.",
+    "@locationPermissionUnableToDetermine": {},
+    "locationFetchException": "Location fetch exception.",
+    "@locationFetchException": {},
+    "locationServiceDisabledMessage": "Location services are disabled.",
+    "@locationServiceDisabledMessage": {},
+    "locationPermissionDeniedMessage": "Location permission denied.",
+    "@locationPermissionDeniedMessage": {},
+    "locationPermissionDeniedForeverMessage": "Location permission denied forever.",
+    "@locationPermissionDeniedForeverMessage": {},
+    "locationPermissionRestrictedMessage": "Location permission restricted.",
+    "@locationPermissionRestrictedMessage": {},
+    "locationPermissionUnableToDetermineMessage": "Location permission unable to determine.",
+    "@locationPermissionUnableToDetermineMessage": {},
+    "locationFetchExceptionMessage": "Location fetch exception.",
+    "@locationFetchExceptionMessage": {},
+    "locationServiceDisabledTitle": "Location services are disabled.",
+    "@locationServiceDisabledTitle": {},
+    "locationPermissionDeniedTitle": "Location permission denied.",
+    "@locationPermissionDeniedTitle": {},
+    "locationPermissionDeniedForeverTitle": "Location permission denied forever.",
+    "@locationPermissionDeniedForeverTitle": {},
+    "locationPermissionRestrictedTitle": "Location permission restricted.",
+    "@locationPermissionRestrictedTitle": {},
+    "locationPermissionUnableToDetermineTitle": "Location permission unable to determine.",
+    "@locationPermissionUnableToDetermineTitle": {},
+    "locationFetchExceptionTitle": "Location fetch exception.",
+    "@locationFetchExceptionTitle": {},
+    "locationServiceDisabledAction": "Enable Location Services",
+    "@locationServiceDisabledAction": {},
+    "locationPermissionDeniedAction": "Request Permission",
+    "@locationPermissionDeniedAction": {},
+    "locationPermissionDeniedForeverAction": "Open Settings",
+    "@locationPermissionDeniedForeverAction": {},
+    "locationPermissionRestrictedAction": "Open Settings",
+    "@locationPermissionRestrictedAction": {},
+    "locationPermissionUnableToDetermineAction": "Request Permission",
+    "@locationPermissionUnableToDetermineAction": {},
+    "locationFetchExceptionAction": "Retry",
+    "@locationFetchExceptionAction": {}
 }

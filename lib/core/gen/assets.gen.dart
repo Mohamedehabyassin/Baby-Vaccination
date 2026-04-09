@@ -69,6 +69,12 @@ class $AssetsImagesGen {
     size: const Size(512.0, 347.0),
   );
 
+  /// File path: assets/images/ai_nurse.png
+  AssetGenImage get aiNurse => const AssetGenImage(
+    'assets/images/ai_nurse.png',
+    size: const Size(1024.0, 1024.0),
+  );
+
   /// File path: assets/images/download.png
   AssetGenImage get download => const AssetGenImage(
     'assets/images/download.png',
@@ -117,6 +123,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
     a1,
+    aiNurse,
     download,
     facebook,
     google,
@@ -143,10 +150,14 @@ class $AssetsRiveGen {
 class Assets {
   const Assets._();
 
+  static const String aEnv = '.env';
   static const $AssetsFlareGen flare = $AssetsFlareGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsRiveGen rive = $AssetsRiveGen();
+
+  /// List of all assets
+  static List<String> get values => [aEnv];
 }
 
 class AssetGenImage {

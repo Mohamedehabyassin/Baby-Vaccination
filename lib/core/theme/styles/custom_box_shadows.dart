@@ -7,10 +7,9 @@ class CustomBoxShadows {
   /// - Blur: 40px to 60px
   /// - Spread: -5px
   static BoxShadow ambientShadow = BoxShadow(
-    color: currentTheme.onSecondaryContainer.withValues(alpha: 0.06),
+    color: currentTheme.neutral300,
     blurRadius: 50,
-    spreadRadius: -5,
-    offset: const Offset(0, 10), // Subtle downward bias for depth
+    offset: const Offset(5, 10), // Subtle downward bias for depth
   );
 
   //! Compatibility Alias

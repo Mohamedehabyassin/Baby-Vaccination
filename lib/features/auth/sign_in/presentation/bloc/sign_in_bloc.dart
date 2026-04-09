@@ -22,18 +22,18 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     on<SignInEvent>((event, emit) async {
       await event.whenOrNull(
         signInWithEmailAndPassword: () async {
-          emit(const SignInState<SignInWithEmailAndPassword>.loading());
-          emit(const SignInState.success());
-          // value.fold(
-          //   (l) {
-          //     animationType = "fail";
-          //     emit(SignInState.error(l));
-          //   },
-          //   (r) {
-          //     animationType = "success";
-          //     emit(const SignInState.success());
-          //   },
-          // );
+          emit(const SignInState.loading());
+          final value = await _signInWithEmailAndPassword();
+          value.fold(
+            (l) {
+              animationType = "fail";
+              emit(SignInState.error(l));
+            },
+            (r) {
+              animationType = "success";
+              emit(const SignInState.success());
+            },
+          );
         },
         signInWithGoogle: () async {
           emit(const SignInState<SignInWithGoogleUseCase>.loading());

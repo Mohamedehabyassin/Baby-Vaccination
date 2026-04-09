@@ -19,7 +19,7 @@ class CustomThemeData {
             Brightness.dark, // For Android(M and greater): (dark icons)
       ),
     ),
-    scaffoldBackgroundColor: currentTheme.primary100,
+    scaffoldBackgroundColor: currentTheme.neutral100,
     brightness: Brightness.dark,
     fontFamily: AppStrings.nunito,
     useMaterial3: false,
@@ -39,7 +39,7 @@ class CustomThemeData {
             Brightness.light, // For Android(M and greater): (dark icons)
       ),
     ),
-    scaffoldBackgroundColor: currentTheme.primary100,
+    scaffoldBackgroundColor: currentTheme.neutral100,
     brightness: Brightness.dark,
     fontFamily: AppStrings.nunito,
     useMaterial3: false,

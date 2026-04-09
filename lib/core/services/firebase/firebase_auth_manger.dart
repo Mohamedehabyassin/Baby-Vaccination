@@ -38,7 +38,7 @@ class FirebaseAuthManger {
         return Left(Failure());
       }
     } catch (e) {
-      return Left(Failure(message: e.toString(), errorObject: e));
+      return Left(Failure(message: e.toString(), error: e));
     }
   }
 
@@ -52,7 +52,7 @@ class FirebaseAuthManger {
       // await DatabaseService().addUser(email, '');
       return Right(Success(data: userCredential));
     } catch (e) {
-      return Left(Failure(message: e.toString(), errorObject: e));
+      return Left(Failure(message: e.toString(), error: e));
     }
   }
 
@@ -90,7 +90,7 @@ class FirebaseAuthManger {
       await _auth.signOut();
       return Right(Success(data: true));
     } catch (e) {
-      return Left(Failure(message: e.toString(), errorObject: e));
+      return Left(Failure(message: e.toString(), error: e));
     }
   }
 }
