@@ -25,7 +25,7 @@ class AddBabyRemoteDataSourceImpl implements AddBabyRemoteDataSource {
     );
     return response.fold(
       (failure) => Left(failure),
-      (success) => Right(Success(data: null)),
+      (success) => Right(Success()),
     );
   }
 

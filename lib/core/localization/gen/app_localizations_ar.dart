@@ -220,4 +220,65 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get locationFetchExceptionAction => 'إعادة المحاولة';
+
+  @override
+  String get boy => 'ولد';
+
+  @override
+  String get girl => 'بنت';
+
+  @override
+  String get other => 'آخر';
+
+  @override
+  String get addYourLittleOne => 'أضف طفلك الصغير';
+
+  @override
+  String get addBabySubtitle =>
+      'لنبدأ في بناء درع طفلك الواقي. قدم بعض التفاصيل لتخصيص جدوله الزمني الصحي.';
+
+  @override
+  String get fullName => 'الاسم الكامل';
+
+  @override
+  String get enterName => 'أدخل الاسم';
+
+  @override
+  String get dateOfBirth => 'تاريخ الميلاد';
+
+  @override
+  String get select => 'اختيار';
+
+  @override
+  String get healthEssentials => 'أساسيات الصحة';
+
+  @override
+  String get importantForEmergencyRecords => 'مهم في السجلات الطبية الطارئة';
+
+  @override
+  String get bloodType => 'فصيلة الدم';
+
+  @override
+  String get saveAndStartTracking => 'حفظ والبدء في التتبع';
+
+  @override
+  String get yourDataIsSecured => 'بياناتك آمنة.';
+
+  @override
+  String get encryptedMedicalJournals => 'سجلات طبية مشفرة لمراحل نمو طفلك.';
+
+  @override
+  String get pleaseFillAllDetails => 'يرجى ملء جميع التفاصيل';
+
+  @override
+  String get unauthenticated => 'غير مصادق';
+
+  @override
+  String get babyDetails => 'تفاصيل الطفل';
+
+  @override
+  String get unknownError => 'خطأ غير معروف';
+
+  @override
+  String get noBabiesFound => 'لم يتم العثور على أطفال';
 }

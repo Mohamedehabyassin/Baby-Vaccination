@@ -83,7 +83,7 @@ class FirebaseManager {
     if (await safeCall()) {
       try {
         await db.collection(collectionName).doc(docId).update(data);
-        return Right(Success(data: null));
+        return Right(Success());
       } catch (error) {
         return Left(Failure(message: error.toString(), error: error));
       }
@@ -99,7 +99,7 @@ class FirebaseManager {
     if (await safeCall()) {
       try {
         await db.collection(collectionName).doc(docId).delete();
-        return Right(Success(data: null));
+        return Right(Success());
       } catch (error) {
         return Left(Failure(message: error.toString(), error: error));
       }

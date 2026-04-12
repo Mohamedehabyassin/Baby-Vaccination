@@ -1,15 +1,27 @@
+import 'package:baby_vaccination/core/constants/hive_constants.dart';
 import 'package:baby_vaccination/features/add_baby/domain/entity/baby_entity.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hive_ce/hive.dart';
 
+part 'baby_model.g.dart';
+
+@HiveType(typeId: HiveConstants.babyTypeId)
 class BabyModel extends BabyEntity {
   const BabyModel({
-    super.id,
-    required super.fullName,
-    required super.dateOfBirth,
-    required super.gender,
-    required super.bloodType,
-    required super.userId,
-  });
+    this.id,
+    required this.fullName,
+    required this.dateOfBirth,
+    required this.gender,
+    required this.bloodType,
+    required this.userId,
+  }) : super(
+          id: id,
+          fullName: fullName,
+          dateOfBirth: dateOfBirth,
+          gender: gender,
+          bloodType: bloodType,
+          userId: userId,
+        );
 
   factory BabyModel.fromJson(Map<String, dynamic> json, {String? id}) {
     return BabyModel(
@@ -32,6 +44,30 @@ class BabyModel extends BabyEntity {
       userId: entity.userId,
     );
   }
+
+  @HiveField(0)
+  @override
+  final String? id;
+
+  @HiveField(1)
+  @override
+  final String fullName;
+
+  @HiveField(2)
+  @override
+  final DateTime dateOfBirth;
+
+  @HiveField(3)
+  @override
+  final String gender;
+
+  @HiveField(4)
+  @override
+  final String bloodType;
+
+  @HiveField(5)
+  @override
+  final String userId;
 
   Map<String, dynamic> toJson() {
     return {

@@ -499,6 +499,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Retry'**
   String get locationFetchExceptionAction;
+
+  /// No description provided for @boy.
+  ///
+  /// In en, this message translates to:
+  /// **'Boy'**
+  String get boy;
+
+  /// No description provided for @girl.
+  ///
+  /// In en, this message translates to:
+  /// **'Girl'**
+  String get girl;
+
+  /// No description provided for @other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get other;
+
+  /// No description provided for @addYourLittleOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Your Little One'**
+  String get addYourLittleOne;
+
+  /// No description provided for @addBabySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Let’s start building your child’s protective shield. Provide a few details to customize their health timeline.'**
+  String get addBabySubtitle;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'FULL NAME'**
+  String get fullName;
+
+  /// No description provided for @enterName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter name'**
+  String get enterName;
+
+  /// No description provided for @dateOfBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'DATE OF BIRTH'**
+  String get dateOfBirth;
+
+  /// No description provided for @select.
+  ///
+  /// In en, this message translates to:
+  /// **'Select'**
+  String get select;
+
+  /// No description provided for @healthEssentials.
+  ///
+  /// In en, this message translates to:
+  /// **'Health Essentials'**
+  String get healthEssentials;
+
+  /// No description provided for @importantForEmergencyRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'Important for emergency records'**
+  String get importantForEmergencyRecords;
+
+  /// No description provided for @bloodType.
+  ///
+  /// In en, this message translates to:
+  /// **'BLOOD TYPE'**
+  String get bloodType;
+
+  /// No description provided for @saveAndStartTracking.
+  ///
+  /// In en, this message translates to:
+  /// **'Save & Start Tracking'**
+  String get saveAndStartTracking;
+
+  /// No description provided for @yourDataIsSecured.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data is secured.'**
+  String get yourDataIsSecured;
+
+  /// No description provided for @encryptedMedicalJournals.
+  ///
+  /// In en, this message translates to:
+  /// **'End-to-end encrypted medical journals for your child\'s milestones.'**
+  String get encryptedMedicalJournals;
+
+  /// No description provided for @pleaseFillAllDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill all the details'**
+  String get pleaseFillAllDetails;
+
+  /// No description provided for @unauthenticated.
+  ///
+  /// In en, this message translates to:
+  /// **'Unauthenticated'**
+  String get unauthenticated;
+
+  /// No description provided for @babyDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Baby Details'**
+  String get babyDetails;
+
+  /// No description provided for @unknownError.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown error'**
+  String get unknownError;
+
+  /// No description provided for @noBabiesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No babies found'**
+  String get noBabiesFound;
 }
 
 class _AppLocalizationsDelegate

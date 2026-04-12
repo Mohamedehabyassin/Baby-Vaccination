@@ -1,6 +1,7 @@
 import 'package:baby_vaccination/features/add_baby/presentation/bloc/add_baby_bloc.dart';
 import 'package:baby_vaccination/features/add_baby/presentation/bloc/add_baby_event.dart';
 import 'package:baby_vaccination/features/add_baby/presentation/bloc/add_baby_state.dart';
+import 'package:baby_vaccination/core/utils/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -8,7 +9,12 @@ import 'package:intl/intl.dart';
 class AddBabyScreen extends StatelessWidget {
   const AddBabyScreen({super.key});
 
-  static const List<String> _genders = ['Boy', 'Girl', 'Other'];
+  List<String> _getGenders(BuildContext context) => [
+        context.loc.boy,
+        context.loc.girl,
+        context.loc.other,
+      ];
+
   static const List<String> _bloodTypes = [
     'A+',
     'A-',
@@ -45,7 +51,15 @@ class AddBabyScreen extends StatelessWidget {
         state.maybeWhen(
           success: () => Navigator.of(context).pop(),
           error: (failure) => ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(failure.message ?? 'Unknown error')),
+            SnackBar(
+              content: Text(
+                failure.message == 'Please fill all the details'
+                    ? context.loc.pleaseFillAllDetails
+                    : failure.message == 'Unauthenticated'
+                        ? context.loc.unauthenticated
+                        : failure.message ?? context.loc.unknownError,
+              ),
+            ),
           ),
           orElse: () {},
         );
@@ -68,6 +82,7 @@ class AddBabyScreen extends StatelessWidget {
                   _buildHealthDetailsSection(context, bloc),
                   const SizedBox(height: 32),
                   _buildSubmitButton(
+                    context,
                     state.maybeWhen(
                       loading: () => true,
                       orElse: () => false,
@@ -139,7 +154,7 @@ class AddBabyScreen extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         Text(
-          'Add Your Little One',
+          context.loc.addYourLittleOne,
           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF1B1C18),
@@ -147,7 +162,7 @@ class AddBabyScreen extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          'Let’s start building your child’s protective shield. Provide a few details to customize their health timeline.',
+          context.loc.addBabySubtitle,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: const Color(0xFF444939)),
         ),
@@ -159,7 +174,7 @@ class AddBabyScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildLabel('FULL NAME'),
+        _buildLabel(context.loc.fullName),
         Container(
           decoration: BoxDecoration(
             color: const Color(0xFFE9E8E2),
@@ -167,12 +182,12 @@ class AddBabyScreen extends StatelessWidget {
           ),
           child: TextFormField(
             controller: bloc.nameController,
-            decoration: const InputDecoration(
-              hintText: 'Enter name',
+            decoration: InputDecoration(
+              hintText: context.loc.enterName,
               border: InputBorder.none,
-              contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             ),
-            validator: (value) => value!.isEmpty ? 'Enter name' : null,
+            validator: (value) => value!.isEmpty ? context.loc.enterName : null,
           ),
         ),
         const SizedBox(height: 24),
@@ -183,7 +198,7 @@ class AddBabyScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildLabel('DATE OF BIRTH'),
+                  _buildLabel(context.loc.dateOfBirth),
                   GestureDetector(
                     onTap: () => _pickDate(context, bloc),
                     child: Container(
@@ -199,7 +214,7 @@ class AddBabyScreen extends StatelessWidget {
                             child: Text(
                               bloc.selectedDate != null
                                   ? DateFormat('MMM d, yyyy').format(bloc.selectedDate!)
-                                  : 'Select',
+                                  : context.loc.select,
                               style: const TextStyle(color: Color(0xFF1B1C18)),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -217,7 +232,7 @@ class AddBabyScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildLabel('GENDER'),
+                  _buildLabel(context.loc.gender),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
                     decoration: BoxDecoration(
@@ -227,9 +242,9 @@ class AddBabyScreen extends StatelessWidget {
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
                         isExpanded: true,
-                        hint: const Text('Select'),
+                        hint: Text(context.loc.select),
                         value: bloc.selectedGender,
-                        items: _genders.map((g) {
+                        items: _getGenders(context).map((g) {
                           return DropdownMenuItem(value: g, child: Text(g));
                         }).toList(),
                         onChanged: (val) {
@@ -276,14 +291,14 @@ class AddBabyScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Health Essentials',
+                      context.loc.healthEssentials,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
                     ),
-                    const Text(
-                      'Important for emergency records',
-                      style: TextStyle(fontSize: 12, color: Color(0xFF444939)),
+                    Text(
+                      context.loc.importantForEmergencyRecords,
+                      style: const TextStyle(fontSize: 12, color: Color(0xFF444939)),
                     ),
                   ],
                 ),
@@ -291,7 +306,7 @@ class AddBabyScreen extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 24),
-          _buildLabel('BLOOD TYPE'),
+          _buildLabel(context.loc.bloodType),
           GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -349,7 +364,7 @@ class AddBabyScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSubmitButton(bool isLoading, AddBabyBloc bloc) {
+  Widget _buildSubmitButton(BuildContext context, bool isLoading, AddBabyBloc bloc) {
     return InkWell(
       onTap: isLoading ? null : () => _submit(bloc),
       borderRadius: BorderRadius.circular(100),
@@ -374,19 +389,19 @@ class AddBabyScreen extends StatelessWidget {
             ? const Center(
                 child: CircularProgressIndicator(color: Colors.white),
               )
-            : const Row(
+            : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Save & Start Tracking',
-                    style: TextStyle(
+                    context.loc.saveAndStartTracking,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 8),
-                  Icon(Icons.arrow_forward, color: Colors.white),
+                  const SizedBox(width: 8),
+                  const Icon(Icons.arrow_forward, color: Colors.white),
                 ],
               ),
       ),
@@ -415,21 +430,21 @@ class AddBabyScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 16),
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Your data is secured.',
-                  style: TextStyle(
+                  context.loc.yourDataIsSecured,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF5C4300),
                     fontSize: 16,
                   ),
                 ),
                 Text(
-                  "End-to-end encrypted medical journals for your child's milestones.",
-                  style: TextStyle(
+                  context.loc.encryptedMedicalJournals,
+                  style: const TextStyle(
                     color: Color(0xFF5C4300),
                     fontSize: 12,
                   ),

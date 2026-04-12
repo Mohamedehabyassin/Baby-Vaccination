@@ -13,7 +13,6 @@ class FacilitiesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     debugPrint('FacilitiesScreen build');
-    final FacilitiesBloc bloc = context.read<FacilitiesBloc>();
 
     return Scaffold(
       body: Stack(

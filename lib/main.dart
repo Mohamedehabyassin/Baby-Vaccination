@@ -1,5 +1,6 @@
 import 'package:baby_vaccination/src/app_root.dart';
 import 'package:baby_vaccination/src/bloc_observer.dart';
+import 'package:baby_vaccination/core/services/storage/hive_service.dart';
 import 'package:flutter/material.dart';
 import 'package:baby_vaccination/core/di/injection.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -13,6 +14,7 @@ void main() async {
 
   Bloc.observer = MyBlocObserver();
   await Firebase.initializeApp();
+  await HiveService.init();
   Gemini.init(apiKey: dotenv.env["GEMINI_API_KEY"]!);
   configureDependencies();
 

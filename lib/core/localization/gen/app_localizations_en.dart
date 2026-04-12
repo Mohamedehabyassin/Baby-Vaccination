@@ -223,4 +223,66 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get locationFetchExceptionAction => 'Retry';
+
+  @override
+  String get boy => 'Boy';
+
+  @override
+  String get girl => 'Girl';
+
+  @override
+  String get other => 'Other';
+
+  @override
+  String get addYourLittleOne => 'Add Your Little One';
+
+  @override
+  String get addBabySubtitle =>
+      'Let’s start building your child’s protective shield. Provide a few details to customize their health timeline.';
+
+  @override
+  String get fullName => 'FULL NAME';
+
+  @override
+  String get enterName => 'Enter name';
+
+  @override
+  String get dateOfBirth => 'DATE OF BIRTH';
+
+  @override
+  String get select => 'Select';
+
+  @override
+  String get healthEssentials => 'Health Essentials';
+
+  @override
+  String get importantForEmergencyRecords => 'Important for emergency records';
+
+  @override
+  String get bloodType => 'BLOOD TYPE';
+
+  @override
+  String get saveAndStartTracking => 'Save & Start Tracking';
+
+  @override
+  String get yourDataIsSecured => 'Your data is secured.';
+
+  @override
+  String get encryptedMedicalJournals =>
+      'End-to-end encrypted medical journals for your child\'s milestones.';
+
+  @override
+  String get pleaseFillAllDetails => 'Please fill all the details';
+
+  @override
+  String get unauthenticated => 'Unauthenticated';
+
+  @override
+  String get babyDetails => 'Baby Details';
+
+  @override
+  String get unknownError => 'Unknown error';
+
+  @override
+  String get noBabiesFound => 'No babies found';
 }

@@ -14,6 +14,8 @@ import 'package:injectable/injectable.dart' as _i526;
 
 import '../../features/add_baby/data/data_sources/add_baby_remote_data_source.dart'
     as _i865;
+import '../../features/add_baby/data/data_sources/baby_local_data_source.dart'
+    as _i110;
 import '../../features/add_baby/data/repository/add_baby_repository_impl.dart'
     as _i1067;
 import '../../features/add_baby/domain/repository/add_baby_repository.dart'
@@ -94,6 +96,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i213.LocalizationWrapper>(
       () => _i213.LocalizationWrapper(),
     );
+    gh.lazySingleton<_i260.ConnectivityManager>(
+      () => _i260.ConnectivityManager(),
+    );
     gh.lazySingleton<_i754.FirebaseAuthManger>(
       () => _i754.FirebaseAuthManger(),
     );
@@ -102,6 +107,9 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i1046.LocationServiceImpl(),
     );
     gh.lazySingleton<_i279.ThemeBloc>(() => _i279.ThemeBloc());
+    gh.lazySingleton<_i110.BabyLocalDataSource>(
+      () => _i110.BabyLocalDataSourceImpl(),
+    );
     gh.factory<_i90.FacilitiesBloc>(
       () => _i90.FacilitiesBloc(gh<_i1046.LocationServiceImpl>()),
     );
@@ -117,22 +125,24 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i478.BabyDetailsRemoteDataSource>(
       () => _i478.BabyDetailsRemoteDataSourceImpl(gh<_i362.FirebaseManager>()),
     );
-    gh.lazySingleton<_i865.AddBabyRemoteDataSource>(
-      () => _i865.AddBabyRemoteDataSourceImpl(gh<_i362.FirebaseManager>()),
-    );
     gh.lazySingleton<_i157.BabyDetailsRepository>(
       () => _i306.BabyDetailsRepositoryImpl(
         gh<_i478.BabyDetailsRemoteDataSource>(),
+        gh<_i110.BabyLocalDataSource>(),
+        gh<_i260.ConnectivityManager>(),
       ),
+    );
+    gh.factory<_i522.BabyDetailsBloc>(
+      () => _i522.BabyDetailsBloc(gh<_i157.BabyDetailsRepository>()),
+    );
+    gh.lazySingleton<_i865.AddBabyRemoteDataSource>(
+      () => _i865.AddBabyRemoteDataSourceImpl(gh<_i362.FirebaseManager>()),
     );
     gh.lazySingleton<_i964.IChatRepository>(
       () => _i578.ChatRepositoryImpl(gh<_i16.IGeminiDataSource>()),
     );
     gh.lazySingleton<_i707.AddBabyRepository>(
       () => _i1067.AddBabyRepositoryImpl(gh<_i865.AddBabyRemoteDataSource>()),
-    );
-    gh.factory<_i522.BabyDetailsBloc>(
-      () => _i522.BabyDetailsBloc(gh<_i157.BabyDetailsRepository>()),
     );
     gh.factory<_i615.AddBabyBloc>(
       () => _i615.AddBabyBloc(gh<_i707.AddBabyRepository>()),
