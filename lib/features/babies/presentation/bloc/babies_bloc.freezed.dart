@@ -320,7 +320,7 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( List<BabyModel> babies)?  loaded,TResult Function( Failure failure)?  error,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( List<BabyEntity> babies)?  loaded,TResult Function( Failure failure)?  error,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _Loading() when loading != null:
@@ -344,7 +344,7 @@ return error(_that.failure);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( List<BabyModel> babies)  loaded,required TResult Function( Failure failure)  error,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( List<BabyEntity> babies)  loaded,required TResult Function( Failure failure)  error,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case _Loading():
@@ -367,7 +367,7 @@ return error(_that.failure);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( List<BabyModel> babies)?  loaded,TResult? Function( Failure failure)?  error,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( List<BabyEntity> babies)?  loaded,TResult? Function( Failure failure)?  error,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _Loading() when loading != null:
@@ -449,11 +449,11 @@ String toString() {
 
 
 class _Loaded implements BabiesState {
-  const _Loaded(final  List<BabyModel> babies): _babies = babies;
+  const _Loaded(final  List<BabyEntity> babies): _babies = babies;
   
 
- final  List<BabyModel> _babies;
- List<BabyModel> get babies {
+ final  List<BabyEntity> _babies;
+ List<BabyEntity> get babies {
   if (_babies is EqualUnmodifiableListView) return _babies;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_babies);
@@ -490,7 +490,7 @@ abstract mixin class _$LoadedCopyWith<$Res> implements $BabiesStateCopyWith<$Res
   factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) _then) = __$LoadedCopyWithImpl;
 @useResult
 $Res call({
- List<BabyModel> babies
+ List<BabyEntity> babies
 });
 
 
@@ -510,7 +510,7 @@ class __$LoadedCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') $Res call({Object? babies = null,}) {
   return _then(_Loaded(
 null == babies ? _self._babies : babies // ignore: cast_nullable_to_non_nullable
-as List<BabyModel>,
+as List<BabyEntity>,
   ));
 }
 

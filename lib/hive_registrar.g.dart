@@ -3,7 +3,7 @@
 // Check in to version control
 
 import 'package:hive_ce/hive_ce.dart';
-import 'package:baby_vaccination/features/add_baby/data/models/baby_model.dart';
+import 'package:baby_vaccination/features/manage_baby/data/models/baby_model.dart';
 
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {

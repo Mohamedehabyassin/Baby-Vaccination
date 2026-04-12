@@ -12,15 +12,6 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
-import '../../features/add_baby/data/data_sources/add_baby_remote_data_source.dart'
-    as _i865;
-import '../../features/add_baby/data/data_sources/baby_local_data_source.dart'
-    as _i110;
-import '../../features/add_baby/data/repository/add_baby_repository_impl.dart'
-    as _i1067;
-import '../../features/add_baby/domain/repository/add_baby_repository.dart'
-    as _i707;
-import '../../features/add_baby/presentation/bloc/add_baby_bloc.dart' as _i615;
 import '../../features/auth/sign_in/data/data_sources/local/sign_in_local_data_source.dart'
     as _i486;
 import '../../features/auth/sign_in/data/data_sources/remote/sign_in_remote_data_source.dart'
@@ -49,6 +40,16 @@ import '../../features/auth/sign_up/domain/use_cases/sign_up_with_google_use_cas
     as _i862;
 import '../../features/auth/sign_up/presentation/bloc/sign_up_bloc.dart'
     as _i130;
+import '../../features/babies/data/data_sources/babies_local_data_source.dart'
+    as _i1049;
+import '../../features/babies/data/data_sources/babies_remote_data_source.dart'
+    as _i679;
+import '../../features/babies/data/repository/babies_repository_impl.dart'
+    as _i15;
+import '../../features/babies/domain/repository/babies_repository.dart'
+    as _i427;
+import '../../features/babies/domain/use_cases/get_babies_use_case.dart'
+    as _i377;
 import '../../features/babies/presentation/bloc/babies_bloc.dart' as _i577;
 import '../../features/baby_details/data/data_sources/baby_details_remote_data_source.dart'
     as _i478;
@@ -71,6 +72,16 @@ import '../../features/llm_chat/domain/use_cases/get_chat_response_use_case.dart
 import '../../features/llm_chat/presentation/bloc/llm_chat_bloc.dart' as _i184;
 import '../../features/main_navigation/presentation/bloc/navigation_bloc.dart'
     as _i999;
+import '../../features/manage_baby/data/data_sources/baby_local_data_source.dart'
+    as _i736;
+import '../../features/manage_baby/data/data_sources/manage_baby_remote_data_source.dart'
+    as _i1052;
+import '../../features/manage_baby/data/repository/manage_baby_repository_impl.dart'
+    as _i743;
+import '../../features/manage_baby/domain/repository/manage_baby_repository.dart'
+    as _i738;
+import '../../features/manage_baby/presentation/bloc/manage_baby_bloc.dart'
+    as _i293;
 import '../../features/profile/presentation/bloc/profile_bloc.dart' as _i469;
 import '../localization/bloc/localization_bloc.dart' as _i434;
 import '../localization/wrapper/localization_wrapper.dart' as _i213;
@@ -88,7 +99,6 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
-    gh.factory<_i577.BabiesBloc>(() => _i577.BabiesBloc());
     gh.factory<_i202.HomeBloc>(() => _i202.HomeBloc());
     gh.factory<_i999.NavigationBloc>(() => _i999.NavigationBloc());
     gh.factory<_i469.ProfileBloc>(() => _i469.ProfileBloc());
@@ -107,8 +117,11 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i1046.LocationServiceImpl(),
     );
     gh.lazySingleton<_i279.ThemeBloc>(() => _i279.ThemeBloc());
-    gh.lazySingleton<_i110.BabyLocalDataSource>(
-      () => _i110.BabyLocalDataSourceImpl(),
+    gh.lazySingleton<_i1049.BabiesLocalDataSource>(
+      () => _i1049.BabiesLocalDataSourceImpl(),
+    );
+    gh.lazySingleton<_i736.BabyLocalDataSource>(
+      () => _i736.BabyLocalDataSourceImpl(),
     );
     gh.factory<_i90.FacilitiesBloc>(
       () => _i90.FacilitiesBloc(gh<_i1046.LocationServiceImpl>()),
@@ -119,33 +132,51 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i754.FirebaseAuthManger>(),
       ),
     );
+    gh.lazySingleton<_i1052.ManageBabyRemoteDataSource>(
+      () => _i1052.ManageBabyRemoteDataSourceImpl(gh<_i362.FirebaseManager>()),
+    );
     gh.lazySingleton<_i16.IGeminiDataSource>(
       () => _i16.GeminiDataSourceImpl(gh<_i671.GeminiService>()),
     );
     gh.lazySingleton<_i478.BabyDetailsRemoteDataSource>(
       () => _i478.BabyDetailsRemoteDataSourceImpl(gh<_i362.FirebaseManager>()),
     );
+    gh.lazySingleton<_i679.BabiesRemoteDataSource>(
+      () => _i679.BabiesRemoteDataSourceImpl(gh<_i362.FirebaseManager>()),
+    );
     gh.lazySingleton<_i157.BabyDetailsRepository>(
       () => _i306.BabyDetailsRepositoryImpl(
         gh<_i478.BabyDetailsRemoteDataSource>(),
-        gh<_i110.BabyLocalDataSource>(),
+        gh<_i736.BabyLocalDataSource>(),
         gh<_i260.ConnectivityManager>(),
       ),
     );
-    gh.factory<_i522.BabyDetailsBloc>(
-      () => _i522.BabyDetailsBloc(gh<_i157.BabyDetailsRepository>()),
+    gh.lazySingleton<_i738.ManageBabyRepository>(
+      () => _i743.ManageBabyRepositoryImpl(
+        gh<_i1052.ManageBabyRemoteDataSource>(),
+      ),
     );
-    gh.lazySingleton<_i865.AddBabyRemoteDataSource>(
-      () => _i865.AddBabyRemoteDataSourceImpl(gh<_i362.FirebaseManager>()),
+    gh.lazySingleton<_i427.BabiesRepository>(
+      () => _i15.BabiesRepositoryImpl(
+        gh<_i679.BabiesRemoteDataSource>(),
+        gh<_i1049.BabiesLocalDataSource>(),
+        gh<_i260.ConnectivityManager>(),
+      ),
     );
     gh.lazySingleton<_i964.IChatRepository>(
       () => _i578.ChatRepositoryImpl(gh<_i16.IGeminiDataSource>()),
     );
-    gh.lazySingleton<_i707.AddBabyRepository>(
-      () => _i1067.AddBabyRepositoryImpl(gh<_i865.AddBabyRemoteDataSource>()),
+    gh.factory<_i293.ManageBabyBloc>(
+      () => _i293.ManageBabyBloc(gh<_i738.ManageBabyRepository>()),
     );
-    gh.factory<_i615.AddBabyBloc>(
-      () => _i615.AddBabyBloc(gh<_i707.AddBabyRepository>()),
+    gh.lazySingleton<_i377.GetBabiesUseCase>(
+      () => _i377.GetBabiesUseCase(gh<_i427.BabiesRepository>()),
+    );
+    gh.factory<_i522.BabyDetailsBloc>(
+      () => _i522.BabyDetailsBloc(gh<_i157.BabyDetailsRepository>()),
+    );
+    gh.factory<_i577.BabiesBloc>(
+      () => _i577.BabiesBloc(gh<_i377.GetBabiesUseCase>()),
     );
     gh.lazySingleton<_i519.GetChatResponseUseCase>(
       () => _i519.GetChatResponseUseCase(gh<_i964.IChatRepository>()),

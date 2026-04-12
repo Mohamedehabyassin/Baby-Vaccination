@@ -1,5 +1,5 @@
 import 'package:baby_vaccination/core/errors/failure.dart';
-import 'package:baby_vaccination/features/add_baby/domain/entity/baby_entity.dart';
+import 'package:baby_vaccination/features/manage_baby/domain/entity/baby_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'baby_details_state.freezed.dart';

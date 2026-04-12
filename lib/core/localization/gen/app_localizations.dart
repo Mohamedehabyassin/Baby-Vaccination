@@ -524,11 +524,11 @@ abstract class AppLocalizations {
   /// **'Add Your Little One'**
   String get addYourLittleOne;
 
-  /// No description provided for @addBabySubtitle.
+  /// No description provided for @manageBabySubtitle.
   ///
   /// In en, this message translates to:
   /// **'Let’s start building your child’s protective shield. Provide a few details to customize their health timeline.'**
-  String get addBabySubtitle;
+  String get manageBabySubtitle;
 
   /// No description provided for @fullName.
   ///
@@ -619,6 +619,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No babies found'**
   String get noBabiesFound;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
 }
 
 class _AppLocalizationsDelegate

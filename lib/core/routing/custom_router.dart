@@ -8,6 +8,12 @@ import 'package:baby_vaccination/features/main_navigation/presentation/bloc/navi
 import 'package:baby_vaccination/features/main_navigation/presentation/screen/main_navigation_screen.dart';
 import 'package:baby_vaccination/features/splash/splash_screen.dart';
 import 'package:baby_vaccination/features/llm_chat/presentation/screen/llm_chat_screen.dart';
+import 'package:baby_vaccination/features/manage_baby/presentation/screens/manage_baby_screen.dart';
+import 'package:baby_vaccination/features/manage_baby/presentation/bloc/manage_baby_bloc.dart';
+import 'package:baby_vaccination/features/baby_details/presentation/screens/baby_details_screen.dart';
+import 'package:baby_vaccination/features/baby_details/presentation/bloc/baby_details_bloc.dart';
+import 'package:baby_vaccination/features/baby_details/presentation/bloc/baby_details_event.dart';
+import 'package:baby_vaccination/features/upcoming_vaccine/presentation/screen/upcoming_vaccine_screen.dart';
 import 'package:baby_vaccination/core/routing/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -60,6 +66,25 @@ class CustomRouter {
       GoRoute(
         path: AppRoutes.llmChat,
         builder: (context, state) => const LlmChatScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.manageBaby,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<ManageBabyBloc>(),
+          child: const ManageBabyScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.babyDetails,
+        builder: (context, state) => BlocProvider(
+          create: (_) =>
+              getIt<BabyDetailsBloc>()..add(const BabyDetailsEvent.getBabies()),
+          child: const BabyDetailsScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.upcomingVaccine,
+        builder: (context, state) => const UpcomingVaccineScreen(),
       ),
     ],
   );

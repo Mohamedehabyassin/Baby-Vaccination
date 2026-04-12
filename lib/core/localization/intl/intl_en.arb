@@ -158,7 +158,7 @@
     "girl": "Girl",
     "other": "Other",
     "addYourLittleOne": "Add Your Little One",
-    "addBabySubtitle": "Let’s start building your child’s protective shield. Provide a few details to customize their health timeline.",
+    "manageBabySubtitle": "Let’s start building your child’s protective shield. Provide a few details to customize their health timeline.",
     "fullName": "FULL NAME",
     "enterName": "Enter name",
     "dateOfBirth": "DATE OF BIRTH",
@@ -173,5 +173,6 @@
     "unauthenticated": "Unauthenticated",
     "babyDetails": "Baby Details",
     "unknownError": "Unknown error",
-    "noBabiesFound": "No babies found"
+    "noBabiesFound": "No babies found",
+    "retry": "Retry"
 }

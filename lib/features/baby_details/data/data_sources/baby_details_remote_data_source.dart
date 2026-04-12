@@ -1,7 +1,7 @@
 import 'package:baby_vaccination/core/errors/failure.dart';
 import 'package:baby_vaccination/core/models/success.dart';
 import 'package:baby_vaccination/core/services/firebase/firestore_manager.dart';
-import 'package:baby_vaccination/features/add_baby/data/models/baby_model.dart';
+import 'package:baby_vaccination/features/manage_baby/data/models/baby_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';

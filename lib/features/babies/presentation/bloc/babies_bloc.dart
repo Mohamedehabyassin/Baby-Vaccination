@@ -1,5 +1,6 @@
 import 'package:baby_vaccination/core/errors/failure.dart';
-import 'package:baby_vaccination/features/baby/baby_model.dart';
+import 'package:baby_vaccination/features/manage_baby/domain/entity/baby_entity.dart';
+import 'package:baby_vaccination/features/babies/domain/use_cases/get_babies_use_case.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -10,15 +11,20 @@ part 'babies_bloc.freezed.dart';
 
 @injectable
 class BabiesBloc extends Bloc<BabiesEvent, BabiesState> {
-  BabiesBloc() : super(const _Initial()) {
+  BabiesBloc(this._getBabiesUseCase) : super(const _Initial()) {
     on<BabiesEvent>((event, emit) async {
-      event.whenOrNull(started: () => _onLoadBabies(emit));
+      await event.when(started: () => _onLoadBabies(emit));
     });
   }
 
+  final GetBabiesUseCase _getBabiesUseCase;
+
   Future<void> _onLoadBabies(Emitter<BabiesState> emit) async {
     emit(const BabiesState.loading());
-    await Future.delayed(const Duration(seconds: 2));
-    emit(const BabiesState.loaded([]));
+    final result = await _getBabiesUseCase();
+    result.fold(
+      (failure) => emit(BabiesState.error(failure)),
+      (babies) => emit(BabiesState.loaded(babies)),
+    );
   }
 }

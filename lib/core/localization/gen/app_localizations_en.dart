@@ -237,7 +237,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addYourLittleOne => 'Add Your Little One';
 
   @override
-  String get addBabySubtitle =>
+  String get manageBabySubtitle =>
       'Let’s start building your child’s protective shield. Provide a few details to customize their health timeline.';
 
   @override
@@ -285,4 +285,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noBabiesFound => 'No babies found';
+
+  @override
+  String get retry => 'Retry';
 }

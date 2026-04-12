@@ -234,7 +234,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addYourLittleOne => 'أضف طفلك الصغير';
 
   @override
-  String get addBabySubtitle =>
+  String get manageBabySubtitle =>
       'لنبدأ في بناء درع طفلك الواقي. قدم بعض التفاصيل لتخصيص جدوله الزمني الصحي.';
 
   @override
@@ -281,4 +281,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noBabiesFound => 'لم يتم العثور على أطفال';
+
+  @override
+  String get retry => 'إعادة المحاولة';
 }
