@@ -1,3 +1,4 @@
+import 'package:baby_vaccination/core/constants/enums.dart';
 import 'package:baby_vaccination/core/errors/failure.dart';
 import 'package:baby_vaccination/core/services/firebase/firebase_auth_manger.dart';
 import 'package:baby_vaccination/features/manage_baby/domain/entity/baby_entity.dart';
@@ -33,8 +34,8 @@ class ManageBabyBloc extends Bloc<ManageBabyEvent, ManageBabyState> {
 
   final TextEditingController nameController = TextEditingController();
   DateTime? selectedDate;
-  String? selectedGender;
-  String? selectedBloodType;
+  GenderType? selectedGender;
+  BloodType? selectedBloodType;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   Future<void> _onAddBaby(Emitter<ManageBabyState> emit) async {
@@ -43,7 +44,9 @@ class ManageBabyBloc extends Bloc<ManageBabyEvent, ManageBabyState> {
           selectedGender == null ||
           selectedBloodType == null) {
         emit(
-          ManageBabyState.error(Failure(message: 'Please fill all the details')),
+          ManageBabyState.error(
+            Failure(message: 'Please fill all the details'),
+          ),
         );
         return;
       }
@@ -77,6 +80,14 @@ class ManageBabyBloc extends Bloc<ManageBabyEvent, ManageBabyState> {
       emit(ManageBabyState.error(Failure(message: 'Unauthenticated')));
       return;
     }
+
+    if (selectedDate == null ||
+        selectedGender == null ||
+        selectedBloodType == null) {
+      emit(ManageBabyState.error(Failure(message: 'Please fill all the details')));
+      return;
+    }
+
     final baby = BabyEntity(
       id: "some_id", // In actual update, id needs to be passed securely
       fullName: nameController.text,
@@ -99,12 +110,12 @@ class ManageBabyBloc extends Bloc<ManageBabyEvent, ManageBabyState> {
     emit(const ManageBabyState.formUpdated());
   }
 
-  void _onUpdateGender(String gender, Emitter<ManageBabyState> emit) {
+  void _onUpdateGender(GenderType gender, Emitter<ManageBabyState> emit) {
     selectedGender = gender;
     emit(const ManageBabyState.formUpdated());
   }
 
-  void _onUpdateBloodType(String bloodType, Emitter<ManageBabyState> emit) {
+  void _onUpdateBloodType(BloodType bloodType, Emitter<ManageBabyState> emit) {
     selectedBloodType = bloodType;
     emit(const ManageBabyState.formUpdated());
   }

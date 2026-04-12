@@ -284,4 +284,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get retry => 'إعادة المحاولة';
+
+  @override
+  String get success => 'تم بنجاح';
 }

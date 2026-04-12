@@ -20,8 +20,8 @@ class BabyModelAdapter extends TypeAdapter<BabyModel> {
       id: fields[0] as String?,
       fullName: fields[1] as String,
       dateOfBirth: fields[2] as DateTime,
-      gender: fields[3] as String,
-      bloodType: fields[4] as String,
+      gender: fields[3] as GenderType,
+      bloodType: fields[4] as BloodType,
       userId: fields[5] as String,
     );
   }

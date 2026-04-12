@@ -1,3 +1,4 @@
+import 'package:baby_vaccination/core/constants/enums.dart';
 import 'package:baby_vaccination/core/theme/components/theme_factory.dart';
 import 'package:baby_vaccination/core/theme/sizes/application_size.dart';
 import 'package:baby_vaccination/core/theme/styles/custom_text_style.dart';
@@ -37,9 +38,7 @@ class BabyItemWidget extends StatelessWidget {
               radius: 30.r,
               backgroundColor: currentTheme.primary100,
               child: Icon(
-                baby.gender.toLowerCase() == 'boy'
-                    ? Icons.child_care
-                    : Icons.face,
+                baby.gender == GenderType.boy ? Icons.child_care : Icons.face,
                 color: currentTheme.primary500,
                 size: 30.r,
               ),
@@ -55,7 +54,7 @@ class BabyItemWidget extends StatelessWidget {
                   ),
                   AppSpacing.vertical4(),
                   CustomText(
-                    text: '${baby.gender} | ${baby.bloodType}',
+                    text: '${baby.gender.name} | ${baby.bloodType.displayName}',
                     style: CustomTextStyle.mediumElementsMedium.copyWith(
                       color: currentTheme.neutral500,
                     ),

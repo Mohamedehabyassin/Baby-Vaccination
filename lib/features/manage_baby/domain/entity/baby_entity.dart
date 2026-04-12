@@ -1,3 +1,5 @@
+import 'package:baby_vaccination/core/constants/enums.dart';
+
 class BabyEntity {
   const BabyEntity({
     this.id,
@@ -11,7 +13,7 @@ class BabyEntity {
   final String? id;
   final String fullName;
   final DateTime dateOfBirth;
-  final String gender;
-  final String bloodType;
+  final GenderType gender;
+  final BloodType bloodType;
   final String userId;
 }

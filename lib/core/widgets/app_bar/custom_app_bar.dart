@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.centerTitle,
     this.elevation,
     this.backgroundColor,
-    this.useBack,
+    this.useBack = true,
     this.actions = const [],
   });
   final String? title;

@@ -3,16 +3,21 @@
 // Check in to version control
 
 import 'package:hive_ce/hive_ce.dart';
+import 'package:baby_vaccination/core/constants/enums.dart';
 import 'package:baby_vaccination/features/manage_baby/data/models/baby_model.dart';
 
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {
     registerAdapter(BabyModelAdapter());
+    registerAdapter(BloodTypeAdapter());
+    registerAdapter(GenderTypeAdapter());
   }
 }
 
 extension IsolatedHiveRegistrar on IsolatedHiveInterface {
   void registerAdapters() {
     registerAdapter(BabyModelAdapter());
+    registerAdapter(BloodTypeAdapter());
+    registerAdapter(GenderTypeAdapter());
   }
 }

@@ -174,5 +174,6 @@
     "babyDetails": "Baby Details",
     "unknownError": "Unknown error",
     "noBabiesFound": "No babies found",
-    "retry": "Retry"
+    "retry": "Retry",
+    "success": "Success"
 }

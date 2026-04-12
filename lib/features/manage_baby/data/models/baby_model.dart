@@ -1,3 +1,4 @@
+import 'package:baby_vaccination/core/constants/enums.dart';
 import 'package:baby_vaccination/core/constants/hive_constants.dart';
 import 'package:baby_vaccination/features/manage_baby/domain/entity/baby_entity.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -28,8 +29,10 @@ class BabyModel extends BabyEntity {
       id: id,
       fullName: json['fullName'] as String,
       dateOfBirth: (json['dateOfBirth'] as Timestamp).toDate(),
-      gender: json['gender'] as String,
-      bloodType: json['bloodType'] as String,
+      gender: GenderType.values.byName(json['gender'] as String),
+      bloodType: BloodType.values.firstWhere(
+        (e) => e.displayName == (json['bloodType'] as String),
+      ),
       userId: json['userId'] as String,
     );
   }
@@ -59,11 +62,11 @@ class BabyModel extends BabyEntity {
 
   @HiveField(3)
   @override
-  final String gender;
+  final GenderType gender;
 
   @HiveField(4)
   @override
-  final String bloodType;
+  final BloodType bloodType;
 
   @HiveField(5)
   @override
@@ -73,8 +76,8 @@ class BabyModel extends BabyEntity {
     return {
       'fullName': fullName,
       'dateOfBirth': Timestamp.fromDate(dateOfBirth),
-      'gender': gender,
-      'bloodType': bloodType,
+      'gender': gender.name,
+      'bloodType': bloodType.displayName,
       'userId': userId,
     };
   }

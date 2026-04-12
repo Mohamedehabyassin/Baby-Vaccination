@@ -131,7 +131,7 @@ return updateBloodType(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  addBaby,TResult Function()?  updateBaby,TResult Function( DateTime date)?  updateDate,TResult Function( String gender)?  updateGender,TResult Function( String bloodType)?  updateBloodType,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  addBaby,TResult Function()?  updateBaby,TResult Function( DateTime date)?  updateDate,TResult Function( GenderType gender)?  updateGender,TResult Function( BloodType bloodType)?  updateBloodType,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ManageBaby() when addBaby != null:
 return addBaby();case _UpdateBaby() when updateBaby != null:
@@ -156,7 +156,7 @@ return updateBloodType(_that.bloodType);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  addBaby,required TResult Function()  updateBaby,required TResult Function( DateTime date)  updateDate,required TResult Function( String gender)  updateGender,required TResult Function( String bloodType)  updateBloodType,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  addBaby,required TResult Function()  updateBaby,required TResult Function( DateTime date)  updateDate,required TResult Function( GenderType gender)  updateGender,required TResult Function( BloodType bloodType)  updateBloodType,}) {final _that = this;
 switch (_that) {
 case _ManageBaby():
 return addBaby();case _UpdateBaby():
@@ -180,7 +180,7 @@ return updateBloodType(_that.bloodType);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  addBaby,TResult? Function()?  updateBaby,TResult? Function( DateTime date)?  updateDate,TResult? Function( String gender)?  updateGender,TResult? Function( String bloodType)?  updateBloodType,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  addBaby,TResult? Function()?  updateBaby,TResult? Function( DateTime date)?  updateDate,TResult? Function( GenderType gender)?  updateGender,TResult? Function( BloodType bloodType)?  updateBloodType,}) {final _that = this;
 switch (_that) {
 case _ManageBaby() when addBaby != null:
 return addBaby();case _UpdateBaby() when updateBaby != null:
@@ -332,7 +332,7 @@ class _UpdateGender implements ManageBabyEvent {
   const _UpdateGender(this.gender);
   
 
- final  String gender;
+ final  GenderType gender;
 
 /// Create a copy of ManageBabyEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -364,7 +364,7 @@ abstract mixin class _$UpdateGenderCopyWith<$Res> implements $ManageBabyEventCop
   factory _$UpdateGenderCopyWith(_UpdateGender value, $Res Function(_UpdateGender) _then) = __$UpdateGenderCopyWithImpl;
 @useResult
 $Res call({
- String gender
+ GenderType gender
 });
 
 
@@ -384,7 +384,7 @@ class __$UpdateGenderCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') $Res call({Object? gender = null,}) {
   return _then(_UpdateGender(
 null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
-as String,
+as GenderType,
   ));
 }
 
@@ -398,7 +398,7 @@ class _UpdateBloodType implements ManageBabyEvent {
   const _UpdateBloodType(this.bloodType);
   
 
- final  String bloodType;
+ final  BloodType bloodType;
 
 /// Create a copy of ManageBabyEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -430,7 +430,7 @@ abstract mixin class _$UpdateBloodTypeCopyWith<$Res> implements $ManageBabyEvent
   factory _$UpdateBloodTypeCopyWith(_UpdateBloodType value, $Res Function(_UpdateBloodType) _then) = __$UpdateBloodTypeCopyWithImpl;
 @useResult
 $Res call({
- String bloodType
+ BloodType bloodType
 });
 
 
@@ -450,7 +450,7 @@ class __$UpdateBloodTypeCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') $Res call({Object? bloodType = null,}) {
   return _then(_UpdateBloodType(
 null == bloodType ? _self.bloodType : bloodType // ignore: cast_nullable_to_non_nullable
-as String,
+as BloodType,
   ));
 }
 

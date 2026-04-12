@@ -35,10 +35,11 @@ class _BabiesScreenState extends State<BabiesScreen> {
     return Scaffold(
       appBar: CustomAppBar(
         title: context.loc.babies,
+        useBack: false,
         actions: [
           IconButton(
             icon: Icon(Icons.add, color: currentTheme.primary500),
-            onPressed: () => context.push(AppRoutes.manageBaby),
+            onPressed: () => context.go(AppRoutes.manageBaby),
           ),
         ],
       ),
