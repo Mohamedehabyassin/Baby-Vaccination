@@ -136,7 +136,6 @@ class LocationServiceImpl {
 
   // ─── Lifecycle ─────────────────────────────────────────────────────────────
 
-  @override
   Future<void> dispose() async {
     await _positionSub?.cancel();
     await _streamController?.close();

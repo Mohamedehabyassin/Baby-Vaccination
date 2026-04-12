@@ -10,9 +10,7 @@ class GeminiService {
   /// Generic text generation
   Future<String?> generateText(String prompt) async {
     try {
-      final value = await _gemini.prompt(parts: [
-        Part.text(prompt),
-      ]);
+      final value = await _gemini.prompt(parts: [Part.text(prompt)]);
       return value?.output;
     } catch (e) {
       return null;
@@ -32,17 +30,16 @@ class GeminiService {
   /// Analyze image and text
   Future<String?> analyzeImage(String text, List<Uint8List> images) async {
     try {
-      final value = await _gemini.prompt(parts: [
-        Part.text(text),
-        ...images.map(
-          (i) => Part.inline(
-            InlineData(
-              data: base64Encode(i),
-              mimeType: 'image/jpeg',
+      final value = await _gemini.prompt(
+        parts: [
+          Part.text(text),
+          ...images.map(
+            (i) => Part.inline(
+              InlineData(data: base64Encode(i), mimeType: 'image/jpeg'),
             ),
           ),
-        ),
-      ]);
+        ],
+      );
       return value?.output;
     } catch (e) {
       return null;
@@ -55,7 +52,8 @@ class GeminiService {
     required String childAge,
     required String vaccineName,
   }) async {
-    final prompt = """
+    final prompt =
+        """
       You are a friendly and professional pediatric nurse assistant for an app called TinyShield.
       The child's name is $childName and they are $childAge old.
       They are scheduled for the $vaccineName vaccine.
@@ -72,7 +70,8 @@ class GeminiService {
 
   /// Answer General Parent Questions
   Future<String?> answerParentQuestion(String question) async {
-    final prompt = """
+    final prompt =
+        """
       You are TinyShield AI, an expert in child healthcare and vaccinations.
       Answer the following parent's question concisely and accurately:
       
@@ -85,7 +84,8 @@ class GeminiService {
 
   /// Summarize Vaccine Side Effects
   Future<String?> summarizeSideEffects(String vaccineName) async {
-    final prompt = "List the common, rare and severe side effects of $vaccineName vaccine in a bulleted list for a parent to read.";
+    final prompt =
+        "List the common, rare and severe side effects of $vaccineName vaccine in a bulleted list for a parent to read.";
     return generateText(prompt);
   }
 }

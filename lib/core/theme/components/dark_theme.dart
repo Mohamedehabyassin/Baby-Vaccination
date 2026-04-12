@@ -51,10 +51,7 @@ class DarkTheme implements ThemeBase {
   @override
   @override
   Color get primary600 => primary500;
-  @override
-  Color get darkText => onSurface;
-  @override
-  Color get mistWhite => surface;
+
   @override
   Color get tertiary400 => primaryFixedDim;
   @override
@@ -81,30 +78,23 @@ class DarkTheme implements ThemeBase {
   Color get neutral950 => const Color(0xFF121212);
 
   @override
-  // TODO: implement primary200
-  Color get primary200 => throw UnimplementedError();
+  Color get primary200 => primary500.withValues(alpha: 0.15);
 
   @override
-  // TODO: implement primary400
-  Color get primary400 => throw UnimplementedError();
+  Color get primary400 => primary500.withValues(alpha: 0.15);
 
   @override
-  // TODO: implement primary50
-  Color get primary50 => throw UnimplementedError();
+  Color get primary50 => primary500.withValues(alpha: 0.15);
 
   @override
-  // TODO: implement primary700
   Color get primary700 => throw UnimplementedError();
 
   @override
-  // TODO: implement primary800
-  Color get primary800 => throw UnimplementedError();
+  Color get primary800 => primary600.withValues(alpha: 0.15);
 
   @override
-  // TODO: implement primary900
-  Color get primary900 => throw UnimplementedError();
+  Color get primary900 => primary600.withValues(alpha: 0.15);
 
   @override
-  // TODO: implement primary950
-  Color get primary950 => throw UnimplementedError(); // near black
+  Color get primary950 => primary600.withValues(alpha: 0.15);
 }

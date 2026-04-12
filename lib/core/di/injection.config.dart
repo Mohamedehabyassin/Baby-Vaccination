@@ -12,6 +12,13 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
+import '../../features/add_baby/data/data_sources/add_baby_remote_data_source.dart'
+    as _i865;
+import '../../features/add_baby/data/repository/add_baby_repository_impl.dart'
+    as _i1067;
+import '../../features/add_baby/domain/repository/add_baby_repository.dart'
+    as _i707;
+import '../../features/add_baby/presentation/bloc/add_baby_bloc.dart' as _i615;
 import '../../features/auth/sign_in/data/data_sources/local/sign_in_local_data_source.dart'
     as _i486;
 import '../../features/auth/sign_in/data/data_sources/remote/sign_in_remote_data_source.dart'
@@ -41,6 +48,14 @@ import '../../features/auth/sign_up/domain/use_cases/sign_up_with_google_use_cas
 import '../../features/auth/sign_up/presentation/bloc/sign_up_bloc.dart'
     as _i130;
 import '../../features/babies/presentation/bloc/babies_bloc.dart' as _i577;
+import '../../features/baby_details/data/data_sources/baby_details_remote_data_source.dart'
+    as _i478;
+import '../../features/baby_details/data/repository/baby_details_repository_impl.dart'
+    as _i306;
+import '../../features/baby_details/domain/repository/baby_details_repository.dart'
+    as _i157;
+import '../../features/baby_details/presentation/bloc/baby_details_bloc.dart'
+    as _i522;
 import '../../features/facilities/presentation/bloc/facilities_bloc.dart'
     as _i90;
 import '../../features/home/presentation/bloc/home_bloc.dart' as _i202;
@@ -99,8 +114,28 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i16.IGeminiDataSource>(
       () => _i16.GeminiDataSourceImpl(gh<_i671.GeminiService>()),
     );
+    gh.lazySingleton<_i478.BabyDetailsRemoteDataSource>(
+      () => _i478.BabyDetailsRemoteDataSourceImpl(gh<_i362.FirebaseManager>()),
+    );
+    gh.lazySingleton<_i865.AddBabyRemoteDataSource>(
+      () => _i865.AddBabyRemoteDataSourceImpl(gh<_i362.FirebaseManager>()),
+    );
+    gh.lazySingleton<_i157.BabyDetailsRepository>(
+      () => _i306.BabyDetailsRepositoryImpl(
+        gh<_i478.BabyDetailsRemoteDataSource>(),
+      ),
+    );
     gh.lazySingleton<_i964.IChatRepository>(
       () => _i578.ChatRepositoryImpl(gh<_i16.IGeminiDataSource>()),
+    );
+    gh.lazySingleton<_i707.AddBabyRepository>(
+      () => _i1067.AddBabyRepositoryImpl(gh<_i865.AddBabyRemoteDataSource>()),
+    );
+    gh.factory<_i522.BabyDetailsBloc>(
+      () => _i522.BabyDetailsBloc(gh<_i157.BabyDetailsRepository>()),
+    );
+    gh.factory<_i615.AddBabyBloc>(
+      () => _i615.AddBabyBloc(gh<_i707.AddBabyRepository>()),
     );
     gh.lazySingleton<_i519.GetChatResponseUseCase>(
       () => _i519.GetChatResponseUseCase(gh<_i964.IChatRepository>()),

@@ -1,7 +1,6 @@
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 
 class DirectionDetails {
-
   DirectionDetails(
     this.distanceValue,
     this.durationValue,

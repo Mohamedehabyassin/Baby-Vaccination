@@ -31,9 +31,9 @@ class FacilitiesErrorView extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             ElevatedButton.icon(
-              onPressed: () => context
-                  .read<FacilitiesBloc>()
-                  .add(const FacilitiesEvent.retryLocation()),
+              onPressed: () => context.read<FacilitiesBloc>().add(
+                const FacilitiesEvent.retryLocation(),
+              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: currentTheme.primary500,
                 foregroundColor: Colors.white,

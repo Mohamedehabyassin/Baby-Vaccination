@@ -59,10 +59,7 @@ class FacilitiesBloc extends Bloc<FacilitiesEvent, FacilitiesState> {
       ),
       Marker(
         markerId: const MarkerId('clinic_2'),
-        position: LatLng(
-          location!.latitude - 0.005,
-          location!.longitude - 0.01,
-        ),
+        position: LatLng(location.latitude - 0.005, location.longitude - 0.01),
         infoWindow: const InfoWindow(
           title: 'Nurture Health Center',
           snippet: 'Specialized in Pediatrics',

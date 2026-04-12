@@ -19,10 +19,10 @@ class HomeResourceSection extends StatelessWidget {
             title: context.loc.sideEffectsGuide,
           ),
         ),
-        AppSpacing.vertical16(),
+        AppSpacing.horizontal16(),
         Expanded(
           child: HomeSmallCard(
-            backgroundColor: currentTheme.primary500.withValues(alpha: 0.15),
+            backgroundColor: currentTheme.primary50,
             icon: Icons.support_agent_outlined,
             subtitle: context.loc.assistance,
             title: context.loc.talkToNurse,

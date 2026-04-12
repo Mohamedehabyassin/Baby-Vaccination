@@ -37,19 +37,74 @@ class FirebaseManager {
     }
   }
 
-  Future read() async {
-    CollectionReference col = db.collection("collectionPath");
-    col.doc("").get();
-  }
-
-  Future update(String collectionName, Map<String, dynamic> data) async {
+  Future<Either<Failure, Success<QuerySnapshot>>> readAll(
+    String collectionName,
+  ) async {
     if (await safeCall()) {
-      final userId = _firebaseAuthManger.currentUser!.uid;
-      return await db.doc(userId).update(data);
+      try {
+        final userId = _firebaseAuthManger.currentUser?.uid;
+        if (userId == null) return Left(Failure(message: "User not logged in"));
+        CollectionReference col = db.collection(collectionName);
+        final response = await col.where('userId', isEqualTo: userId).get();
+        return Right(Success(data: response));
+      } catch (error) {
+        return Left(Failure(message: error.toString(), error: error));
+      }
+    } else {
+      return Left(Failure(message: "No Internet connection"));
     }
   }
 
-  Future delete(String collectionName, String id) async {
-    if (await safeCall()) {}
+  Future<Either<Failure, Success<DocumentSnapshot>>> readOne(
+    String collectionName,
+    String docId,
+  ) async {
+    if (await safeCall()) {
+      try {
+        final response = await db.collection(collectionName).doc(docId).get();
+        if (response.exists) {
+          return Right(Success(data: response));
+        } else {
+          return Left(Failure(message: "Document not found"));
+        }
+      } catch (error) {
+        return Left(Failure(message: error.toString(), error: error));
+      }
+    } else {
+      return Left(Failure(message: "No Internet connection"));
+    }
+  }
+
+  Future<Either<Failure, Success<void>>> update(
+    String collectionName,
+    String docId,
+    Map<String, dynamic> data,
+  ) async {
+    if (await safeCall()) {
+      try {
+        await db.collection(collectionName).doc(docId).update(data);
+        return Right(Success(data: null));
+      } catch (error) {
+        return Left(Failure(message: error.toString(), error: error));
+      }
+    } else {
+      return Left(Failure(message: "No Internet connection"));
+    }
+  }
+
+  Future<Either<Failure, Success<void>>> delete(
+    String collectionName,
+    String docId,
+  ) async {
+    if (await safeCall()) {
+      try {
+        await db.collection(collectionName).doc(docId).delete();
+        return Right(Success(data: null));
+      } catch (error) {
+        return Left(Failure(message: error.toString(), error: error));
+      }
+    } else {
+      return Left(Failure(message: "No Internet connection"));
+    }
   }
 }

@@ -3,5 +3,8 @@ import 'package:dartz/dartz.dart';
 import 'package:baby_vaccination/core/errors/failure.dart';
 
 abstract class IChatRepository {
-  Future<Either<Failure, String>> sendMessage(String text, List<ChatDomainMessage> history);
+  Future<Either<Failure, String>> sendMessage(
+    String text,
+    List<ChatDomainMessage> history,
+  );
 }

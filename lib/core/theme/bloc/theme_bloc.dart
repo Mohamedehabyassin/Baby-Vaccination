@@ -35,8 +35,9 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   }
 
   Future<void> _onChangeTheme(String value, Emitter<ThemeState> emit) async {
-    themeMode =
-        value == AppStrings.darkTheme ? ThemeMode.dark : ThemeMode.light;
+    themeMode = value == AppStrings.darkTheme
+        ? ThemeMode.dark
+        : ThemeMode.light;
     theme = themeMode == ThemeMode.dark ? ThemeData.dark() : ThemeData.light();
     emit(const ThemeChangeState());
   }

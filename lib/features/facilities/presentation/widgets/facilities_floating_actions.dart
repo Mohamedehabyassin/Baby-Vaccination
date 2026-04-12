@@ -22,10 +22,12 @@ class FacilitiesFloatingActions extends StatelessWidget {
             heroTag: 'my_location',
             backgroundColor: currentTheme.surface,
             onPressed: () => location != null
-                ? context.read<FacilitiesBloc>().centerOnCurrentLocation(location!)
-                : context
-                    .read<FacilitiesBloc>()
-                    .add(const FacilitiesEvent.retryLocation()),
+                ? context.read<FacilitiesBloc>().centerOnCurrentLocation(
+                    location!,
+                  )
+                : context.read<FacilitiesBloc>().add(
+                    const FacilitiesEvent.retryLocation(),
+                  ),
             child: Icon(Icons.my_location, color: currentTheme.primary500),
           ),
           const SizedBox(height: 12),

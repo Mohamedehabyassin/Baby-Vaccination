@@ -7,7 +7,7 @@ class FacilitiesLoadingOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: currentTheme.surface.withOpacity(0.5),
+      color: currentTheme.surface,
       child: Center(
         child: CircularProgressIndicator(color: currentTheme.primary500),
       ),
